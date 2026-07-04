@@ -68,6 +68,37 @@ def select_tournaments(results, settings):
     return selected
 
 
+def probe_matchdata(settings):
+    """matchdata가 있는 대회에 대해 후보 엔드포인트를 시도해 스키마를 파악한다."""
+    import requests as rq
+
+    results = abr.fetch_results(limit=50)
+    targets = [t for t in results if t.get("matchdata") and (t.get("players_count") or 0) >= 8][:3]
+    if not targets:
+        print("matchdata=true 대회를 찾지 못함")
+        return 0
+    candidates = [
+        "https://alwaysberunning.net/api/matchdata?id={id}",
+        "https://alwaysberunning.net/api/tournaments/matchdata?id={id}",
+        "https://alwaysberunning.net/tjsons/{id}.json",
+        "https://alwaysberunning.net/api/entries?id={id}&matchdata=1",
+    ]
+    for t in targets:
+        print(f"\n===== 대회 {t['id']} ({t.get('title')}) players={t.get('players_count')} =====")
+        for url_tpl in candidates:
+            url = url_tpl.format(id=t["id"])
+            try:
+                r = rq.get(url, headers=abr.HEADERS, timeout=30)
+                ctype = r.headers.get("content-type", "")
+                print(f"\n--- GET {url} -> {r.status_code} ({ctype})")
+                if r.status_code == 200:
+                    body = r.text
+                    print(body[:2500])
+            except Exception as e:
+                print(f"\n--- GET {url} -> 예외: {e}")
+    return 0
+
+
 def probe(settings):
     """API 실제 응답의 키 구조를 출력 — 스키마 검증/디버그용."""
     results = abr.fetch_results(limit=10)
@@ -132,9 +163,12 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--offline", action="store_true", help="네트워크 없이 캐시만 사용")
     parser.add_argument("--probe", action="store_true", help="API 응답 구조 출력")
+    parser.add_argument("--probe-matchdata", action="store_true", help="matchdata 엔드포인트 탐색")
     args = parser.parse_args()
     if args.probe:
         sys.exit(probe(load_settings()))
+    if args.probe_matchdata:
+        sys.exit(probe_matchdata(load_settings()))
     sys.exit(run(offline=args.offline))
 
 

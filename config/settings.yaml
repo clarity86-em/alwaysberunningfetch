@@ -27,11 +27,12 @@ tiers:
   district championship:         {rank: 4, label: "District"}
   regional:                      {rank: 4, label: "Regional"}
   circuit breaker:               {rank: 2, label: "Circuit Breaker"}
-  store champ:                   {rank: 5, label: "Store Champ"}
+  national championship:         {rank: 3, label: "Nationals"}
+  store championship:            {rank: 5, label: "Store Champ"}
   circuit opener:                {rank: 5, label: "Circuit Opener"}
   casual tournament kit:         {rank: 6, label: "Casual Kit"}
   "gnk / seasonal":              {rank: 6, label: "GNK"}
-  community:                     {rank: 6, label: "Community"}
+  community tournament:          {rank: 6, label: "Community"}
   online event:                  {rank: 6, label: "Online"}
   asynchronous tournament:       {rank: 7, label: "Async"}
   team tournament:               {rank: 5, label: "Team"}

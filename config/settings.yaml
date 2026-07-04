@@ -36,6 +36,7 @@ tiers:
   online event:                  {rank: 6, label: "Online"}
   asynchronous tournament:       {rank: 7, label: "Async"}
   team tournament:               {rank: 5, label: "Team"}
+  players circuit:               {rank: 5, label: "Players Circuit"}
 
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:

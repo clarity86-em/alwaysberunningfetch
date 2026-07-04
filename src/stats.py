@@ -44,6 +44,21 @@ def player_name(entry):
     return _first(entry, "user_name", "user_import_name") or "?"
 
 
+def normalize_faction(faction, side):
+    """ABR은 팩션 코드를 12자로 잘라서 준다 ('weyland-cons' 등) — 접두사 매칭으로 복원."""
+    if not faction:
+        return None
+    if faction == "neutral":
+        return f"neutral-{side}"
+    known = CORP_FACTIONS + RUNNER_FACTIONS
+    if faction in known:
+        return faction
+    for full in known:
+        if full.startswith(faction):
+            return full
+    return faction
+
+
 def deck_info(entry, side, id_map):
     """(identity_title, faction, deck_url) — side는 'corp' 또는 'runner'."""
     title = _first(entry, f"{side}_deck_identity_title", f"{side}_deck_identity")
@@ -51,8 +66,7 @@ def deck_info(entry, side, id_map):
     url = _first(entry, f"{side}_deck_url")
     if not faction and title and title in id_map:
         faction = id_map[title]["faction"]
-    if faction == "neutral":  # NRDB 구버전 코드 보정
-        faction = f"neutral-{side}"
+    faction = normalize_faction(faction, side)
     return (title or "Unknown", faction or "unknown", url)
 
 

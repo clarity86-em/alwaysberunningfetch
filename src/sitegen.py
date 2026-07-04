@@ -3,11 +3,22 @@
 외부 리소스 없이 완전히 자체 포함된 페이지를 만든다 (인라인 SVG 차트 + CSS).
 라이트/다크 모드는 CSS 변수 + prefers-color-scheme으로 처리.
 색상은 dataviz 검증을 통과한 팔레트 (팩션별 고정 색).
+
+구조:
+  index.html            포맷별(Standard/Startup) 최신 메타 통계 + 전체 대회 목록
+  meta/<slug>.html      메타 그룹(포맷 x 카드풀 x 밴리스트)별 상세 통계
+  t/<id>.html           대회별 상세 (우승, 차트, 순위표)
+  data/summary.json     기계가독 요약
+
+캐주얼 포함/제외: 각 통계 블록을 두 버전으로 렌더링하고
+체크박스 + CSS :has()로 전환한다 (JS 없음).
 """
 
 import html
 import json
 import math
+import re
+from collections import defaultdict
 from pathlib import Path
 
 from stats import FACTION_LABELS, aggregate, faction_breakdown, shorten_identity
@@ -32,18 +43,59 @@ FACTION_COLORS = {
     "unknown": ("#898781", "#898781"),
 }
 
+FORMAT_LABELS = {"standard": "Standard", "startup": "Startup", "eternal": "Eternal"}
+
 
 def esc(s):
     return html.escape(str(s if s is not None else ""))
 
 
+# ---------------------------------------------------------------- 메타 그룹
+
+def banlist_version(mwl):
+    """'Standard Ban List 26.05' -> '26.05'. 인식 불가면 None."""
+    m = re.search(r"(\d{2}\.\d{2})", mwl or "")
+    return m.group(1) if m else None
+
+
+def meta_key(t):
+    return (t["format"], t["cardpool"], banlist_version(t["mwl"]))
+
+
+def meta_label(key):
+    fmt, cardpool, ban = key
+    parts = [FORMAT_LABELS.get(fmt, fmt or "?"), cardpool]
+    parts.append(f"밴리스트 {ban}" if ban else "밴리스트 미상")
+    return " · ".join(parts)
+
+
+def meta_slug(key):
+    fmt, cardpool, ban = key
+    raw = f"{fmt}-{cardpool}-{ban or 'etc'}"
+    return re.sub(r"[^a-z0-9]+", "-", raw.lower()).strip("-")
+
+
+def group_by_meta(per_tournament):
+    """{key: [tournaments]} — 각 포맷 안에서 최신 대회 날짜 기준 내림차순 정렬된 키 목록도 반환."""
+    groups = defaultdict(list)
+    for t in per_tournament:
+        groups[meta_key(t)].append(t)
+    order = sorted(
+        groups,
+        key=lambda k: (k[0], max(t["date"] for t in groups[k])),
+        reverse=True,
+    )
+    # 포맷 우선순위: standard, startup, 나머지
+    fmt_rank = {"standard": 0, "startup": 1}
+    order.sort(key=lambda k: fmt_rank.get(k[0], 9))
+    return groups, order
+
+
+# ---------------------------------------------------------------- CSS / 페이지 골격
+
 def faction_css():
-    light = "\n".join(
-        f"  --f-{name}: {colors[0]};" for name, colors in FACTION_COLORS.items()
-    )
-    dark = "\n".join(
-        f"    --f-{name}: {colors[1]};" for name, colors in FACTION_COLORS.items()
-    )
+    light = "\n".join(f"  --f-{n}: {c[0]};" for n, c in FACTION_COLORS.items())
+    dark = "\n".join(f"    --f-{n}: {c[1]};" for n, c in FACTION_COLORS.items())
     return light, dark
 
 
@@ -108,6 +160,7 @@ a {{ color: inherit; }}
   border: 1px solid var(--border); border-radius: 999px; color: var(--ink-2);
   white-space: nowrap;
 }}
+.badge.comp {{ color: var(--ink); border-color: var(--baseline); }}
 .winner {{ display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }}
 .winner .who {{ font-size: 17px; font-weight: 600; }}
 .idtag {{ font-size: 13px; color: var(--ink-2); }}
@@ -115,8 +168,44 @@ a {{ color: inherit; }}
 footer {{ color: var(--muted); font-size: 12.5px; margin-top: 40px; }}
 footer a {{ color: inherit; }}
 .crumb {{ font-size: 13px; color: var(--ink-2); }}
+.toggle-row {{
+  display: flex; align-items: center; gap: 8px; margin: 0 0 18px;
+  font-size: 14px; color: var(--ink-2);
+}}
+.toggle-row input {{ width: 16px; height: 16px; accent-color: var(--ink); }}
+.agg-note {{ font-size: 13px; color: var(--ink-2); margin: 0 0 10px; }}
+.agg-comp {{ display: none; }}
+body:has(#comp-only:checked) .agg-all {{ display: none; }}
+body:has(#comp-only:checked) .agg-comp {{ display: block; }}
+.meta-links {{ list-style: none; margin: 0; padding: 0; font-size: 14px; }}
+.meta-links li {{ margin: 4px 0; }}
+.meta-links .n {{ color: var(--ink-2); font-size: 12.5px; }}
 """
 
+
+def page(title, body):
+    return f"""<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta name="robots" content="noindex">
+<title>{esc(title)}</title>
+<style>{base_css()}</style>
+</head>
+<body>
+<main>
+{body}
+<footer>Data: <a href="https://alwaysberunning.net">alwaysberunning.net</a> ·
+Identities: <a href="https://netrunnerdb.com">NetrunnerDB</a> ·
+자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch">alwaysberunningfetch</a>)</footer>
+</main>
+</body>
+</html>"""
+
+
+# ---------------------------------------------------------------- 차트 조각
 
 def svg_donut(pairs, total, aria_label):
     """pairs: [(faction, {count, cut})] -> 도넛 SVG. 세그먼트 간 2px 서피스 갭."""
@@ -151,7 +240,6 @@ def svg_donut(pairs, total, aria_label):
                 f'<path d="{d}" fill="var(--f-{faction})" stroke="var(--surface)" stroke-width="2">'
                 f"<title>{esc(label)}: {share}</title></path>"
             )
-        # 큰 조각에는 퍼센트 직접 라벨 (흰 글자, 진한 팩션색 위)
         if frac >= 0.12:
             mid = (start + end) / 2
             rm = (r_out + r_in) / 2
@@ -198,7 +286,6 @@ def bars_block(identity_rows, has_cut):
         bar = [
             f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
         ]
-        # 트랙(전체 엔트리): 같은 색 옅게, 데이터 끝 4px 라운드
         bar.append(
             f'<rect x="0" y="2" width="{w_total:.2f}" height="14" rx="1.2" fill="{color}" opacity="0.25"/>'
         )
@@ -224,33 +311,13 @@ def idtag(deck):
     return f"<span class='idtag'><span class='dot' style='background:var(--f-{f})'></span>{name}</span>"
 
 
-def page(title, body, root_prefix=""):
-    return f"""<!DOCTYPE html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="color-scheme" content="light dark">
-<meta name="robots" content="noindex">
-<title>{esc(title)}</title>
-<style>{base_css()}</style>
-</head>
-<body>
-<main>
-{body}
-<footer>Data: <a href="https://alwaysberunning.net">alwaysberunning.net</a> ·
-Identities: <a href="https://netrunnerdb.com">NetrunnerDB</a> ·
-자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch">alwaysberunningfetch</a>)</footer>
-</main>
-</body>
-</html>"""
+def tier_badge(t):
+    label = t.get("tier_label") or t["type"] or "?"
+    cls = "badge comp" if t.get("formality") == "competitive" else "badge"
+    return f"<span class='{cls}'>{esc(label)}</span>"
 
 
-def tier_badge(t_type, tiers):
-    info = tiers.get(t_type)
-    label = info["label"] if info else (t_type or "?")
-    return f"<span class='badge'>{esc(label)}</span>"
-
+# ---------------------------------------------------------------- 페이지 블록
 
 def side_section(stats_side, side, has_cut):
     pairs = faction_breakdown(stats_side, side)
@@ -265,12 +332,148 @@ def side_section(stats_side, side, has_cut):
     )
 
 
-def render_tournament(t, tiers):
+def toggle_html():
+    return (
+        "<div class='toggle-row'><input type='checkbox' id='comp-only'>"
+        "<label for='comp-only'>경쟁 대회만 보기 (캐주얼 티어 제외)</label></div>"
+    )
+
+
+def agg_charts(tournaments):
+    agg = aggregate(tournaments)
+    has_cut = any(t["cut_size"] > 0 for t in tournaments)
+    note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}</p>"
+    return note + (
+        "<div class='grid2'>"
+        + side_section(agg["corp"], "corp", has_cut)
+        + side_section(agg["runner"], "runner", has_cut)
+        + "</div>"
+    )
+
+
+def agg_variants(tournaments):
+    """캐주얼 포함(기본)/경쟁만 두 버전 — 체크박스로 전환."""
+    comp = [t for t in tournaments if t.get("formality") == "competitive"]
+    all_html = f"<div class='agg-all'>{agg_charts(tournaments)}</div>"
+    if comp:
+        comp_html = f"<div class='agg-comp'>{agg_charts(comp)}</div>"
+    else:
+        comp_html = "<div class='agg-comp'><p class='sub'>이 그룹에는 경쟁 티어 대회가 없습니다.</p></div>"
+    return all_html + comp_html
+
+
+def tournament_table(tournaments, prefix="", show_meta=True):
+    rows = []
+    for t in sorted(tournaments, key=lambda x: x.get("date") or "", reverse=True):
+        w = t["winner"]
+        winner = (
+            f"{esc(w['player'])} {idtag(w.get('corp'))} {idtag(w.get('runner'))}" if w else "—"
+        )
+        meta_td = ""
+        if show_meta:
+            ban = banlist_version(t["mwl"])
+            meta = f"{FORMAT_LABELS.get(t['format'], t['format'])}"
+            tip = f"{t['cardpool']}" + (f" · 밴리스트 {ban}" if ban else "")
+            meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
+        rows.append(
+            f"<tr><td>{esc(t['date'])}</td>"
+            f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a></td>"
+            + meta_td
+            + f"<td>{tier_badge(t)}</td>"
+            f"<td class='num'>{t['players']}</td><td>{winner}</td></tr>"
+        )
+    meta_th = "<th>포맷</th>" if show_meta else ""
+    return (
+        "<table><thead><tr><th>날짜</th><th>대회</th>"
+        + meta_th
+        + "<th>티어</th><th class='num'>인원</th><th>우승</th></tr></thead>"
+        "<tbody>" + "".join(rows) + "</tbody></table>"
+    )
+
+
+# ---------------------------------------------------------------- 페이지 렌더링
+
+def render_index(per_tournament, settings):
+    groups, order = group_by_meta(per_tournament)
+    n_comp = sum(1 for t in per_tournament if t.get("formality") == "competitive")
+    total_entries = sum(t["players"] for t in per_tournament)
+
+    head = f"""
+<h1>{esc(settings.get('site_title', 'Netrunner Meta Tracker'))}</h1>
+<p class="sub">{esc(settings.get('site_subtitle', ''))} — 시즌 {esc(settings.get('season_start', ''))}~</p>
+<div class="kpis">
+<div class="kpi"><div class="label">대회</div><div class="value">{len(per_tournament)}</div></div>
+<div class="kpi"><div class="label">경쟁 티어 대회</div><div class="value">{n_comp}</div></div>
+<div class="kpi"><div class="label">총 엔트리</div><div class="value">{total_entries}</div></div>
+<div class="kpi"><div class="label">메타 (포맷×카드풀×밴리스트)</div><div class="value">{len(groups)}</div></div>
+</div>
+""" + toggle_html()
+
+    sections = []
+    seen_formats = []
+    for key in order:
+        if key[0] not in seen_formats:
+            seen_formats.append(key[0])
+    for fmt in seen_formats:
+        fmt_keys = [k for k in order if k[0] == fmt]
+        latest = fmt_keys[0]
+        sec = [f"<h2 style='font-size:22px;margin:28px 0 12px'>{esc(FORMAT_LABELS.get(fmt, fmt))}</h2>"]
+        sec.append(
+            f"<div class='card'><h2>{esc(meta_label(latest))} <span class='badge'>현재 메타</span></h2>"
+            + agg_variants(groups[latest])
+            + f"<p style='margin:12px 0 0'><a href='meta/{meta_slug(latest)}.html'>이 메타의 대회 목록 →</a></p></div>"
+        )
+        if len(fmt_keys) > 1:
+            links = ["<div class='card'><h3>이전 메타</h3><ul class='meta-links'>"]
+            for k in fmt_keys[1:]:
+                ts = groups[k]
+                dates = sorted(t["date"] for t in ts)
+                links.append(
+                    f"<li><a href='meta/{meta_slug(k)}.html'>{esc(meta_label(k))}</a> "
+                    f"<span class='n'>대회 {len(ts)}개 · {esc(dates[0])}~{esc(dates[-1])}</span></li>"
+                )
+            links.append("</ul></div>")
+            sec.append("".join(links))
+        sections.append("".join(sec))
+
+    table = (
+        "<div class='card'><h2>전체 대회 목록</h2>"
+        + tournament_table(per_tournament)
+        + "</div>"
+    )
+    return page(
+        settings.get("site_title", "Netrunner Meta Tracker"),
+        head + "".join(sections) + table,
+    )
+
+
+def render_meta(key, tournaments, settings):
+    label = meta_label(key)
+    dates = sorted(t["date"] for t in tournaments)
+    head = f"""
+<p class="crumb"><a href="../index.html">← 전체 통계</a></p>
+<h1>{esc(label)}</h1>
+<p class="sub">{esc(dates[0])} ~ {esc(dates[-1])} · 대회 {len(tournaments)}개</p>
+""" + toggle_html()
+    body = agg_variants(tournaments)
+    table = (
+        "<div class='card'><h2>대회 목록</h2>"
+        + tournament_table(tournaments, prefix="../", show_meta=False)
+        + "</div>"
+    )
+    return page(label, head + body + table)
+
+
+def render_tournament(t, settings):
     has_cut = t["cut_size"] > 0
+    ban = banlist_version(t["mwl"])
+    meta_txt = f"{FORMAT_LABELS.get(t['format'], t['format'])} · {t['cardpool']}" + (
+        f" · 밴리스트 {ban}" if ban else ""
+    )
     head = f"""
 <p class="crumb"><a href="../index.html">← 전체 통계</a></p>
 <h1>{esc(t['title'])}</h1>
-<p class="sub">{esc(t['date'])} · {tier_badge(t['type'], tiers)} · {t['players']}명
+<p class="sub">{esc(t['date'])} · {tier_badge(t)} · <b>{esc(meta_txt)}</b> · {t['players']}명
 {'· 탑컷 ' + str(t['cut_size']) + '명' if has_cut else ''}
 {f"· <a href='https://alwaysberunning.net/tournaments/{t['id']}'>ABR에서 보기</a>" if t['id'] else ''}</p>
 """
@@ -306,56 +509,31 @@ def render_tournament(t, tiers):
     return page(t["title"], head + winner_html + charts + table)
 
 
-def render_index(per_tournament, settings, tiers):
-    agg = aggregate(per_tournament)
-    has_cut = any(t["cut_size"] > 0 for t in per_tournament)
-    n_corp = len(agg["corp"])
-    n_runner = len(agg["runner"])
-    head = f"""
-<h1>{esc(settings.get('site_title', 'Netrunner Meta Tracker'))}</h1>
-<p class="sub">{esc(settings.get('site_subtitle', ''))} — 시즌 {esc(settings.get('season_start', ''))}~</p>
-<div class="kpis">
-<div class="kpi"><div class="label">대회</div><div class="value">{agg['tournaments']}</div></div>
-<div class="kpi"><div class="label">총 엔트리</div><div class="value">{agg['players']}</div></div>
-<div class="kpi"><div class="label">Corp identity 종류</div><div class="value">{n_corp}</div></div>
-<div class="kpi"><div class="label">Runner identity 종류</div><div class="value">{n_runner}</div></div>
-</div>
-"""
-    charts = (
-        "<div class='grid2'>"
-        + side_section(agg["corp"], "corp", has_cut)
-        + side_section(agg["runner"], "runner", has_cut)
-        + "</div>"
-    )
-    rows = []
-    for t in sorted(per_tournament, key=lambda x: x.get("date") or "", reverse=True):
-        w = t["winner"]
-        winner = (
-            f"{esc(w['player'])} {idtag(w.get('corp'))} {idtag(w.get('runner'))}" if w else "—"
-        )
-        rows.append(
-            f"<tr><td>{esc(t['date'])}</td>"
-            f"<td><a href='t/{t['id']}.html'>{esc(t['title'])}</a></td>"
-            f"<td>{tier_badge(t['type'], tiers)}</td>"
-            f"<td class='num'>{t['players']}</td><td>{winner}</td></tr>"
-        )
-    table = (
-        "<div class='card'><h2>대회별 상세</h2><table>"
-        "<thead><tr><th>날짜</th><th>대회</th><th>티어</th><th class='num'>인원</th><th>우승</th></tr></thead>"
-        "<tbody>" + "".join(rows) + "</tbody></table></div>"
-    )
-    return page(settings.get("site_title", "Netrunner Meta Tracker"), head + charts + table)
+# ---------------------------------------------------------------- 빌드
+
+def annotate(per_tournament, settings):
+    tiers = settings.get("tiers") or {}
+    for t in per_tournament:
+        info = tiers.get(t["type"]) or {}
+        t["formality"] = info.get("formality", "casual")
+        t["tier_label"] = info.get("label")
+    return per_tournament
 
 
 def build_site(per_tournament, settings):
-    tiers = settings.get("tiers") or {}
+    annotate(per_tournament, settings)
     DOCS.mkdir(parents=True, exist_ok=True)
     (DOCS / "t").mkdir(exist_ok=True)
+    (DOCS / "meta").mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
-    (DOCS / "index.html").write_text(render_index(per_tournament, settings, tiers), encoding="utf-8")
+    (DOCS / "index.html").write_text(render_index(per_tournament, settings), encoding="utf-8")
+    groups, order = group_by_meta(per_tournament)
+    for key in order:
+        (DOCS / "meta" / f"{meta_slug(key)}.html").write_text(
+            render_meta(key, groups[key], settings), encoding="utf-8"
+        )
     for t in per_tournament:
-        (DOCS / "t" / f"{t['id']}.html").write_text(render_tournament(t, tiers), encoding="utf-8")
-    # 개인 사이트 등에서 쓸 수 있는 기계가독 요약
+        (DOCS / "t" / f"{t['id']}.html").write_text(render_tournament(t, settings), encoding="utf-8")
     summary = {
         "season_start": settings.get("season_start"),
         "tournaments": [
@@ -364,6 +542,10 @@ def build_site(per_tournament, settings):
                 "title": t["title"],
                 "date": t["date"],
                 "type": t["type"],
+                "format": t["format"],
+                "cardpool": t["cardpool"],
+                "banlist": banlist_version(t["mwl"]),
+                "formality": t["formality"],
                 "players": t["players"],
                 "cut_size": t["cut_size"],
                 "winner": t["winner"],

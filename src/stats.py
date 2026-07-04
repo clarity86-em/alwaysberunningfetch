@@ -126,6 +126,8 @@ def tournament_stats(tournament, entries, id_map):
         "date": tournament.get("date", ""),
         "type": (tournament.get("type") or "").lower(),
         "format": (tournament.get("format") or "").lower(),
+        "cardpool": tournament.get("cardpool") or "?",
+        "mwl": tournament.get("mwl") or "",
         "url": tournament.get("url"),
         "players": players,
         "cut_size": sum(1 for e in entries if e.get("rank_top")),

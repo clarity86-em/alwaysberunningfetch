@@ -9,6 +9,7 @@ season_start: "2026-01-01"
 # 포함할 포맷 (ABR의 format 필드값, 소문자)
 formats:
   - standard
+  - startup
 
 # 최소 참가자 수 (이보다 작은 대회는 통계에서 제외)
 min_players: 8
@@ -16,27 +17,28 @@ min_players: 8
 # 한 번에 스캔할 최근 종료 대회 수 (ABR API limit)
 scan_limit: 200
 
-# 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서
+# 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서/공식성
+# formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어
 # 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)
 tiers:
-  worlds:                        {rank: 1, label: "World Championship"}
-  intercontinental championship: {rank: 1, label: "Intercontinentals"}
-  continental championship:      {rank: 2, label: "Continentals"}
-  nationals:                     {rank: 3, label: "Nationals"}
-  megacity championship:         {rank: 3, label: "Megacity"}
-  district championship:         {rank: 4, label: "District"}
-  regional:                      {rank: 4, label: "Regional"}
-  circuit breaker:               {rank: 2, label: "Circuit Breaker"}
-  national championship:         {rank: 3, label: "Nationals"}
-  store championship:            {rank: 5, label: "Store Champ"}
-  circuit opener:                {rank: 5, label: "Circuit Opener"}
-  casual tournament kit:         {rank: 6, label: "Casual Kit"}
-  "gnk / seasonal":              {rank: 6, label: "GNK"}
-  community tournament:          {rank: 6, label: "Community"}
-  online event:                  {rank: 6, label: "Online"}
-  asynchronous tournament:       {rank: 7, label: "Async"}
-  team tournament:               {rank: 5, label: "Team"}
-  players circuit:               {rank: 5, label: "Players Circuit"}
+  worlds:                        {rank: 1, label: "World Championship", formality: competitive}
+  intercontinental championship: {rank: 1, label: "Intercontinentals", formality: competitive}
+  continental championship:      {rank: 2, label: "Continentals", formality: competitive}
+  circuit breaker:               {rank: 2, label: "Circuit Breaker", formality: competitive}
+  nationals:                     {rank: 3, label: "Nationals", formality: competitive}
+  national championship:         {rank: 3, label: "Nationals", formality: competitive}
+  megacity championship:         {rank: 3, label: "Megacity", formality: competitive}
+  district championship:         {rank: 4, label: "District", formality: competitive}
+  regional:                      {rank: 4, label: "Regional", formality: competitive}
+  store championship:            {rank: 5, label: "Store Champ", formality: competitive}
+  circuit opener:                {rank: 5, label: "Circuit Opener", formality: competitive}
+  players circuit:               {rank: 5, label: "Players Circuit", formality: competitive}
+  team tournament:               {rank: 5, label: "Team", formality: casual}
+  casual tournament kit:         {rank: 6, label: "Casual Kit", formality: casual}
+  "gnk / seasonal":              {rank: 6, label: "GNK", formality: casual}
+  community tournament:          {rank: 6, label: "Community", formality: casual}
+  online event:                  {rank: 6, label: "Online", formality: casual}
+  asynchronous tournament:       {rank: 7, label: "Async", formality: casual}
 
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:

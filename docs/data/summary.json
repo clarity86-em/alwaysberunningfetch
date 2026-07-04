@@ -2287,6 +2287,173 @@
    }
   },
   {
+   "id": 5722,
+   "title": "Casual Startup Tournament",
+   "date": "2026.06.20.",
+   "type": "gnk / seasonal",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "Zieg",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Zwicky Group: Invisible Hands",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/96887"
+    },
+    "runner": {
+     "identity": "Tāo Salonga: Telepresence Magician",
+     "faction": "shaper",
+     "url": "https://netrunnerdb.com/en/decklist/96888"
+    }
+   },
+   "corp": {
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 2,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   }
+  },
+  {
    "id": 5613,
    "title": "Saint Petersburg Megacity Championship 2026",
    "date": "2026.06.20.",
@@ -4074,6 +4241,167 @@
      "best_rank": 8,
      "ranks": [
       8
+     ]
+    }
+   }
+  },
+  {
+   "id": 5661,
+   "title": "Startup Tournament - Victory Point Cafe",
+   "date": "2026.06.06.",
+   "type": "casual tournament kit",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 13,
+   "cut_size": 0,
+   "winner": {
+    "player": "tzeentchling",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Méliès U: Only the Brightest",
+     "faction": "jinteki",
+     "url": "https://netrunnerdb.com/en/decklist/96643"
+    },
+    "runner": {
+     "identity": "Magdalene Keino-Chemutai: Cryptarchitect",
+     "faction": "shaper",
+     "url": "https://netrunnerdb.com/en/decklist/96644"
+    }
+   },
+   "corp": {
+    "Méliès U: Only the Brightest": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 3,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      9
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      10
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      8
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 3,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      12,
+      13
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      4
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 3,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      6,
+      8
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 3,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      7,
+      12
+     ]
+    },
+    "Topan: Ormas Leader": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 3,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 10,
+     "ranks": [
+      10,
+      11,
+      13
      ]
     }
    }
@@ -8173,6 +8501,169 @@
    }
   },
   {
+   "id": 5664,
+   "title": "Adelaide Mega City Startup Side Event",
+   "date": "2026.05.17.",
+   "type": "community tournament",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "24.01",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "SleepyPanda27",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Zwicky Group: Invisible Hands",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/96201"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/96204"
+    }
+   },
+   "corp": {
+    "The Zwicky Group: Invisible Hands": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      6
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      5
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      10
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "runner": {
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 3,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4,
+      8
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 2,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      6
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   }
+  },
+  {
    "id": 5641,
    "title": "SanSan South May Standard CTK",
    "date": "2026.05.16.",
@@ -11529,6 +12020,141 @@
      "best_rank": 16,
      "ranks": [
       16
+     ]
+    }
+   }
+  },
+  {
+   "id": 5623,
+   "title": "Lyon Casual Side Event",
+   "date": "2026.04.26.",
+   "type": "district championship",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "competitive",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "AngryNocker",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Poétrï Luxury Brands: All the Rage",
+     "faction": "haas-bioroid",
+     "url": "https://netrunnerdb.com/en/decklist/95874"
+    },
+    "runner": {
+     "identity": "Barry “Baz” Wong: Tri-Maf Veteran",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/95873"
+    }
+   },
+   "corp": {
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 3,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      6
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 2,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      7
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 3,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      7
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "best_rank": 8,
+     "ranks": [
+      8
      ]
     }
    }
@@ -20451,6 +21077,189 @@
    }
   },
   {
+   "id": 5557,
+   "title": "Startup AdVantage tournament at Victory Point Cafe",
+   "date": "2026.04.07.",
+   "type": "casual tournament kit",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "casual",
+   "players": 12,
+   "cut_size": 0,
+   "winner": {
+    "player": "iherdn3rfz",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Weyland Consortium: Built to Last",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/95543"
+    },
+    "runner": {
+     "identity": "Zahya Sadeghi: Versatile Smuggler",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/95544"
+    }
+   },
+   "corp": {
+    "Weyland Consortium: Built to Last": {
+     "count": 3,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      5,
+      8
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      12
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    }
+   },
+   "runner": {
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 3,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3,
+      6
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 2,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      8
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 2,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      11
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 2,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      12
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   }
+  },
+  {
    "id": 5573,
    "title": "Canberra/Ngunnawal Easter Monday 2026 GNK",
    "date": "2026.04.06.",
@@ -20740,6 +21549,137 @@
       6,
       7,
       8
+     ]
+    }
+   }
+  },
+  {
+   "id": 5523,
+   "title": "VP Startup Portland tournament",
+   "date": "2026.04.04.",
+   "type": "casual tournament kit",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "Bilby",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Weyland Consortium: Built to Last",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/95351"
+    },
+    "runner": {
+     "identity": "Zahya Sadeghi: Versatile Smuggler",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/95352"
+    }
+   },
+   "corp": {
+    "Weyland Consortium: Built to Last": {
+     "count": 5,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      4,
+      8,
+      9
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      10
+     ]
+    }
+   },
+   "runner": {
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 5,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      6
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      9
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 10,
+     "ranks": [
+      10
      ]
     }
    }
@@ -22034,6 +22974,161 @@
      "best_rank": 14,
      "ranks": [
       14
+     ]
+    }
+   }
+  },
+  {
+   "id": 5458,
+   "title": "Async Startup CTK @Hearthside",
+   "date": "2026.04.01.",
+   "type": "casual tournament kit",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "Ersatzjello",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Zwicky Group: Invisible Hands",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/96056"
+    },
+    "runner": {
+     "identity": "Tāo Salonga: Telepresence Magician",
+     "faction": "shaper",
+     "url": "https://netrunnerdb.com/en/decklist/96057"
+    }
+   },
+   "corp": {
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 2,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      4
+     ]
+    },
+    "PT Untaian: Life's Building Blocks": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 3,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      7,
+      9
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "best_rank": 8,
+     "ranks": [
+      8,
+      10
+     ]
+    }
+   },
+   "runner": {
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Topan: Ormas Leader": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 4,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      7,
+      10
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "best_rank": 9,
+     "ranks": [
+      9
      ]
     }
    }

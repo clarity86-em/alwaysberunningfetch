@@ -180,10 +180,35 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 .meta-links {{ list-style: none; margin: 0; padding: 0; font-size: 14px; }}
 .meta-links li {{ margin: 4px 0; }}
 .meta-links .n {{ color: var(--ink-2); font-size: 12.5px; }}
+.tier-chips {{ display: flex; flex-wrap: wrap; gap: 6px; align-items: center; margin: 0 0 12px; }}
+.chips-label {{ font-size: 12.5px; color: var(--ink-2); margin-right: 4px; }}
+.chip {{
+  display: inline-flex; align-items: center; gap: 5px; cursor: pointer;
+  font-size: 12.5px; padding: 2px 10px; border-radius: 999px;
+  border: 1px solid var(--border); color: var(--muted); user-select: none;
+}}
+.chip input {{ display: none; }}
+.chip span {{ font-variant-numeric: tabular-nums; font-size: 11.5px; }}
+.chip.on {{ color: var(--ink); border-color: var(--baseline); background: color-mix(in srgb, var(--ink) 5%, transparent); }}
+.chip-all {{
+  font-size: 12px; padding: 2px 10px; border-radius: 999px; cursor: pointer;
+  border: 1px solid var(--border); background: none; color: var(--ink-2);
+  font-family: inherit;
+}}
+.table-foot {{ display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }}
+.pcount {{ font-size: 12.5px; color: var(--ink-2); }}
+.pager {{ display: flex; gap: 4px; flex-wrap: wrap; }}
+.pager button {{
+  min-width: 28px; height: 26px; font-size: 12.5px; cursor: pointer;
+  border: 1px solid var(--border); border-radius: 6px; background: none;
+  color: var(--ink-2); font-family: inherit; font-variant-numeric: tabular-nums;
+}}
+.pager button.cur {{ color: var(--ink); border-color: var(--baseline); font-weight: 700; }}
+.pager button:hover {{ background: color-mix(in srgb, var(--ink) 6%, transparent); }}
 """
 
 
-def page(title, body):
+def page(title, body, scripts=""):
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -201,6 +226,7 @@ def page(title, body):
 Identities: <a href="https://netrunnerdb.com">NetrunnerDB</a> ·
 자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch">alwaysberunningfetch</a>)</footer>
 </main>
+{f'<script>{scripts}</script>' if scripts else ''}
 </body>
 </html>"""
 
@@ -294,7 +320,10 @@ def bars_block(identity_rows, has_cut):
                 f'<rect x="0" y="2" width="{max(w_cut, 1.5):.2f}" height="14" rx="1.2" fill="{color}"/>'
             )
         bar.append(f"<title>{esc(tip)}</title></svg>")
-        out.append(f"<div class='name' title='{esc(title)}'>{esc(shorten_identity(title))}</div>")
+        name = esc(shorten_identity(title))
+        if row.get("nrdb_id"):
+            name = f"<a href='https://netrunnerdb.com/en/card/{esc(row['nrdb_id'])}'>{name}</a>"
+        out.append(f"<div class='name' title='{esc(title)}'>{name}</div>")
         out.append("".join(bar))
         out.append(f"<div class='val'>{row['count']}{cut_txt}</div>")
     out.append("</div>")
@@ -302,12 +331,16 @@ def bars_block(identity_rows, has_cut):
 
 
 def idtag(deck):
+    """identity 태그 — 덱리스트가 있으면 덱으로, 없으면 NRDB 카드 페이지로 링크."""
     if not deck:
         return ""
     f = deck["faction"] if deck["faction"] in FACTION_COLORS else "unknown"
     name = esc(shorten_identity(deck["identity"]))
-    if deck.get("url"):
-        name = f"<a href='{esc(deck['url'])}'>{name}</a>"
+    href = deck.get("url") or (
+        f"https://netrunnerdb.com/en/card/{deck['nrdb_id']}" if deck.get("nrdb_id") else None
+    )
+    if href:
+        name = f"<a href='{esc(href)}'>{name}</a>"
     return f"<span class='idtag'><span class='dot' style='background:var(--f-{f})'></span>{name}</span>"
 
 
@@ -363,6 +396,7 @@ def agg_variants(tournaments):
 
 
 def tournament_table(tournaments, prefix="", show_meta=True):
+    """페이지네이션(15개/페이지) + 티어 필터가 붙는 대회 목록. JS 없으면 전체 표시."""
     rows = []
     for t in sorted(tournaments, key=lambda x: x.get("date") or "", reverse=True):
         w = t["winner"]
@@ -375,8 +409,9 @@ def tournament_table(tournaments, prefix="", show_meta=True):
             meta = f"{FORMAT_LABELS.get(t['format'], t['format'])}"
             tip = f"{t['cardpool']}" + (f" · 밴리스트 {ban}" if ban else "")
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
+        tier = t.get("tier_label") or t["type"] or "?"
         rows.append(
-            f"<tr><td>{esc(t['date'])}</td>"
+            f"<tr data-tier='{esc(tier)}'><td>{esc(t['date'])}</td>"
             f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a></td>"
             + meta_td
             + f"<td>{tier_badge(t)}</td>"
@@ -384,11 +419,115 @@ def tournament_table(tournaments, prefix="", show_meta=True):
         )
     meta_th = "<th>포맷</th>" if show_meta else ""
     return (
+        "<div data-ptable>"
+        "<div class='tier-chips'><span class='chips-label'>티어 필터</span></div>"
         "<table><thead><tr><th>날짜</th><th>대회</th>"
         + meta_th
         + "<th>티어</th><th class='num'>인원</th><th>우승</th></tr></thead>"
         "<tbody>" + "".join(rows) + "</tbody></table>"
+        "<div class='table-foot'><span class='pcount'></span><nav class='pager'></nav></div>"
+        "</div>"
     )
+
+
+def tier_legend(tournaments, settings):
+    """데이터에 실제로 등장하는 티어만, 위상 순서대로 간단 설명."""
+    tiers = settings.get("tiers") or {}
+    present = {}
+    for t in tournaments:
+        info = tiers.get(t["type"]) or {}
+        label = info.get("label") or t["type"] or "?"
+        if label not in present:
+            present[label] = (
+                info.get("rank", 99),
+                info.get("formality", "casual"),
+                info.get("desc", ""),
+            )
+    if not present:
+        return ""
+    rows = []
+    for label, (rank, formality, desc) in sorted(present.items(), key=lambda kv: (kv[1][0], kv[0])):
+        cls = "badge comp" if formality == "competitive" else "badge"
+        kind = "경쟁" if formality == "competitive" else "캐주얼"
+        rows.append(
+            f"<tr><td><span class='{cls}'>{esc(label)}</span></td>"
+            f"<td>{esc(kind)}</td><td>{esc(desc)}</td></tr>"
+        )
+    return (
+        "<div class='card'><h2>대회 티어 안내</h2>"
+        "<p class='agg-note'>위상이 높은 순서. '경쟁' 티어가 상단 통계의 \"경쟁 대회만 보기\"에 포함되는 대회입니다.</p>"
+        "<table><thead><tr><th>티어</th><th>구분</th><th>설명</th></tr></thead><tbody>"
+        + "".join(rows)
+        + "</tbody></table></div>"
+    )
+
+
+PTABLE_JS = """
+document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
+  var PER = 15;
+  var rows = Array.prototype.slice.call(wrap.querySelectorAll('tbody tr'));
+  if (!rows.length) return;
+  var chipBox = wrap.querySelector('.tier-chips');
+  var pager = wrap.querySelector('.pager');
+  var pcount = wrap.querySelector('.pcount');
+  var counts = {};
+  rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
+  var tierNames = Object.keys(counts);
+  var active = {};
+  tierNames.forEach(function (t) { active[t] = true; });
+  var page = 1;
+
+  tierNames.forEach(function (t) {
+    var lab = document.createElement('label');
+    lab.className = 'chip on';
+    var cb = document.createElement('input');
+    cb.type = 'checkbox'; cb.checked = true;
+    lab.appendChild(cb);
+    lab.appendChild(document.createTextNode(' ' + t + ' '));
+    var n = document.createElement('span'); n.textContent = counts[t];
+    lab.appendChild(n);
+    cb.addEventListener('change', function () {
+      active[t] = cb.checked;
+      lab.classList.toggle('on', cb.checked);
+      page = 1; render();
+    });
+    chipBox.appendChild(lab);
+  });
+  if (tierNames.length > 1) {
+    var allBtn = document.createElement('button');
+    allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
+    allBtn.addEventListener('click', function () {
+      var anyOff = tierNames.some(function (t) { return !active[t]; });
+      chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
+        if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+      });
+    });
+    chipBox.appendChild(allBtn);
+  }
+
+  function render() {
+    var vis = rows.filter(function (r) { return active[r.dataset.tier]; });
+    rows.forEach(function (r) { r.style.display = 'none'; });
+    var pages = Math.max(1, Math.ceil(vis.length / PER));
+    if (page > pages) page = pages;
+    vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
+    pcount.textContent = vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '');
+    pager.innerHTML = '';
+    if (pages > 1) {
+      for (var p = 1; p <= pages; p++) {
+        (function (p) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.textContent = p;
+          if (p === page) b.className = 'cur';
+          b.addEventListener('click', function () { page = p; render(); });
+          pager.appendChild(b);
+        })(p);
+      }
+    }
+  }
+  render();
+});
+"""
 
 
 # ---------------------------------------------------------------- 페이지 렌더링
@@ -441,9 +580,11 @@ def render_index(per_tournament, settings):
         + tournament_table(per_tournament)
         + "</div>"
     )
+    legend = tier_legend(per_tournament, settings)
     return page(
         settings.get("site_title", "Netrunner Meta Tracker"),
-        head + "".join(sections) + table,
+        head + "".join(sections) + table + legend,
+        scripts=PTABLE_JS,
     )
 
 
@@ -461,7 +602,7 @@ def render_meta(key, tournaments, settings):
         + tournament_table(tournaments, prefix="../", show_meta=False)
         + "</div>"
     )
-    return page(label, head + body + table)
+    return page(label, head + body + table, scripts=PTABLE_JS)
 
 
 def render_tournament(t, settings):

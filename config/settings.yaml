@@ -21,24 +21,60 @@ scan_limit: 200
 # formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어
 # 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)
 tiers:
-  worlds:                        {rank: 1, label: "World Championship", formality: competitive}
-  intercontinental championship: {rank: 1, label: "Intercontinentals", formality: competitive}
-  continental championship:      {rank: 2, label: "Continentals", formality: competitive}
-  circuit breaker:               {rank: 2, label: "Circuit Breaker", formality: competitive}
-  nationals:                     {rank: 3, label: "Nationals", formality: competitive}
-  national championship:         {rank: 3, label: "Nationals", formality: competitive}
-  megacity championship:         {rank: 3, label: "Megacity", formality: competitive}
-  district championship:         {rank: 4, label: "District", formality: competitive}
-  regional:                      {rank: 4, label: "Regional", formality: competitive}
-  store championship:            {rank: 5, label: "Store Champ", formality: competitive}
-  circuit opener:                {rank: 5, label: "Circuit Opener", formality: competitive}
-  players circuit:               {rank: 5, label: "Players Circuit", formality: competitive}
-  team tournament:               {rank: 5, label: "Team", formality: casual}
-  casual tournament kit:         {rank: 6, label: "Casual Kit", formality: casual}
-  "gnk / seasonal":              {rank: 6, label: "GNK", formality: casual}
-  community tournament:          {rank: 6, label: "Community", formality: casual}
-  online event:                  {rank: 6, label: "Online", formality: casual}
-  asynchronous tournament:       {rank: 7, label: "Async", formality: casual}
+  worlds:
+    {rank: 1, label: "World Championship", formality: competitive,
+     desc: "연 1회 열리는 최정상 대회. NSG가 직접 주최하는 한 해의 정점."}
+  intercontinental championship:
+    {rank: 1, label: "Intercontinentals", formality: competitive,
+     desc: "각 대륙 챔피언십 상위 입상자들이 겨루는 초청전."}
+  continental championship:
+    {rank: 2, label: "Continentals", formality: competitive,
+     desc: "대륙 단위(EMEA/Americas/APAC) 최상위 대회. 지역별 연 1회."}
+  circuit breaker:
+    {rank: 2, label: "Circuit Breaker", formality: competitive,
+     desc: "시즌 성적 상위 플레이어 초청전."}
+  nationals:
+    {rank: 3, label: "Nationals", formality: competitive,
+     desc: "국가 단위 챔피언십 (구 체계)."}
+  national championship:
+    {rank: 3, label: "Nationals", formality: competitive,
+     desc: "국가 단위 챔피언십 (구 체계)."}
+  megacity championship:
+    {rank: 3, label: "Megacity", formality: competitive,
+     desc: "광역 생활권(3~4시간 이동권) 단위 챔피언십. 2분기 개최, 경쟁 티어."}
+  district championship:
+    {rank: 4, label: "District", formality: competitive,
+     desc: "지역 커뮤니티 단위 챔피언십. 1분기 개최, 경쟁 티어 중 가장 접근성 높음."}
+  regional:
+    {rank: 4, label: "Regional", formality: competitive,
+     desc: "지역 단위 대회 (구 체계)."}
+  store championship:
+    {rank: 5, label: "Store Champ", formality: competitive,
+     desc: "매장 단위 챔피언십."}
+  circuit opener:
+    {rank: 5, label: "Circuit Opener", formality: competitive,
+     desc: "시즌 개막 이벤트."}
+  players circuit:
+    {rank: 5, label: "Players Circuit", formality: competitive,
+     desc: "온라인 경쟁 리그."}
+  team tournament:
+    {rank: 5, label: "Team", formality: casual,
+     desc: "팀 단위 대회."}
+  casual tournament kit:
+    {rank: 6, label: "Casual Kit", formality: casual,
+     desc: "CTK. 신규 플레이어 대상 캐주얼 티어 키트 대회. 개최 수 제한 없음."}
+  "gnk / seasonal":
+    {rank: 6, label: "GNK", formality: casual,
+     desc: "Game Night Kit. 매장/모임에서 여는 캐주얼 대회."}
+  community tournament:
+    {rank: 6, label: "Community", formality: casual,
+     desc: "커뮤니티가 자체 주최하는 대회."}
+  online event:
+    {rank: 6, label: "Online", formality: casual,
+     desc: "온라인(jinteki.net 등) 대회."}
+  asynchronous tournament:
+    {rank: 7, label: "Async", formality: casual,
+     desc: "실시간이 아닌, 기간을 두고 진행되는 비동기 대회."}
 
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:

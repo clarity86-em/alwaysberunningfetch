@@ -60,14 +60,15 @@ def normalize_faction(faction, side):
 
 
 def deck_info(entry, side, id_map):
-    """(identity_title, faction, deck_url) — side는 'corp' 또는 'runner'."""
+    """(identity_title, faction, deck_url, nrdb_card_id) — side는 'corp' 또는 'runner'."""
     title = _first(entry, f"{side}_deck_identity_title", f"{side}_deck_identity")
     faction = _first(entry, f"{side}_deck_identity_faction", f"{side}_deck_faction")
     url = _first(entry, f"{side}_deck_url")
+    nrdb_id = _first(entry, f"{side}_deck_identity_id")
     if not faction and title and title in id_map:
         faction = id_map[title]["faction"]
     faction = normalize_faction(faction, side)
-    return (title or "Unknown", faction or "unknown", url)
+    return (title or "Unknown", faction or "unknown", url, nrdb_id)
 
 
 def shorten_identity(title):
@@ -98,17 +99,19 @@ def tournament_stats(tournament, entries, id_map):
         rank_top = e.get("rank_top") or None
         row_std = {"player": player_name(e), "rank_swiss": rank_swiss, "rank_top": rank_top}
         for side in ("corp", "runner"):
-            title, faction, url = deck_info(e, side, id_map)
+            title, faction, url, nrdb_id = deck_info(e, side, id_map)
             row = sides[side][title]
             row["count"] += 1
             row["faction"] = faction
+            if nrdb_id:
+                row["nrdb_id"] = nrdb_id
             if rank_top:
                 row["cut"] += 1
             if rank_swiss:
                 row["ranks"].append(rank_swiss)
                 if row["best_rank"] is None or rank_swiss < row["best_rank"]:
                     row["best_rank"] = rank_swiss
-            row_std[side] = {"identity": title, "faction": faction, "url": url}
+            row_std[side] = {"identity": title, "faction": faction, "url": url, "nrdb_id": nrdb_id}
         standings.append(row_std)
         if rank_top:
             cut_ranks[rank_top] = row_std
@@ -139,7 +142,7 @@ def tournament_stats(tournament, entries, id_map):
 
 
 def _new_row():
-    return {"count": 0, "cut": 0, "faction": "unknown", "best_rank": None, "ranks": []}
+    return {"count": 0, "cut": 0, "faction": "unknown", "nrdb_id": None, "best_rank": None, "ranks": []}
 
 
 def faction_breakdown(identity_rows, side):
@@ -165,6 +168,7 @@ def aggregate(per_tournament):
                 a["count"] += row["count"]
                 a["cut"] += row["cut"]
                 a["faction"] = row["faction"]
+                a["nrdb_id"] = a["nrdb_id"] or row.get("nrdb_id")
                 a["ranks"].extend(row["ranks"])
                 if row["best_rank"] is not None and (
                     a["best_rank"] is None or row["best_rank"] < a["best_rank"]

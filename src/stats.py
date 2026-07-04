@@ -71,6 +71,15 @@ def deck_info(entry, side, id_map):
     return (title or "Unknown", faction or "unknown", url, nrdb_id)
 
 
+def norm_title(title):
+    """소스 간 표기 차이 정규화 (둥근따옴표 vs 곧은따옴표, 공백)."""
+    if not title:
+        return title
+    for a, b in (("“", '"'), ("”", '"'), ("‘", "'"), ("’", "'")):
+        title = title.replace(a, b)
+    return " ".join(title.split())
+
+
 def shorten_identity(title):
     """'Haas-Bioroid: Precision Design' -> 'HB: Precision Design' 같은 축약."""
     replacements = {
@@ -126,7 +135,7 @@ def parse_matchdata(tjson):
         state["corp_side_wins"] += cw
         for side, title, w in (("corp", corp_title, cw), ("runner", runner_title, 1.0 - cw)):
             if title:
-                row = res[side][title]
+                row = res[side][norm_title(title)]
                 row["games"] += 1
                 row["wins"] += w
                 if tie:

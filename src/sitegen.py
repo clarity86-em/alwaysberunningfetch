@@ -26,6 +26,7 @@ from stats import (
     aggregate,
     aggregate_winrates,
     faction_breakdown,
+    norm_title,
     shorten_identity,
 )
 
@@ -352,15 +353,14 @@ def winrate_bars(rows_dict, faction_of, min_games):
     rows.sort(key=lambda x: -x[2])
     out = ["<div class='bars'>"]
     for title, r, wr in rows:
-        faction = faction_of.get(title, "unknown")
+        faction = faction_of.get(norm_title(title).casefold(), "unknown")
         color = f"var(--f-{faction if faction in FACTION_COLORS else 'unknown'})"
-        x0, x1 = min(50.0, wr), max(50.0, wr)
         tie_txt = f" (무 {r['ties']})" if r["ties"] else ""
         tip = f"{title}: 승률 {wr:.1f}%, {r['games']}게임{tie_txt}"
         bar = [
             f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">',
-            '<line x1="50" y1="0" x2="50" y2="18" stroke="var(--baseline)" stroke-width="1"/>',
-            f'<rect x="{x0:.2f}" y="2" width="{max(x1 - x0, 0.8):.2f}" height="14" rx="1.2" fill="{color}"/>',
+            f'<rect x="0" y="2" width="{max(wr, 1.0):.2f}" height="14" rx="1.2" fill="{color}"/>',
+            '<rect x="49.6" y="0" width="0.8" height="18" fill="var(--baseline)"/>',
             f"<title>{esc(tip)}</title></svg>",
         ]
         out.append(f"<div class='name' title='{esc(title)}'>{esc(shorten_identity(title))}</div>")
@@ -399,11 +399,11 @@ def winrate_block(wr, faction_of, min_games, heading="Identity 승률"):
 
 
 def _faction_lookup(identity_rows_by_side):
-    """{corp: {title: row}, runner: {...}} -> {title: faction}"""
+    """{corp: {title: row}, runner: {...}} -> {정규화된 title: faction}"""
     lookup = {}
     for side_rows in identity_rows_by_side:
         for title, row in side_rows.items():
-            lookup[title] = row.get("faction", "unknown")
+            lookup[norm_title(title).casefold()] = row.get("faction", "unknown")
     return lookup
 
 

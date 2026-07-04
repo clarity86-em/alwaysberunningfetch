@@ -139,7 +139,13 @@ def run(offline=False):
             entries = abr.fetch_entries(t["id"], offline=True)
         if not entries:
             continue
-        raw.append((t, entries))
+        tjson = None
+        if t.get("matchdata"):
+            try:
+                tjson = abr.fetch_tjson(t["id"], refresh=refresh and not offline, offline=offline)
+            except Exception as e:
+                print(f"경고: 대회 {t['id']} matchdata fetch 실패: {e}", file=sys.stderr)
+        raw.append((t, entries, tjson))
         for e in entries:
             for side in ("corp", "runner"):
                 title = e.get(f"{side}_deck_identity_title")
@@ -147,8 +153,8 @@ def run(offline=False):
                     want_titles.add(title)
 
     id_map = abr.identity_map(offline=offline, want_titles=want_titles)
-    for t, entries in raw:
-        per_tournament.append(tournament_stats(t, entries, id_map))
+    for t, entries, tjson in raw:
+        per_tournament.append(tournament_stats(t, entries, id_map, tjson=tjson))
 
     if not per_tournament:
         print("통계를 낼 대회가 없습니다 (필터를 확인하세요)", file=sys.stderr)

@@ -20,6 +20,7 @@ import requests
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
 TOURNAMENTS_DIR = DATA_DIR / "tournaments"
+MATCHES_DIR = DATA_DIR / "matches"
 RESULTS_CACHE = DATA_DIR / "results.json"
 NRDB_CACHE = DATA_DIR / "nrdb_identities.json"
 
@@ -80,6 +81,28 @@ def fetch_entries(tournament_id, refresh=False, offline=False):
     if offline:
         return cached  # 캐시 없으면 None — 호출자가 스킵
     data = _get_json(f"{ABR_BASE}/api/entries", {"id": tournament_id})
+    _write_cache(cache_path, data)
+    return data
+
+
+def fetch_tjson(tournament_id, refresh=False, offline=False):
+    """대회의 NRTM 토너먼트 JSON (라운드별 경기 결과 포함, /tjsons/<id>.json).
+
+    matchdata가 없는 대회는 404 -> {"unavailable": True} 마커를 캐시하고 None 반환.
+    """
+    cache_path = MATCHES_DIR / f"{tournament_id}.json"
+    cached = _read_cache(cache_path)
+    if cached is not None and not refresh:
+        return None if cached.get("unavailable") else cached
+    if offline:
+        return None if (cached is None or cached.get("unavailable")) else cached
+    try:
+        data = _get_json(f"{ABR_BASE}/tjsons/{tournament_id}.json")
+    except requests.HTTPError as e:
+        if e.response is not None and e.response.status_code == 404:
+            _write_cache(cache_path, {"unavailable": True})
+            return None
+        raise
     _write_cache(cache_path, data)
     return data
 

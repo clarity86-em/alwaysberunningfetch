@@ -21,7 +21,13 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from stats import FACTION_LABELS, aggregate, faction_breakdown, shorten_identity
+from stats import (
+    FACTION_LABELS,
+    aggregate,
+    aggregate_winrates,
+    faction_breakdown,
+    shorten_identity,
+)
 
 ROOT = Path(__file__).resolve().parent.parent
 DOCS = ROOT / "docs"
@@ -334,6 +340,73 @@ def bars_block(identity_rows, has_cut):
     return "".join(out)
 
 
+def winrate_bars(rows_dict, faction_of, min_games):
+    """identity별 승률 편차 바 — 50% 기준선에서 좌우로 뻗음."""
+    rows = [
+        (title, r, r["wins"] / r["games"] * 100)
+        for title, r in rows_dict.items()
+        if r["games"] >= min_games
+    ]
+    if not rows:
+        return f"<p class='sub'>{min_games}게임 이상인 identity가 없습니다.</p>"
+    rows.sort(key=lambda x: -x[2])
+    out = ["<div class='bars'>"]
+    for title, r, wr in rows:
+        faction = faction_of.get(title, "unknown")
+        color = f"var(--f-{faction if faction in FACTION_COLORS else 'unknown'})"
+        x0, x1 = min(50.0, wr), max(50.0, wr)
+        tie_txt = f" (무 {r['ties']})" if r["ties"] else ""
+        tip = f"{title}: 승률 {wr:.1f}%, {r['games']}게임{tie_txt}"
+        bar = [
+            f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">',
+            '<line x1="50" y1="0" x2="50" y2="18" stroke="var(--baseline)" stroke-width="1"/>',
+            f'<rect x="{x0:.2f}" y="2" width="{max(x1 - x0, 0.8):.2f}" height="14" rx="1.2" fill="{color}"/>',
+            f"<title>{esc(tip)}</title></svg>",
+        ]
+        out.append(f"<div class='name' title='{esc(title)}'>{esc(shorten_identity(title))}</div>")
+        out.append("".join(bar))
+        out.append(f"<div class='val'>{wr:.0f}% · {r['games']}판</div>")
+    out.append("</div>")
+    excluded = [t for t, r in rows_dict.items() if r["games"] < min_games]
+    if excluded:
+        names = ", ".join(shorten_identity(t) for t in sorted(excluded))
+        out.append(
+            f"<p class='agg-note' style='margin-top:8px'>표본 부족({min_games}게임 미만) 제외: {esc(names)}</p>"
+        )
+    return "".join(out)
+
+
+def winrate_block(wr, faction_of, min_games, heading="Identity 승률"):
+    """승률 카드 — 사이드 밸런스 + corp/runner 승률 바."""
+    if not wr:
+        return ""
+    corp_pct = wr["corp_side_wins"] / wr["games"] * 100
+    n_t = wr.get("tournaments")
+    src = f"matchdata가 업로드된 대회 {n_t}개 · " if n_t else ""
+    note = (
+        f"<p class='agg-note'>{src}총 {wr['games']}게임 기준 · 무승부는 0.5승 처리 · "
+        f"기준선 = 50%</p>"
+        f"<p style='margin:0 0 14px;font-size:14.5px'><b>사이드 밸런스:</b> "
+        f"Corp {corp_pct:.1f}% · Runner {100 - corp_pct:.1f}%</p>"
+    )
+    return (
+        f"<div class='card'><h2>{esc(heading)}</h2>" + note
+        + "<div class='grid2'>"
+        + f"<div><h3>Corp</h3>{winrate_bars(wr['corp'], faction_of, min_games)}</div>"
+        + f"<div><h3>Runner</h3>{winrate_bars(wr['runner'], faction_of, min_games)}</div>"
+        + "</div></div>"
+    )
+
+
+def _faction_lookup(identity_rows_by_side):
+    """{corp: {title: row}, runner: {...}} -> {title: faction}"""
+    lookup = {}
+    for side_rows in identity_rows_by_side:
+        for title, row in side_rows.items():
+            lookup[title] = row.get("faction", "unknown")
+    return lookup
+
+
 def idtag(deck):
     """identity 태그 — 덱리스트가 올라온 경우에만 링크 (볼드 = 덱리스트 있음)."""
     if not deck:
@@ -376,16 +449,21 @@ def toggle_html():
     )
 
 
-def agg_charts(tournaments):
+def agg_charts(tournaments, min_wr_games=10):
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)
     note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}</p>"
-    return note + (
+    html_out = note + (
         "<div class='grid2'>"
         + side_section(agg["corp"], "corp", has_cut)
         + side_section(agg["runner"], "runner", has_cut)
         + "</div>"
     )
+    wr = aggregate_winrates(tournaments)
+    if wr:
+        faction_of = _faction_lookup([agg["corp"], agg["runner"]])
+        html_out += winrate_block(wr, faction_of, min_wr_games)
+    return html_out
 
 
 def agg_variants(tournaments):
@@ -468,7 +546,7 @@ def tier_legend(tournaments, settings):
 
 PTABLE_JS = """
 document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
-  var PER = 15;
+  var PER = 10;
   var rows = Array.prototype.slice.call(wrap.querySelectorAll('tbody tr'));
   if (!rows.length) return;
   var chipBox = wrap.querySelector('.tier-chips');
@@ -636,6 +714,9 @@ def render_tournament(t, settings):
         + side_section(t["runner"], "runner", has_cut)
         + "</div>"
     )
+    if t.get("winrates"):
+        faction_of = _faction_lookup([t["corp"], t["runner"]])
+        charts += winrate_block(t["winrates"], faction_of, min_games=3, heading="이 대회의 identity 승률")
     rows = []
     for s in t["standings"]:
         rank = s["rank_top"] or s["rank_swiss"] or ""
@@ -697,6 +778,7 @@ def build_site(per_tournament, settings):
                 "winner": t["winner"],
                 "corp": t["corp"],
                 "runner": t["runner"],
+                "winrates": t.get("winrates"),
             }
             for t in per_tournament
         ],

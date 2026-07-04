@@ -38,10 +38,6 @@ jobs:
         if: ${{ inputs.probe }}
         run: python src/main.py --probe
 
-      - name: Probe matchdata endpoints (임시)
-        if: ${{ !inputs.probe }}
-        run: python src/main.py --probe-matchdata | tee data/matchdata_probe.txt || true
-
       - name: Run pipeline
         if: ${{ !inputs.probe }}
         run: python src/main.py

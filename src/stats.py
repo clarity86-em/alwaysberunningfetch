@@ -83,7 +83,122 @@ def shorten_identity(title):
     return title
 
 
-def tournament_stats(tournament, entries, id_map):
+def parse_matchdata(tjson):
+    """NRTM 토너먼트 JSON -> identity별 승/무/게임 수.
+
+    점수 규약: 3=승, 1=무, 0=패. 스위스 한 테이블 = 두 게임
+    (p1 corp vs p2 runner, p1 runner vs p2 corp). 컷/단판 게임은
+    role 필드로 판별. 파싱할 수 없는 테이블은 건너뛴다.
+
+    반환: {"corp": {identity: {wins, ties, games}}, "runner": {...},
+           "corp_side_wins": float, "games": int}  (게임 0개면 None)
+    무승부는 양쪽에 0.5승으로 계산.
+    """
+    if not tjson or not isinstance(tjson, dict):
+        return None
+    idents = {}
+    for p in (tjson.get("players") or []) + (tjson.get("eliminationPlayers") or []):
+        pid = p.get("id")
+        if pid is not None and pid not in idents:
+            idents[pid] = (p.get("corpIdentity"), p.get("runnerIdentity"))
+
+    res = {
+        "corp": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
+        "runner": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
+    }
+    state = {"games": 0, "corp_side_wins": 0.0}
+    _complement = {3: 0, 0: 3, 1: 1}
+
+    def record(corp_title, runner_title, corp_score, runner_score):
+        if corp_score is None and runner_score is not None:
+            corp_score = _complement.get(runner_score)
+        if runner_score is None and corp_score is not None:
+            runner_score = _complement.get(corp_score)
+        if corp_score == 3 and runner_score == 0:
+            cw, tie = 1.0, False
+        elif corp_score == 0 and runner_score == 3:
+            cw, tie = 0.0, False
+        elif corp_score == 1 and runner_score == 1:
+            cw, tie = 0.5, True
+        else:
+            return  # 미진행(0-0)이거나 알 수 없는 조합
+        state["games"] += 1
+        state["corp_side_wins"] += cw
+        for side, title, w in (("corp", corp_title, cw), ("runner", runner_title, 1.0 - cw)):
+            if title:
+                row = res[side][title]
+                row["games"] += 1
+                row["wins"] += w
+                if tie:
+                    row["ties"] += 1
+
+    for rnd in tjson.get("rounds") or []:
+        for tbl in rnd or []:
+            p1, p2 = tbl.get("player1") or {}, tbl.get("player2") or {}
+            id1, id2 = p1.get("id"), p2.get("id")
+            if id1 is None or id2 is None:
+                continue  # 부전승(bye)
+            c1, r1 = idents.get(id1, (None, None))
+            c2, r2 = idents.get(id2, (None, None))
+            role1 = (p1.get("role") or "").lower()
+            if role1 in ("corp", "runner"):
+                # 단판 (컷 라운드 등): p1이 role1 측을 플레이
+                winner1 = p1.get("winner")
+                if winner1 is None and p1.get("combinedScore") is not None:
+                    winner1 = (p1.get("combinedScore") or 0) > (p2.get("combinedScore") or 0)
+                if winner1 is None:
+                    continue
+                if role1 == "corp":
+                    record(c1, r2, 3 if winner1 else 0, 0 if winner1 else 3)
+                else:
+                    record(c2, r1, 0 if winner1 else 3, 3 if winner1 else 0)
+            else:
+                # 스위스 양판
+                record(c1, r2, p1.get("corpScore"), p2.get("runnerScore"))
+                record(c2, r1, p2.get("corpScore"), p1.get("runnerScore"))
+
+    if state["games"] == 0:
+        return None
+    return {
+        "corp": dict(res["corp"]),
+        "runner": dict(res["runner"]),
+        "corp_side_wins": state["corp_side_wins"],
+        "games": state["games"],
+    }
+
+
+def aggregate_winrates(per_tournament):
+    """여러 대회의 winrates 합산. matchdata가 있는 대회가 없으면 None."""
+    agg = {
+        "corp": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
+        "runner": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
+    }
+    n_t, games, corp_wins = 0, 0, 0.0
+    for t in per_tournament:
+        wr = t.get("winrates")
+        if not wr:
+            continue
+        n_t += 1
+        games += wr["games"]
+        corp_wins += wr["corp_side_wins"]
+        for side in ("corp", "runner"):
+            for title, row in wr[side].items():
+                a = agg[side][title]
+                a["wins"] += row["wins"]
+                a["ties"] += row["ties"]
+                a["games"] += row["games"]
+    if n_t == 0:
+        return None
+    return {
+        "corp": dict(agg["corp"]),
+        "runner": dict(agg["runner"]),
+        "corp_side_wins": corp_wins,
+        "games": games,
+        "tournaments": n_t,
+    }
+
+
+def tournament_stats(tournament, entries, id_map, tjson=None):
     """대회 하나의 identity 통계.
 
     반환: {corp: {identity: row}, runner: {...}, players, cut_size, winner, standings}
@@ -138,6 +253,7 @@ def tournament_stats(tournament, entries, id_map):
         "runner": dict(sides["runner"]),
         "winner": winner,
         "standings": standings,
+        "winrates": parse_matchdata(tjson),
     }
 
 

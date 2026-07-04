@@ -22,59 +22,128 @@ scan_limit: 200
 # 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)
 tiers:
   worlds:
-    {rank: 1, label: "World Championship", formality: competitive,
-     desc: "연 1회 열리는 최정상 대회. NSG가 직접 주최하는 한 해의 정점."}
+    rank: 1
+    label: "World Championship"
+    formality: competitive
+    desc: >-
+      한 해 조직 플레이의 정점. NSG가 직접 주최하는 연 1회 오프라인 대회로,
+      전 세계 플레이어가 한자리에 모이는 최정상 이벤트입니다.
+      2026년 대회는 10월 개최 예정입니다.
   intercontinental championship:
-    {rank: 1, label: "Intercontinentals", formality: competitive,
-     desc: "각 대륙 챔피언십 상위 입상자들이 겨루는 초청전."}
+    rank: 1
+    label: "Intercontinentals"
+    formality: competitive
+    desc: >-
+      각 대륙 챔피언십(EMEA/Americas/APAC)의 상위 입상자들만 초청되어
+      대륙 대표 간 최강자를 가리는 소수 정예 초청전입니다.
   continental championship:
-    {rank: 2, label: "Continentals", formality: competitive,
-     desc: "대륙 단위(EMEA/Americas/APAC) 최상위 대회. 지역별 연 1회."}
+    rank: 2
+    label: "Continentals"
+    formality: competitive
+    desc: >-
+      NSG의 프리미어 이벤트. 유럽·중동·아프리카(EMEA), 아메리카, 아시아-태평양(APAC)
+      세 권역에서 각각 오프라인 1회 + 온라인 1회가 열립니다. 오프라인 대회는
+      지역 주최자가 NSG의 후원을 받아 운영하며, 3~4분기에 개최됩니다.
   circuit breaker:
-    {rank: 2, label: "Circuit Breaker", formality: competitive,
-     desc: "시즌 성적 상위 플레이어 초청전."}
+    rank: 2
+    label: "Circuit Breaker"
+    formality: competitive
+    desc: >-
+      Circuit Breaker Invitational. 시즌 동안의 성적 상위 플레이어들이
+      초청받아 겨루는 시즌 결산 초청전입니다.
   nationals:
-    {rank: 3, label: "Nationals", formality: competitive,
-     desc: "국가 단위 챔피언십 (구 체계)."}
+    rank: 3
+    label: "Nationals"
+    formality: competitive
+    desc: >-
+      국가 단위 챔피언십. 현행 District/Megacity 체계 이전(FFG 시대~NSG 초기)의
+      대회 구조로, 과거 대회 기록에서 볼 수 있습니다.
   national championship:
-    {rank: 3, label: "Nationals", formality: competitive,
-     desc: "국가 단위 챔피언십 (구 체계)."}
+    rank: 3
+    label: "Nationals"
+    formality: competitive
+    desc: >-
+      국가 단위 챔피언십. 현행 District/Megacity 체계 이전(FFG 시대~NSG 초기)의
+      대회 구조로, 과거 대회 기록에서 볼 수 있습니다.
   megacity championship:
-    {rank: 3, label: "Megacity", formality: competitive,
-     desc: "광역 생활권(3~4시간 이동권) 단위 챔피언십. 2분기 개최, 경쟁 티어."}
+    rank: 3
+    label: "Megacity"
+    formality: competitive
+    desc: >-
+      광역 생활권 단위의 경쟁 티어 챔피언십. 이동 3~4시간 권역당 1개로 수가 제한되며,
+      주최자가 신청서를 내면 NSG가 심사해 개최권을 부여합니다.
+      매년 5~7월(2분기)에 열리고, 포맷은 Standard입니다.
   district championship:
-    {rank: 4, label: "District", formality: competitive,
-     desc: "지역 커뮤니티 단위 챔피언십. 1분기 개최, 경쟁 티어 중 가장 접근성 높음."}
+    rank: 4
+    label: "District"
+    formality: competitive
+    desc: >-
+      경쟁 티어 중 가장 접근성 높은 지역 챔피언십. 당일 이동 가능한 거리에서
+      10인 이상을 꾸준히 모을 수 있는 커뮤니티에 개최권이 주어지며,
+      넓은 지역엔 복수 개최도 허용됩니다. 매년 1분기에 열리고, 포맷은 Standard입니다.
   regional:
-    {rank: 4, label: "Regional", formality: competitive,
-     desc: "지역 단위 대회 (구 체계)."}
+    rank: 4
+    label: "Regional"
+    formality: competitive
+    desc: >-
+      지역 단위 대회. 구 체계(FFG 시대)의 티어로, 과거 대회 기록에서 볼 수 있습니다.
   store championship:
-    {rank: 5, label: "Store Champ", formality: competitive,
-     desc: "매장 단위 챔피언십."}
+    rank: 5
+    label: "Store Champ"
+    formality: competitive
+    desc: >-
+      매장 단위 챔피언십. 게임 매장이 주최하는 소규모 경쟁 대회입니다.
   circuit opener:
-    {rank: 5, label: "Circuit Opener", formality: competitive,
-     desc: "시즌 개막 이벤트."}
+    rank: 5
+    label: "Circuit Opener"
+    formality: competitive
+    desc: >-
+      시즌 개막을 알리는 이벤트. 본격적인 챔피언십 시즌 전에 열리는 진입용 경쟁 대회입니다.
   players circuit:
-    {rank: 5, label: "Players Circuit", formality: competitive,
-     desc: "온라인 경쟁 리그."}
+    rank: 5
+    label: "Players Circuit"
+    formality: competitive
+    desc: >-
+      온라인 경쟁 리그/서킷. 지역 기반 대회에 참가하기 어려운 플레이어를 위한
+      온라인 경쟁 이벤트입니다.
   team tournament:
-    {rank: 5, label: "Team", formality: casual,
-     desc: "팀 단위 대회."}
+    rank: 5
+    label: "Team"
+    formality: casual
+    desc: >-
+      팀 단위로 진행되는 이벤트성 대회입니다.
   casual tournament kit:
-    {rank: 6, label: "Casual Kit", formality: casual,
-     desc: "CTK. 신규 플레이어 대상 캐주얼 티어 키트 대회. 개최 수 제한 없음."}
+    rank: 6
+    label: "Casual Kit"
+    formality: casual
+    desc: >-
+      CTK(Casual Tournament Kit). 시즌 초·중반의 입문용 이벤트로, 많은 신규 플레이어가
+      처음 참가하는 구조화된 대회입니다. 지역 주최자가 키트를 구매해 열며 개최 수 제한이 없고,
+      포맷은 주최자 재량으로 Standard 또는 Startup입니다. 캐주얼 티어.
   "gnk / seasonal":
-    {rank: 6, label: "GNK", formality: casual,
-     desc: "Game Night Kit. 매장/모임에서 여는 캐주얼 대회."}
+    rank: 6
+    label: "GNK"
+    formality: casual
+    desc: >-
+      Game Night Kit. 매장이나 모임에서 분기별 키트로 여는 가장 가벼운 캐주얼 대회입니다.
   community tournament:
-    {rank: 6, label: "Community", formality: casual,
-     desc: "커뮤니티가 자체 주최하는 대회."}
+    rank: 6
+    label: "Community"
+    formality: casual
+    desc: >-
+      NSG 공식 체계 밖에서 커뮤니티가 자체 기획·주최하는 대회입니다.
   online event:
-    {rank: 6, label: "Online", formality: casual,
-     desc: "온라인(jinteki.net 등) 대회."}
+    rank: 6
+    label: "Online"
+    formality: casual
+    desc: >-
+      온라인(jinteki.net 등)으로 진행되는 대회입니다.
   asynchronous tournament:
-    {rank: 7, label: "Async", formality: casual,
-     desc: "실시간이 아닌, 기간을 두고 진행되는 비동기 대회."}
+    rank: 7
+    label: "Async"
+    formality: casual
+    desc: >-
+      정해진 시각에 모이지 않고 기간을 두고 라운드를 소화하는 비동기 온라인 대회입니다.
 
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:

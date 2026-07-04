@@ -165,6 +165,7 @@ a {{ color: inherit; }}
 .winner .who {{ font-size: 17px; font-weight: 600; }}
 .idtag {{ font-size: 13px; color: var(--ink-2); }}
 .idtag .dot {{ display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; }}
+.idtag .decklink {{ font-weight: 650; color: var(--ink); }}
 footer {{ color: var(--muted); font-size: 12.5px; margin-top: 40px; }}
 footer a {{ color: inherit; }}
 .crumb {{ font-size: 13px; color: var(--ink-2); }}
@@ -222,9 +223,9 @@ def page(title, body, scripts=""):
 <body>
 <main>
 {body}
-<footer>Data: <a href="https://alwaysberunning.net">alwaysberunning.net</a> ·
-Identities: <a href="https://netrunnerdb.com">NetrunnerDB</a> ·
-자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch">alwaysberunningfetch</a>)</footer>
+<footer>Data: <a href="https://alwaysberunning.net" target="_blank" rel="noopener">alwaysberunning.net</a> ·
+Identities: <a href="https://netrunnerdb.com" target="_blank" rel="noopener">NetrunnerDB</a> ·
+자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch" target="_blank" rel="noopener">alwaysberunningfetch</a>)</footer>
 </main>
 {f'<script>{scripts}</script>' if scripts else ''}
 </body>
@@ -322,7 +323,10 @@ def bars_block(identity_rows, has_cut):
         bar.append(f"<title>{esc(tip)}</title></svg>")
         name = esc(shorten_identity(title))
         if row.get("nrdb_id"):
-            name = f"<a href='https://netrunnerdb.com/en/card/{esc(row['nrdb_id'])}'>{name}</a>"
+            name = (
+                f"<a href='https://netrunnerdb.com/en/card/{esc(row['nrdb_id'])}' "
+                f"target='_blank' rel='noopener'>{name}</a>"
+            )
         out.append(f"<div class='name' title='{esc(title)}'>{name}</div>")
         out.append("".join(bar))
         out.append(f"<div class='val'>{row['count']}{cut_txt}</div>")
@@ -331,16 +335,16 @@ def bars_block(identity_rows, has_cut):
 
 
 def idtag(deck):
-    """identity 태그 — 덱리스트가 있으면 덱으로, 없으면 NRDB 카드 페이지로 링크."""
+    """identity 태그 — 덱리스트가 올라온 경우에만 링크 (볼드 = 덱리스트 있음)."""
     if not deck:
         return ""
     f = deck["faction"] if deck["faction"] in FACTION_COLORS else "unknown"
     name = esc(shorten_identity(deck["identity"]))
-    href = deck.get("url") or (
-        f"https://netrunnerdb.com/en/card/{deck['nrdb_id']}" if deck.get("nrdb_id") else None
-    )
-    if href:
-        name = f"<a href='{esc(href)}'>{name}</a>"
+    if deck.get("url"):
+        name = (
+            f"<a class='decklink' href='{esc(deck['url'])}' title='덱리스트 보기' "
+            f"target='_blank' rel='noopener'>{name}</a>"
+        )
     return f"<span class='idtag'><span class='dot' style='background:var(--f-{f})'></span>{name}</span>"
 
 
@@ -451,7 +455,7 @@ def tier_legend(tournaments, settings):
         kind = "경쟁" if formality == "competitive" else "캐주얼"
         rows.append(
             f"<tr><td><span class='{cls}'>{esc(label)}</span></td>"
-            f"<td>{esc(kind)}</td><td>{esc(desc)}</td></tr>"
+            f"<td style='white-space:nowrap'>{esc(kind)}</td><td>{esc(desc)}</td></tr>"
         )
     return (
         "<div class='card'><h2>대회 티어 안내</h2>"
@@ -616,7 +620,7 @@ def render_tournament(t, settings):
 <h1>{esc(t['title'])}</h1>
 <p class="sub">{esc(t['date'])} · {tier_badge(t)} · <b>{esc(meta_txt)}</b> · {t['players']}명
 {'· 탑컷 ' + str(t['cut_size']) + '명' if has_cut else ''}
-{f"· <a href='https://alwaysberunning.net/tournaments/{t['id']}'>ABR에서 보기</a>" if t['id'] else ''}</p>
+{f"· <a href='https://alwaysberunning.net/tournaments/{t['id']}' target='_blank' rel='noopener'>ABR에서 보기</a>" if t['id'] else ''}</p>
 """
     winner_html = ""
     if t["winner"]:
@@ -641,7 +645,8 @@ def render_tournament(t, settings):
             f"<td class='num'>{s['rank_swiss'] or ''}</td></tr>"
         )
     table = (
-        "<div class='card'><h2>순위표</h2><table>"
+        "<div class='card'><h2>순위표</h2>"
+        "<p class='agg-note'>진하게 표시된 identity는 클릭하면 업로드된 덱리스트로 이동합니다.</p><table>"
         "<thead><tr><th class='num'>#</th><th>플레이어</th><th>Corp</th><th>Runner</th>"
         "<th class='num'>스위스</th></tr></thead><tbody>"
         + "".join(rows)

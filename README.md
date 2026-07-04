@@ -1,73 +1,67 @@
 # alwaysberunningfetch
 
-온라인 사이트를 **주기적으로 자동 fetch**해서 변화를 감지하고, 데이터를 저장하고, 알림을 보내는 자동화 프로젝트입니다.
+[alwaysberunning.net](https://alwaysberunning.net)(ABR)에 올라오는 **Android: Netrunner 대회 결과를 매일 자동 수집**해서,
+대회마다 어떤 Corp/Runner identity가 쓰였고 어떤 성적을 냈는지 통계 페이지를 생성하는 자동화입니다.
 
-별도 서버 없이 **GitHub Actions**로 계속 돌아가며(기본: 30분마다), 감시할 사이트는 `config/sites.yaml`에 적기만 하면 됩니다.
+- **팩션 도넛 차트** — corp/runner 팩션별 점유율
+- **Identity별 바 차트** — 엔트리 수 + 탑컷 진출 수(진한 부분)
+- **대회별 상세 페이지** — 우승자, 순위표, 덱리스트 링크(NetrunnerDB)
+- **시즌 전체 집계** — 여러 대회를 합친 메타 현황
+- **`docs/data/summary.json`** — 개인 사이트에서 가져다 쓸 수 있는 JSON 요약
 
-## 동작 방식
+GitHub Actions가 매일 실행하고 결과를 `docs/`에 커밋하므로, **GitHub Pages를 켜면 그대로 웹사이트**가 됩니다.
 
-1. `config/sites.yaml`에 등록된 각 사이트를 fetch
-2. CSS 선택자(선택 사항)로 원하는 부분만 추출
-3. 이전 실행 결과와 비교해서 **변화 감지**
-4. 변화가 있으면:
-   - `data/` 폴더에 스냅샷 저장 (git으로 이력 관리)
-   - Discord/Slack 웹훅으로 알림 전송 (설정한 경우)
+## 동작 구조
 
-## 빠른 시작
-
-### 1. 감시할 사이트 등록
-
-`config/sites.yaml`을 편집하세요:
-
-```yaml
-sites:
-  - name: example            # 사이트를 구분할 이름 (영문, 파일명에 사용)
-    url: https://example.com # 가져올 주소
-    selector: "h1"           # (선택) 이 CSS 선택자에 해당하는 부분만 감시
-    # selector를 생략하면 페이지 전체를 감시합니다
+```
+ABR API ──> data/ (원본 캐시) ──> 통계 계산 ──> docs/ (정적 사이트 + summary.json)
+  │
+  └─ /api/tournaments/results  종료된 대회 목록
+     /api/entries?id=N         대회별 순위/identity/덱리스트
+     NetrunnerDB /api/2.0/public/cards  identity -> 팩션 매핑
 ```
 
-### 2. 로컬에서 테스트
+- `src/abr.py` — API 클라이언트 (요청 간 1초 간격, data/에 캐시)
+- `src/stats.py` — identity/팩션별 엔트리 수, 탑컷 진출, 우승자 계산
+- `src/sitegen.py` — 자체 포함 정적 HTML 생성 (인라인 SVG, 라이트/다크 지원)
+- `src/main.py` — 진입점
+
+## 사용법
 
 ```bash
 pip install -r requirements.txt
-python src/fetch.py            # 전체 사이트 1회 실행
-python src/fetch.py --site example  # 특정 사이트만 실행
+
+python src/main.py            # fetch -> 통계 -> docs/ 생성
+python src/main.py --offline  # 네트워크 없이 캐시로만 재생성
+python src/main.py --probe    # API 응답 필드 구조 확인 (디버그)
+
+# 네트워크 없이 개발할 때: 샘플 데이터 생성
+python tests/make_fixtures.py && python src/main.py --offline
 ```
 
-### 3. 자동 실행 (GitHub Actions)
+## 설정 (`config/settings.yaml`)
 
-`main` 브랜치에 푸시하면 `.github/workflows/fetch.yml`이 30분마다 자동 실행됩니다.
-주기를 바꾸려면 workflow 파일의 `cron` 값을 수정하세요.
-
-GitHub 저장소 → Actions 탭 → "Run workflow" 버튼으로 수동 실행도 가능합니다.
-
-### 4. (선택) 변화 감지 시 알림 받기
-
-GitHub 저장소 → Settings → Secrets and variables → Actions 에서 secret을 추가하세요:
-
-- `WEBHOOK_URL`: Discord 또는 Slack의 Incoming Webhook URL
-
-설정하면 감시 대상에 변화가 생길 때마다 메시지가 전송됩니다.
-
-## 폴더 구조
-
-```
-config/sites.yaml        # 감시할 사이트 목록 (여기만 수정하면 됨)
-src/fetch.py             # 메인 스크립트
-data/state.json          # 마지막 실행 상태 (해시)
-data/snapshots/          # 변화가 있을 때마다 저장되는 스냅샷
-.github/workflows/fetch.yml  # 주기 실행 설정
-```
-
-## 자주 하는 수정
-
-| 하고 싶은 것 | 방법 |
+| 항목 | 설명 |
 |---|---|
-| 감시 주기 변경 | `.github/workflows/fetch.yml`의 `cron` 수정 (예: `0 * * * *` = 매시간) |
-| 사이트 추가/삭제 | `config/sites.yaml` 편집 |
-| 페이지 일부만 감시 | 해당 사이트에 `selector` 추가 (브라우저 개발자도구로 CSS 선택자 확인) |
-| 로그인이 필요한 사이트 | `headers`에 쿠키/토큰 추가 (secret 사용 권장) — 아래 참고 |
+| `season_start` | 이 날짜 이후 종료된 대회만 수집 |
+| `formats` | 포함할 포맷 (기본: standard) |
+| `min_players` | 최소 참가자 수 (기본 8명) |
+| `scan_limit` | 스캔할 최근 대회 수 |
+| `tiers` | ABR 대회 type -> 티어 배지 이름 (NSG Competitive Season 기준: Worlds > Continentals > Megacity > District > Casual) |
 
-로그인·버튼 클릭 등 실제 브라우저 조작이 필요한 사이트(JavaScript로만 렌더링되는 페이지 포함)는
-requests만으로는 안 될 수 있습니다. 그런 경우 Playwright 기반으로 확장이 필요하니 이슈로 남겨주세요.
+## 자동 실행 & 웹사이트로 공개하기
+
+1. `.github/workflows/fetch.yml`이 **매일 03:17 UTC**에 실행되어 `data/`, `docs/`를 커밋합니다.
+   (Actions 탭 → fetch → Run workflow로 수동 실행도 가능)
+2. GitHub 저장소 → **Settings → Pages → Branch: main(또는 기본 브랜치), 폴더: `/docs`** 선택.
+3. `https://<계정>.github.io/alwaysberunningfetch/` 에서 통계 페이지가 열립니다.
+
+개인 사이트에 붙일 때는 `<iframe>`으로 페이지를 임베드하거나,
+`docs/data/summary.json`을 fetch해서 원하는 형태로 직접 렌더링하면 됩니다.
+
+## 참고
+
+- 데이터 출처: [alwaysberunning.net](https://alwaysberunning.net) (API 이용 조건: 백링크 표기 — 생성 페이지 푸터에 포함됨)
+- Identity 정보: [NetrunnerDB](https://netrunnerdb.com)
+- ABR에는 경기 단위(match) 결과가 대부분 없어서 **identity 승률은 계산하지 않습니다.**
+  대신 엔트리 수 대비 **탑컷 진출**을 성적 지표로 사용합니다.

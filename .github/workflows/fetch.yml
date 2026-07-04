@@ -2,11 +2,16 @@ name: fetch
 
 on:
   schedule:
-    - cron: "*/30 * * * *"   # 30분마다 (UTC 기준)
-  workflow_dispatch: {}       # Actions 탭에서 수동 실행 가능
+    - cron: "17 3 * * *"        # 매일 03:17 UTC (한국시간 12:17)
+  workflow_dispatch:
+    inputs:
+      probe:
+        description: "API 스키마 확인만 실행 (사이트 생성 안 함)"
+        type: boolean
+        default: false
 
 permissions:
-  contents: write             # 결과(data/)를 저장소에 커밋하기 위해 필요
+  contents: write               # data/, docs/ 결과를 저장소에 커밋
 
 concurrency:
   group: fetch
@@ -26,19 +31,23 @@ jobs:
       - name: Install dependencies
         run: pip install -r requirements.txt
 
-      - name: Run fetcher
-        env:
-          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: python src/fetch.py
+      - name: Probe API schema
+        if: ${{ inputs.probe }}
+        run: python src/main.py --probe
+
+      - name: Run pipeline
+        if: ${{ !inputs.probe }}
+        run: python src/main.py
 
       - name: Commit results
+        if: ${{ !inputs.probe }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add data/
+          git add data/ docs/
           if git diff --cached --quiet; then
             echo "No changes to commit"
           else
-            git commit -m "chore: fetch results $(date -u +%Y-%m-%dT%H:%MZ)"
+            git commit -m "chore: update stats $(date -u +%Y-%m-%dT%H:%MZ)"
             git push
           fi

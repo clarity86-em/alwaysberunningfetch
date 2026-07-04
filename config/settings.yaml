@@ -1,0 +1,41 @@
+# ABR(alwaysberunning.net) 통계 파이프라인 설정
+
+site_title: "Netrunner Tournament Meta Tracker"
+site_subtitle: "alwaysberunning.net 대회 결과 기반 identity 통계"
+
+# 이 날짜 이후 종료된 대회만 수집 (시즌 시작일)
+season_start: "2026-01-01"
+
+# 포함할 포맷 (ABR의 format 필드값, 소문자)
+formats:
+  - standard
+
+# 최소 참가자 수 (이보다 작은 대회는 통계에서 제외)
+min_players: 8
+
+# 한 번에 스캔할 최근 종료 대회 수 (ABR API limit)
+scan_limit: 200
+
+# 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서
+# 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)
+tiers:
+  worlds:                        {rank: 1, label: "World Championship"}
+  intercontinental championship: {rank: 1, label: "Intercontinentals"}
+  continental championship:      {rank: 2, label: "Continentals"}
+  nationals:                     {rank: 3, label: "Nationals"}
+  megacity championship:         {rank: 3, label: "Megacity"}
+  district championship:         {rank: 4, label: "District"}
+  regional:                      {rank: 4, label: "Regional"}
+  circuit breaker:               {rank: 2, label: "Circuit Breaker"}
+  store champ:                   {rank: 5, label: "Store Champ"}
+  circuit opener:                {rank: 5, label: "Circuit Opener"}
+  casual tournament kit:         {rank: 6, label: "Casual Kit"}
+  "gnk / seasonal":              {rank: 6, label: "GNK"}
+  community:                     {rank: 6, label: "Community"}
+  online event:                  {rank: 6, label: "Online"}
+  asynchronous tournament:       {rank: 7, label: "Async"}
+  team tournament:               {rank: 5, label: "Team"}
+
+# 여기 나열된 type은 아예 수집하지 않음
+exclude_types:
+  - non-tournament event

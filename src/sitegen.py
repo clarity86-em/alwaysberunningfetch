@@ -221,12 +221,10 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 @media (max-width: 640px) {{
   main {{ padding: 16px 10px 48px; }}
   .card {{ padding: 14px 12px; }}
-  /* 1. identity 바: 이름 폭 축소 -> 그래프 공간 확보. 승률은 숫자만 */
+  /* identity 바(엔트리/승률 공통): 이름 폭 축소 -> 그래프 공간 확보 */
   .bars {{ gap: 4px 8px; }}
   .bars .name {{ max-width: 128px; font-size: 12px; }}
   .bars .val {{ font-size: 11.5px; }}
-  .bars.wr {{ grid-template-columns: 1fr max-content; }}
-  .bars.wr svg {{ display: none; }}
   /* 2. 대회 목록: 짧은 날짜, 카드풀 서브라인 숨김, 인원/우승은 탭해서 펼침 */
   .d-full {{ display: none; }}
   .d-short {{ display: inline; }}

@@ -167,7 +167,10 @@ a {{ color: inherit; }}
   border: 1px solid var(--border); border-radius: 999px; color: var(--ink-2);
   white-space: nowrap;
 }}
-.badge.comp {{ color: var(--ink); border-color: var(--baseline); }}
+.badge.comp {{
+  color: var(--ink); border-color: var(--baseline);
+  background: color-mix(in srgb, var(--ink) 9%, transparent);
+}}
 .winner {{ display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }}
 .winner .who {{ font-size: 17px; font-weight: 600; }}
 .idtag {{ font-size: 13px; color: var(--ink-2); }}
@@ -213,6 +216,27 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 }}
 .pager button.cur {{ color: var(--ink); border-color: var(--baseline); font-weight: 700; }}
 .pager button:hover {{ background: color-mix(in srgb, var(--ink) 6%, transparent); }}
+.d-short {{ display: none; }}
+.mob-extra {{ display: none; font-size: 12px; color: var(--ink-2); margin-top: 3px; }}
+@media (max-width: 640px) {{
+  main {{ padding: 16px 10px 48px; }}
+  .card {{ padding: 14px 12px; }}
+  /* 1. identity 바: 이름 폭 축소 -> 그래프 공간 확보. 승률은 숫자만 */
+  .bars {{ gap: 4px 8px; }}
+  .bars .name {{ max-width: 128px; font-size: 12px; }}
+  .bars .val {{ font-size: 11.5px; }}
+  .bars.wr {{ grid-template-columns: 1fr max-content; }}
+  .bars.wr svg {{ display: none; }}
+  /* 2. 대회 목록: 짧은 날짜, 카드풀 서브라인 숨김, 인원/우승은 탭해서 펼침 */
+  .d-full {{ display: none; }}
+  .d-short {{ display: inline; }}
+  th, td {{ padding: 6px 5px; }}
+  td .n {{ display: none; }}
+  th.col-players, td.col-players, th.col-winner, td.col-winner {{ display: none; }}
+  [data-ptable] tbody tr {{ cursor: pointer; }}
+  tr.open .mob-extra {{ display: block; }}
+  .badge {{ font-size: 10.5px; padding: 1px 6px; }}
+}}
 """
 
 
@@ -315,7 +339,7 @@ def bars_block(identity_rows, has_cut):
         w_total = row["count"] / max_count * 100
         w_cut = row["cut"] / max_count * 100
         color = f"var(--f-{row['faction'] if row['faction'] in FACTION_COLORS else 'unknown'})"
-        cut_txt = f" · 컷 {row['cut']}" if (has_cut and row["cut"]) else ""
+        cut_txt = f"({row['cut']})" if (has_cut and row["cut"]) else ""
         tip = f"{title}: {row['count']} entries" + (f", top cut {row['cut']}" if row["cut"] else "")
         bar = [
             f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
@@ -351,7 +375,7 @@ def winrate_bars(rows_dict, faction_of, min_games):
     if not rows:
         return f"<p class='sub'>{min_games}게임 이상인 identity가 없습니다.</p>"
     rows.sort(key=lambda x: -x[2])
-    out = ["<div class='bars'>"]
+    out = ["<div class='bars wr'>"]
     for title, r, wr in rows:
         faction = faction_of.get(norm_title(title).casefold(), "unknown")
         color = f"var(--f-{faction if faction in FACTION_COLORS else 'unknown'})"
@@ -433,10 +457,16 @@ def side_section(stats_side, side, has_cut):
     pairs = faction_breakdown(stats_side, side)
     total = sum(r["count"] for _, r in pairs)
     side_label = "Corp" if side == "corp" else "Runner"
+    note = (
+        "<p class='agg-note'>표기: 출전 수(컷 진출 수) · 진한 부분 = 탑컷 진출</p>"
+        if has_cut
+        else ""
+    )
     return (
         f"<div class='card'><h2>{side_label}</h2>"
         + donut_block(pairs, total, side_label)
-        + f"<h3 style='margin-top:16px'>Identity별 엔트리{' (진한 부분 = 탑컷 진출)' if has_cut else ''}</h3>"
+        + "<h3 style='margin-top:16px'>Identity별 엔트리</h3>"
+        + note
         + bars_block(stats_side, has_cut)
         + "</div>"
     )
@@ -477,8 +507,19 @@ def agg_variants(tournaments):
     return all_html + comp_html
 
 
+def short_date(date_str):
+    """'2026.06.27.' -> '26.06.27' (모바일용)."""
+    parts = str(date_str).strip(".").split(".")
+    if len(parts) == 3 and len(parts[0]) == 4:
+        return f"{parts[0][2:]}.{parts[1]}.{parts[2]}"
+    return date_str
+
+
 def tournament_table(tournaments, prefix="", show_meta=True):
-    """페이지네이션(15개/페이지) + 티어 필터가 붙는 대회 목록. JS 없으면 전체 표시."""
+    """페이지네이션(10개/페이지) + 티어 필터가 붙는 대회 목록. JS 없으면 전체 표시.
+
+    모바일(<=640px)에서는 인원/우승 열을 숨기고 행을 탭하면 펼쳐서 보여준다.
+    """
     rows = []
     for t in sorted(tournaments, key=lambda x: x.get("date") or "", reverse=True):
         w = t["winner"]
@@ -492,12 +533,18 @@ def tournament_table(tournaments, prefix="", show_meta=True):
             tip = f"{t['cardpool']}" + (f" · 밴리스트 {ban}" if ban else "")
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
         tier = t.get("tier_label") or t["type"] or "?"
+        mob_extra = (
+            f"<div class='mob-extra'>인원 {t['players']}명 · 우승: {winner}</div>"
+        )
         rows.append(
-            f"<tr data-tier='{esc(tier)}'><td>{esc(t['date'])}</td>"
-            f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a></td>"
+            f"<tr data-tier='{esc(tier)}'>"
+            f"<td class='col-date'><span class='d-full'>{esc(t['date'])}</span>"
+            f"<span class='d-short'>{esc(short_date(t['date']))}</span></td>"
+            f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a>{mob_extra}</td>"
             + meta_td
             + f"<td>{tier_badge(t)}</td>"
-            f"<td class='num'>{t['players']}</td><td>{winner}</td></tr>"
+            f"<td class='num col-players'>{t['players']}</td>"
+            f"<td class='col-winner'>{winner}</td></tr>"
         )
     meta_th = "<th>포맷</th>" if show_meta else ""
     return (
@@ -505,7 +552,7 @@ def tournament_table(tournaments, prefix="", show_meta=True):
         "<div class='tier-chips'><span class='chips-label'>티어 필터</span></div>"
         "<table><thead><tr><th>날짜</th><th>대회</th>"
         + meta_th
-        + "<th>티어</th><th class='num'>인원</th><th>우승</th></tr></thead>"
+        + "<th>티어</th><th class='num col-players'>인원</th><th class='col-winner'>우승</th></tr></thead>"
         "<tbody>" + "".join(rows) + "</tbody></table>"
         "<div class='table-foot'><span class='pcount'></span><nav class='pager'></nav></div>"
         "</div>"
@@ -586,6 +633,13 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     });
     chipBox.appendChild(allBtn);
   }
+
+  rows.forEach(function (r) {
+    r.addEventListener('click', function (e) {
+      if (e.target.closest('a, input, label, button')) return;
+      r.classList.toggle('open');
+    });
+  });
 
   function render() {
     var vis = rows.filter(function (r) { return active[r.dataset.tier]; });

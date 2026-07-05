@@ -159,6 +159,12 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
   [data-ptable] tbody tr { cursor: pointer; }
   tr.open .mob-extra { display: block; }
   .badge { font-size: 10.5px; padding: 1px 6px; }
+  /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
+  .standings td:nth-child(2), .standings th:nth-child(2) {
+    max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
+  }
+  .standings td:first-child, .standings th:first-child { padding-left: 2px; padding-right: 2px; }
+  .standings td:last-child, .standings th:last-child { padding-left: 2px; padding-right: 2px; }
 }
 </style>
 </head>

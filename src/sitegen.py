@@ -234,6 +234,12 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
   [data-ptable] tbody tr {{ cursor: pointer; }}
   tr.open .mob-extra {{ display: block; }}
   .badge {{ font-size: 10.5px; padding: 1px 6px; }}
+  /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
+  .standings td:nth-child(2), .standings th:nth-child(2) {{
+    max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
+  }}
+  .standings td:first-child, .standings th:first-child {{ padding-left: 2px; padding-right: 2px; }}
+  .standings td:last-child, .standings th:last-child {{ padding-left: 2px; padding-right: 2px; }}
 }}
 """
 
@@ -794,7 +800,7 @@ def render_tournament(t, settings):
         )
     table = (
         "<div class='card'><h2>순위표</h2>"
-        "<p class='agg-note'>진하게 표시된 identity는 클릭하면 업로드된 덱리스트로 이동합니다.</p><table>"
+        "<p class='agg-note'>진하게 표시된 identity는 클릭하면 업로드된 덱리스트로 이동합니다.</p><table class='standings'>"
         "<thead><tr><th class='num'>#</th><th>플레이어</th><th>Corp</th><th>Runner</th>"
         "<th class='num'>스위스</th></tr></thead><tbody>"
         + "".join(rows)

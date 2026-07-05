@@ -238,7 +238,19 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 """
 
 
-def page(title, body, scripts=""):
+FAVICON_SVG = """<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+<rect width="64" height="64" rx="14" fill="#14141a"/>
+<g fill="none" stroke-width="11">
+<path d="M32 15 A17 17 0 0 1 49 32" stroke="#9085e9"/>
+<path d="M49 32 A17 17 0 0 1 26.75 48.17" stroke="#e66767"/>
+<path d="M26.75 48.17 A17 17 0 0 1 15.83 37.25" stroke="#eda100"/>
+<path d="M15.83 37.25 A17 17 0 0 1 32 15" stroke="#2fae2f"/>
+</g>
+</svg>
+"""
+
+
+def page(title, body, scripts="", root=""):
     return f"""<!DOCTYPE html>
 <html lang="ko">
 <head>
@@ -247,6 +259,9 @@ def page(title, body, scripts=""):
 <meta name="color-scheme" content="light dark">
 <meta name="robots" content="noindex">
 <title>{esc(title)}</title>
+<link rel="icon" type="image/svg+xml" href="{root}favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="{root}favicon-32.png">
+<link rel="apple-touch-icon" href="{root}apple-touch-icon.png">
 <style>{base_css()}</style>
 </head>
 <body>
@@ -736,7 +751,7 @@ def render_meta(key, tournaments, settings):
         + tournament_table(tournaments, prefix="../", show_meta=False)
         + "</div>"
     )
-    return page(label, head + body + table, scripts=PTABLE_JS)
+    return page(label, head + body + table, scripts=PTABLE_JS, root="../")
 
 
 def render_tournament(t, settings):
@@ -785,7 +800,7 @@ def render_tournament(t, settings):
         + "".join(rows)
         + "</tbody></table></div>"
     )
-    return page(t["title"], head + winner_html + charts + table)
+    return page(t["title"], head + winner_html + charts + table, root="../")
 
 
 # ---------------------------------------------------------------- 빌드
@@ -805,6 +820,7 @@ def build_site(per_tournament, settings):
     (DOCS / "t").mkdir(exist_ok=True)
     (DOCS / "meta").mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")
+    (DOCS / "favicon.svg").write_text(FAVICON_SVG, encoding="utf-8")
     (DOCS / "index.html").write_text(render_index(per_tournament, settings), encoding="utf-8")
     groups, order = group_by_meta(per_tournament)
     for key in order:

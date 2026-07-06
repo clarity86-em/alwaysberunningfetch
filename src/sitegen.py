@@ -171,8 +171,8 @@ a {{ color: inherit; }}
   color: var(--ink); border-color: var(--baseline);
   background: color-mix(in srgb, var(--ink) 9%, transparent);
 }}
-.winner {{ display: flex; gap: 10px; align-items: baseline; flex-wrap: wrap; }}
 .winner .who {{ font-size: 17px; font-weight: 600; }}
+.winner-decks {{ display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; margin-top: 4px; }}
 .idtag {{ font-size: 13px; color: var(--ink-2); }}
 .idtag .dot {{ display: inline-block; width: 9px; height: 9px; border-radius: 3px; margin-right: 5px; }}
 .idtag .decklink {{ font-weight: 650; color: var(--ink); }}
@@ -778,8 +778,9 @@ def render_tournament(t, settings):
         w = t["winner"]
         winner_html = (
             "<div class='card'><h3>우승</h3><div class='winner'>"
-            f"<span class='who'>{esc(w['player'])}</span>"
-            f"{idtag(w.get('corp'))} {idtag(w.get('runner'))}</div></div>"
+            f"<div class='who'>{esc(w['player'])}</div>"
+            f"<div class='winner-decks'>{idtag(w.get('corp'))} {idtag(w.get('runner'))}</div>"
+            "</div></div>"
         )
     charts = (
         "<div class='grid2'>"

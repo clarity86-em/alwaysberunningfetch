@@ -151,6 +151,10 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 .pager button:hover { background: color-mix(in srgb, var(--ink) 6%, transparent); }
 .d-short { display: none; }
 .mob-extra { display: none; font-size: 12px; color: var(--ink-2); margin-top: 3px; }
+.champs { table-layout: fixed; width: 100%; }
+.champs th:nth-child(1) { width: 74px; }
+.champs th:nth-child(2) { width: 34%; }
+.champs .trunc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 @media (max-width: 640px) {
   main { padding: 16px 10px 48px; }
   .card { padding: 14px 12px; }
@@ -167,9 +171,9 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
   [data-ptable] tbody tr { cursor: pointer; }
   tr.open .mob-extra { display: block; }
   .badge { font-size: 10.5px; padding: 1px 6px; }
-  /* 최근 챔피언십 우승 표: 폭 압축 */
+  /* 최근 공식 대회 우승 표: 폭 압축 */
   .champs th, .champs td { font-size: 12px; padding: 6px 4px; }
-  .champs td:nth-child(2) { overflow-wrap: anywhere; }
+  .champs th:nth-child(1) { width: 58px; }
   .champs .idtag { font-size: 12px; }
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {

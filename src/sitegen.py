@@ -227,6 +227,10 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 .pager button:hover {{ background: color-mix(in srgb, var(--ink) 6%, transparent); }}
 .d-short {{ display: none; }}
 .mob-extra {{ display: none; font-size: 12px; color: var(--ink-2); margin-top: 3px; }}
+.champs {{ table-layout: fixed; width: 100%; }}
+.champs th:nth-child(1) {{ width: 74px; }}
+.champs th:nth-child(2) {{ width: 34%; }}
+.champs .trunc {{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
 @media (max-width: 640px) {{
   main {{ padding: 16px 10px 48px; }}
   .card {{ padding: 14px 12px; }}
@@ -243,9 +247,9 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
   [data-ptable] tbody tr {{ cursor: pointer; }}
   tr.open .mob-extra {{ display: block; }}
   .badge {{ font-size: 10.5px; padding: 1px 6px; }}
-  /* 최근 챔피언십 우승 표: 폭 압축 */
+  /* 최근 공식 대회 우승 표: 폭 압축 */
   .champs th, .champs td {{ font-size: 12px; padding: 6px 4px; }}
-  .champs td:nth-child(2) {{ overflow-wrap: anywhere; }}
+  .champs th:nth-child(1) {{ width: 58px; }}
   .champs .idtag {{ font-size: 12px; }}
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {{
@@ -522,15 +526,18 @@ def champion_board(per_tournament, limit=10):
     rows = []
     for t in champs:
         w = t["winner"]
+        corp_full = w["corp"]["identity"] if w.get("corp") else ""
+        runner_full = w["runner"]["identity"] if w.get("runner") else ""
         rows.append(
             f"<tr><td class='col-date'>{esc(short_date(t['date']))}</td>"
-            f"<td><a href='t/{t['id']}.html'>{esc(t['title'])}</a> "
-            f"<span class='n' style='color:var(--ink-2);font-size:12px;white-space:nowrap'>({t['players']}명)</span></td>"
-            f"<td>{idtag(w.get('corp')) or '—'}</td>"
-            f"<td>{idtag(w.get('runner')) or '—'}</td></tr>"
+            f"<td><div class='trunc' title='{esc(t['title'])}'>"
+            f"<a href='t/{t['id']}.html'>{esc(t['title'])}</a> "
+            f"<span class='n' style='color:var(--ink-2);font-size:12px'>({t['players']}명)</span></div></td>"
+            f"<td><div class='trunc' title='{esc(corp_full)}'>{idtag(w.get('corp')) or '—'}</div></td>"
+            f"<td><div class='trunc' title='{esc(runner_full)}'>{idtag(w.get('runner')) or '—'}</div></td></tr>"
         )
     return (
-        "<div class='card'><h2>최근 챔피언십 우승</h2>"
+        "<div class='card'><h2>최근 공식 대회 우승</h2>"
         "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds 최근 "
         f"{len(champs)}개</p>"
         "<table class='champs'><thead><tr><th>날짜</th><th>대회</th>"

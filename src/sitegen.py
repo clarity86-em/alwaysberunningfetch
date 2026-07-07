@@ -862,11 +862,12 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
     faction = faction_of.get(norm_title(title).casefold(), "unknown")
     f_css = faction if faction in FACTION_COLORS else "unknown"
     nrdb_id = nrdb_of.get(norm_title(title).casefold())
-    nrdb_link = (
-        f" · <a href='https://netrunnerdb.com/en/card/{esc(nrdb_id)}' target='_blank' rel='noopener'>카드 보기</a>"
-        if nrdb_id
-        else ""
-    )
+    title_html = esc(shorten_identity(title))
+    if nrdb_id:
+        title_html = (
+            f"<a href='https://netrunnerdb.com/en/card/{esc(nrdb_id)}' target='_blank' "
+            f"rel='noopener' title='NetrunnerDB에서 카드 보기'>{title_html}</a>"
+        )
 
     def variant(wr):
         if not wr or norm_title(title) not in wr.get(side, {}):
@@ -886,8 +887,8 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
     body = f"""
 <p class="crumb"><a href="../../index.html">← 전체 통계</a> ·
 <a href="../../meta/{meta_slug(key)}.html">{esc(meta_label(key))}</a></p>
-<h1><span class='dot' style='display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--f-{f_css});margin-right:6px'></span>{esc(shorten_identity(title))}</h1>
-<p class="sub">{side_label} · {esc(meta_label(key))}{nrdb_link}</p>
+<h1><span class='dot' style='display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--f-{f_css});margin-right:6px'></span>{title_html}</h1>
+<p class="sub">{side_label} · {esc(meta_label(key))}</p>
 """ + toggle_html() + (
         f"<div class='card'><div class='agg-all'>{variant(wr_all)}</div>"
         f"<div class='agg-comp'>{variant(wr_comp)}</div>"

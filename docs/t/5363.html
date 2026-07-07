@@ -167,6 +167,10 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
   [data-ptable] tbody tr { cursor: pointer; }
   tr.open .mob-extra { display: block; }
   .badge { font-size: 10.5px; padding: 1px 6px; }
+  /* 최근 챔피언십 우승 표: 폭 압축 */
+  .champs th, .champs td { font-size: 12px; padding: 6px 4px; }
+  .champs td:nth-child(2) { overflow-wrap: anywhere; }
+  .champs .idtag { font-size: 12px; }
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {
     max-width: 88px; overflow-wrap: anywhere; font-size: 12px;

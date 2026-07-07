@@ -243,6 +243,10 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
   [data-ptable] tbody tr {{ cursor: pointer; }}
   tr.open .mob-extra {{ display: block; }}
   .badge {{ font-size: 10.5px; padding: 1px 6px; }}
+  /* 최근 챔피언십 우승 표: 폭 압축 */
+  .champs th, .champs td {{ font-size: 12px; padding: 6px 4px; }}
+  .champs td:nth-child(2) {{ overflow-wrap: anywhere; }}
+  .champs .idtag {{ font-size: 12px; }}
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {{
     max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
@@ -493,6 +497,66 @@ def idtag(deck):
     return f"<span class='idtag'><span class='dot' style='background:var(--f-{f})'></span>{name}</span>"
 
 
+# 최근 우승 보드에 포함할 챔피언십 (Standard 경쟁 티어)
+CHAMPIONSHIP_TYPES = {
+    "worlds",
+    "intercontinental championship",
+    "continental championship",
+    "megacity championship",
+    "district championship",
+}
+# 대회가 아직 없어도 티어 필터에 항상 노출할 티어 (위상 순)
+PINNED_TIERS = ["World Championship", "Continentals", "Megacity", "District"]
+
+
+def idtag_brief(deck):
+    """우승 보드용 짧은 identity 태그 — 콜론 앞부분만 표시, 전체 이름은 툴팁."""
+    if not deck:
+        return "—"
+    f = deck["faction"] if deck["faction"] in FACTION_COLORS else "unknown"
+    full = shorten_identity(deck["identity"])
+    brief = esc(full.split(":")[0].strip())
+    if deck.get("url"):
+        brief = (
+            f"<a class='decklink' href='{esc(deck['url'])}' target='_blank' rel='noopener'>{brief}</a>"
+        )
+    return (
+        f"<span class='idtag' title='{esc(full)}'>"
+        f"<span class='dot' style='background:var(--f-{f})'></span>{brief}</span>"
+    )
+
+
+def champion_board(per_tournament, limit=10):
+    """최근 챔피언십(Standard) 우승 요약 표."""
+    champs = [
+        t for t in per_tournament
+        if t["format"] == "standard" and t["type"] in CHAMPIONSHIP_TYPES and t["winner"]
+    ]
+    champs.sort(key=lambda t: t.get("date") or "", reverse=True)
+    champs = champs[:limit]
+    if not champs:
+        return ""
+    rows = []
+    for t in champs:
+        w = t["winner"]
+        rows.append(
+            f"<tr><td class='col-date'>{esc(short_date(t['date']))}</td>"
+            f"<td><a href='t/{t['id']}.html'>{esc(t['title'])}</a> "
+            f"<span class='n' style='color:var(--ink-2);font-size:12px;white-space:nowrap'>({t['players']}명)</span></td>"
+            f"<td>{idtag_brief(w.get('corp'))}</td>"
+            f"<td>{idtag_brief(w.get('runner'))}</td></tr>"
+        )
+    return (
+        "<div class='card'><h2>최근 챔피언십 우승</h2>"
+        "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds 최근 "
+        f"{len(champs)}개 · identity 전체 이름은 마우스를 올리면 표시</p>"
+        "<table class='champs'><thead><tr><th>날짜</th><th>대회</th>"
+        "<th>Corp 우승</th><th>Runner 우승</th></tr></thead><tbody>"
+        + "".join(rows)
+        + "</tbody></table></div>"
+    )
+
+
 def tier_badge(t):
     label = t.get("tier_label") or t["type"] or "?"
     cls = "badge comp" if t.get("formality") == "competitive" else "badge"
@@ -601,8 +665,9 @@ def tournament_table(tournaments, prefix="", show_meta=True):
         if show_meta
         else ""
     )
+    pinned = esc("|".join(PINNED_TIERS)) if show_meta else ""
     return (
-        "<div data-ptable>"
+        f"<div data-ptable data-pinned='{pinned}'>"
         "<div class='tier-chips'><span class='chips-label'>티어 필터</span></div>"
         + fmt_filter
         + "<table><thead><tr><th>날짜</th><th>대회</th>"
@@ -656,7 +721,13 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
   var pcount = wrap.querySelector('.pcount');
   var counts = {};
   rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
-  var tierNames = Object.keys(counts);
+  // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
+  var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
+  var tierNames = pinned.slice();
+  pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
+  Object.keys(counts).forEach(function (t) {
+    if (tierNames.indexOf(t) === -1) tierNames.push(t);
+  });
   var active = {};
   tierNames.forEach(function (t) { active[t] = true; });
   var page = 1;
@@ -801,6 +872,7 @@ def render_index(per_tournament, settings):
             sec.append("".join(links))
         sections.append("".join(sec))
 
+    champs = champion_board(per_tournament)
     table = (
         "<div class='card'><h2>전체 대회 목록</h2>"
         + tournament_table(per_tournament)
@@ -809,7 +881,7 @@ def render_index(per_tournament, settings):
     legend = tier_legend(per_tournament, settings)
     return page(
         settings.get("site_title", "Netrunner Meta Tracker"),
-        head + "".join(sections) + table + legend,
+        head + "".join(sections) + champs + table + legend,
         scripts=PTABLE_JS,
     )
 

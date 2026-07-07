@@ -786,7 +786,7 @@ def render_index(per_tournament, settings):
         sec.append(
             f"<div class='card'><h2>{esc(meta_label(latest))} <span class='badge'>현재 메타</span></h2>"
             + agg_variants(groups[latest], matchup_base=f"matchup/{meta_slug(latest)}/")
-            + f"<p style='margin:12px 0 0'><a href='meta/{meta_slug(latest)}.html'>이 메타의 대회 목록 →</a></p></div>"
+            + "</div>"
         )
         if len(fmt_keys) > 1:
             links = ["<div class='card'><h3>이전 메타</h3><ul class='meta-links'>"]

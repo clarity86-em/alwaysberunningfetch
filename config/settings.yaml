@@ -11,8 +11,11 @@ formats:
   - standard
   - startup
 
-# 최소 참가자 수 (이보다 작은 대회는 통계에서 제외)
-min_players: 8
+# 최소 참가자 수 (이보다 작은 대회는 통계에서 제외). 포맷별로 다르게 지정 가능
+min_players:
+  standard: 8
+  startup: 4
+  default: 8
 
 # 한 번에 스캔할 최근 종료 대회 수 (ABR API limit)
 scan_limit: 200

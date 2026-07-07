@@ -53,14 +53,19 @@ def select_tournaments(results, settings):
         if d is None or d < season_start:
             skipped["date"] += 1
             continue
-        if formats and (t.get("format") or "").lower() not in formats:
+        fmt = (t.get("format") or "").lower()
+        if formats and fmt not in formats:
             skipped["format"] += 1
             continue
         if (t.get("type") or "").lower() in exclude:
             skipped["type"] += 1
             continue
+        if isinstance(min_players, dict):
+            threshold = min_players.get(fmt, min_players.get("default", 0))
+        else:
+            threshold = min_players
         players = t.get("players_count") or 0
-        if players < min_players:
+        if players < threshold:
             skipped["players"] += 1
             continue
         selected.append(t)

@@ -509,23 +509,6 @@ CHAMPIONSHIP_TYPES = {
 PINNED_TIERS = ["World Championship", "Continentals", "Megacity", "District"]
 
 
-def idtag_brief(deck):
-    """우승 보드용 짧은 identity 태그 — 콜론 앞부분만 표시, 전체 이름은 툴팁."""
-    if not deck:
-        return "—"
-    f = deck["faction"] if deck["faction"] in FACTION_COLORS else "unknown"
-    full = shorten_identity(deck["identity"])
-    brief = esc(full.split(":")[0].strip())
-    if deck.get("url"):
-        brief = (
-            f"<a class='decklink' href='{esc(deck['url'])}' target='_blank' rel='noopener'>{brief}</a>"
-        )
-    return (
-        f"<span class='idtag' title='{esc(full)}'>"
-        f"<span class='dot' style='background:var(--f-{f})'></span>{brief}</span>"
-    )
-
-
 def champion_board(per_tournament, limit=10):
     """최근 챔피언십(Standard) 우승 요약 표."""
     champs = [
@@ -543,13 +526,13 @@ def champion_board(per_tournament, limit=10):
             f"<tr><td class='col-date'>{esc(short_date(t['date']))}</td>"
             f"<td><a href='t/{t['id']}.html'>{esc(t['title'])}</a> "
             f"<span class='n' style='color:var(--ink-2);font-size:12px;white-space:nowrap'>({t['players']}명)</span></td>"
-            f"<td>{idtag_brief(w.get('corp'))}</td>"
-            f"<td>{idtag_brief(w.get('runner'))}</td></tr>"
+            f"<td>{idtag(w.get('corp')) or '—'}</td>"
+            f"<td>{idtag(w.get('runner')) or '—'}</td></tr>"
         )
     return (
         "<div class='card'><h2>최근 챔피언십 우승</h2>"
         "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds 최근 "
-        f"{len(champs)}개 · identity 전체 이름은 마우스를 올리면 표시</p>"
+        f"{len(champs)}개</p>"
         "<table class='champs'><thead><tr><th>날짜</th><th>대회</th>"
         "<th>Corp 우승</th><th>Runner 우승</th></tr></thead><tbody>"
         + "".join(rows)

@@ -720,7 +720,7 @@ def render_index(per_tournament, settings):
 <div class="kpi"><div class="label">대회</div><div class="value">{len(per_tournament)}</div></div>
 <div class="kpi"><div class="label">경쟁 티어 대회</div><div class="value">{n_comp}</div></div>
 <div class="kpi"><div class="label">총 엔트리</div><div class="value">{total_entries}</div></div>
-<div class="kpi"><div class="label">메타 (포맷×카드풀×밴리스트)</div><div class="value">{len(groups)}</div></div>
+<div class="kpi"><div class="label">메타</div><div class="value">{len(groups)}</div></div>
 </div>
 """ + toggle_html()
 

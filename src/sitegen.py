@@ -509,8 +509,18 @@ CHAMPIONSHIP_TYPES = {
     "megacity championship",
     "district championship",
 }
-# 대회가 아직 없어도 티어 필터에 항상 노출할 티어 (위상 순)
-PINNED_TIERS = ["Worlds", "Continentals", "CBI", "Megacity", "District"]
+def tier_filter_order(per_tournament, settings):
+    """티어 필터 칩 순서 — (데이터에 있는 티어 + always 티어)를 위상(rank) 순으로."""
+    tiers = settings.get("tiers") or {}
+    present = {t.get("tier_label") or t["type"] or "?" for t in per_tournament}
+    entries = {}
+    for info in tiers.values():
+        label = info.get("label")
+        if label and (label in present or info.get("always")):
+            entries[label] = info.get("rank", 99)
+    for label in present:
+        entries.setdefault(label, 99)
+    return [l for l, _ in sorted(entries.items(), key=lambda kv: (kv[1], kv[0]))]
 
 
 def champion_board(per_tournament, limit=10):
@@ -617,7 +627,7 @@ def short_date(date_str):
     return date_str
 
 
-def tournament_table(tournaments, prefix="", show_meta=True):
+def tournament_table(tournaments, prefix="", show_meta=True, tier_order=None):
     """페이지네이션(10개/페이지) + 티어 필터가 붙는 대회 목록. JS 없으면 전체 표시.
 
     모바일(<=640px)에서는 인원/우승 열을 숨기고 행을 탭하면 펼쳐서 보여준다.
@@ -655,7 +665,7 @@ def tournament_table(tournaments, prefix="", show_meta=True):
         if show_meta
         else ""
     )
-    pinned = esc("|".join(PINNED_TIERS)) if show_meta else ""
+    pinned = esc("|".join(tier_order)) if tier_order else ""
     return (
         f"<div data-ptable data-pinned='{pinned}'>"
         "<div class='tier-chips'><span class='chips-label'>티어 필터</span></div>"
@@ -875,7 +885,7 @@ def render_index(per_tournament, settings):
     champs = champion_board(per_tournament)
     table = (
         "<div class='card'><h2>전체 대회 목록</h2>"
-        + tournament_table(per_tournament)
+        + tournament_table(per_tournament, tier_order=tier_filter_order(per_tournament, settings))
         + "</div>"
     )
     legend = tier_legend(per_tournament, settings)

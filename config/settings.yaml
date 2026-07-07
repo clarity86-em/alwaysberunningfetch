@@ -51,8 +51,8 @@ tiers:
       지역 주최자가 NSG의 후원을 받아 운영하고, 온라인 대회는 NSG가 직접 운영합니다.
       3~4분기에 개최됩니다.
   circuit breaker:
-    rank: 3
-    label: "CBI"
+    rank: 6
+    label: "Invitational"
     always: true
     formality: competitive
     desc: >-
@@ -61,21 +61,21 @@ tiers:
       (District/Megacity 등)의 우승자와 상위 입상자만 초청받으며, 전년도 최고
       플레이어들을 조명하는 자리입니다.
   nationals:
-    rank: 4
+    rank: 3
     label: "Nationals"
     formality: competitive
     desc: >-
       국가 단위 챔피언십. 현행 District/Megacity 체계 이전(FFG 시대~NSG 초기)의
       대회 구조로, 과거 대회 기록에서 볼 수 있습니다.
   national championship:
-    rank: 4
+    rank: 3
     label: "Nationals"
     formality: competitive
     desc: >-
       국가 단위 챔피언십. 현행 District/Megacity 체계 이전(FFG 시대~NSG 초기)의
       대회 구조로, 과거 대회 기록에서 볼 수 있습니다.
   megacity championship:
-    rank: 4
+    rank: 3
     label: "Megacity"
     always: true
     formality: competitive
@@ -84,7 +84,7 @@ tiers:
       주최자가 신청서를 내면 NSG가 심사해 개최권을 부여합니다.
       매년 5~7월(2분기)에 열리고, 포맷은 Standard입니다.
   district championship:
-    rank: 5
+    rank: 4
     label: "District"
     always: true
     formality: competitive
@@ -93,25 +93,25 @@ tiers:
       10인 이상을 꾸준히 모을 수 있는 커뮤니티에 개최권이 주어지며,
       넓은 지역엔 복수 개최도 허용됩니다. 매년 1분기에 열리고, 포맷은 Standard입니다.
   regional:
-    rank: 5
+    rank: 4
     label: "Regional"
     formality: competitive
     desc: >-
       지역 단위 대회. 구 체계(FFG 시대)의 티어로, 과거 대회 기록에서 볼 수 있습니다.
   store championship:
-    rank: 6
+    rank: 5
     label: "Store Champ"
     formality: competitive
     desc: >-
       매장 단위 챔피언십. 게임 매장이 주최하는 소규모 경쟁 대회입니다.
   circuit opener:
-    rank: 6
+    rank: 5
     label: "Circuit Opener"
     formality: competitive
     desc: >-
       시즌 개막을 알리는 이벤트. 본격적인 챔피언십 시즌 전에 열리는 진입용 경쟁 대회입니다.
   players circuit:
-    rank: 6
+    rank: 5
     label: "Circuit"
     formality: competitive
     desc: >-
@@ -120,7 +120,7 @@ tiers:
       주말 양일(토 스위스, 일 탑컷)로 열리는 리저널급 오프라인 대회 시리즈입니다.
       자체 리더보드와 상품 지원을 운영합니다.
   team tournament:
-    rank: 6
+    rank: 9
     label: "Team"
     formality: casual
     desc: >-
@@ -130,29 +130,29 @@ tiers:
     label: "CTK"
     formality: casual
     desc: >-
-      CTK(Casual Tournament Kit). 시즌 초·중반의 입문용 이벤트로, 많은 신규 플레이어가
+      Casual Tournament Kit. 시즌 초·중반의 입문용 이벤트로, 많은 신규 플레이어가
       처음 참가하는 구조화된 대회입니다. 지역 주최자가 키트를 구매해 열며 개최 수 제한이 없고,
-      포맷은 주최자 재량으로 Standard 또는 Startup입니다. 캐주얼 티어.
+      포맷은 주최자 재량으로 Standard 또는 Startup입니다.
   "gnk / seasonal":
-    rank: 7
+    rank: 8
     label: "GNK"
     formality: casual
     desc: >-
       Game Night Kit. 매장이나 모임에서 분기별 키트로 여는 가장 가벼운 캐주얼 대회입니다.
   community tournament:
-    rank: 7
+    rank: 9
     label: "Community"
     formality: casual
     desc: >-
       NSG 공식 체계 밖에서 커뮤니티가 자체 기획·주최하는 대회입니다.
   online event:
-    rank: 7
+    rank: 9
     label: "Online"
     formality: casual
     desc: >-
       온라인(jinteki.net 등)으로 진행되는 대회입니다.
   asynchronous tournament:
-    rank: 8
+    rank: 10
     label: "Async"
     formality: casual
     desc: >-

@@ -292,7 +292,9 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     var pages = Math.max(1, Math.ceil(vis.length / PER));
     if (page > pages) page = pages;
     vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
-    pcount.textContent = vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '');
+    pcount.textContent = vis.length
+      ? vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
+      : '조건에 맞는 대회가 없습니다 — 위의 티어/포맷 필터를 확인하세요';
     pager.innerHTML = '';
     if (pages > 1) {
       for (var p = 1; p <= pages; p++) {

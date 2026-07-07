@@ -510,7 +510,7 @@ CHAMPIONSHIP_TYPES = {
     "district championship",
 }
 # 대회가 아직 없어도 티어 필터에 항상 노출할 티어 (위상 순)
-PINNED_TIERS = ["World Championship", "Continentals", "Megacity", "District"]
+PINNED_TIERS = ["Worlds", "Continentals", "CBI", "Megacity", "District"]
 
 
 def champion_board(per_tournament, limit=10):
@@ -670,7 +670,7 @@ def tournament_table(tournaments, prefix="", show_meta=True):
 
 
 def tier_legend(tournaments, settings):
-    """데이터에 실제로 등장하는 티어만, 위상 순서대로 간단 설명."""
+    """티어 안내 — 데이터에 등장하는 티어 + always 지정 티어, 위상 순."""
     tiers = settings.get("tiers") or {}
     present = {}
     for t in tournaments:
@@ -678,6 +678,14 @@ def tier_legend(tournaments, settings):
         label = info.get("label") or t["type"] or "?"
         if label not in present:
             present[label] = (
+                info.get("rank", 99),
+                info.get("formality", "casual"),
+                info.get("desc", ""),
+            )
+    # 아직 대회가 없어도 항상 안내에 포함할 티어 (always: true)
+    for info in tiers.values():
+        if info.get("always") and info.get("label") not in present:
+            present[info["label"]] = (
                 info.get("rank", 99),
                 info.get("formality", "casual"),
                 info.get("desc", ""),
@@ -798,7 +806,9 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     var pages = Math.max(1, Math.ceil(vis.length / PER));
     if (page > pages) page = pages;
     vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
-    pcount.textContent = vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '');
+    pcount.textContent = vis.length
+      ? vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
+      : '조건에 맞는 대회가 없습니다 — 위의 티어/포맷 필터를 확인하세요';
     pager.innerHTML = '';
     if (pages > 1) {
       for (var p = 1; p <= pages; p++) {

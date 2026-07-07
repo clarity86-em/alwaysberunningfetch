@@ -207,6 +207,14 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
   border: 1px solid var(--border); background: none; color: var(--ink-2);
   font-family: inherit;
 }}
+.fmt-filter {{ display: flex; flex-wrap: wrap; gap: 14px; align-items: center; margin: 0 0 12px; }}
+.fmtbtn {{
+  background: none; border: none; padding: 0; cursor: pointer; font-family: inherit;
+  font-size: 13px; color: var(--ink); font-weight: 600;
+}}
+.fmtbtn .n {{ color: var(--ink-2); font-weight: 400; font-size: 12px; }}
+.fmtbtn.off {{ color: var(--muted); font-weight: 400; text-decoration: line-through; }}
+.fmtbtn.off .n {{ color: var(--muted); }}
 .table-foot {{ display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-top: 12px; flex-wrap: wrap; }}
 .pcount {{ font-size: 12.5px; color: var(--ink-2); }}
 .pager {{ display: flex; gap: 4px; flex-wrap: wrap; }}
@@ -573,11 +581,12 @@ def tournament_table(tournaments, prefix="", show_meta=True):
             tip = f"{t['cardpool']}" + (f" · {ban}" if ban else "")
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
         tier = t.get("tier_label") or t["type"] or "?"
+        fmt_label = FORMAT_LABELS.get(t["format"], t["format"] or "?")
         mob_extra = (
             f"<div class='mob-extra'>인원 {t['players']}명 · 우승: {winner}</div>"
         )
         rows.append(
-            f"<tr data-tier='{esc(tier)}'>"
+            f"<tr data-tier='{esc(tier)}' data-format='{esc(fmt_label)}'>"
             f"<td class='col-date'><span class='d-full'>{esc(t['date'])}</span>"
             f"<span class='d-short'>{esc(short_date(t['date']))}</span></td>"
             f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a>{mob_extra}</td>"
@@ -587,10 +596,16 @@ def tournament_table(tournaments, prefix="", show_meta=True):
             f"<td class='col-winner'>{winner}</td></tr>"
         )
     meta_th = "<th>포맷</th>" if show_meta else ""
+    fmt_filter = (
+        "<div class='fmt-filter'><span class='chips-label'>포맷 필터</span></div>"
+        if show_meta
+        else ""
+    )
     return (
         "<div data-ptable>"
         "<div class='tier-chips'><span class='chips-label'>티어 필터</span></div>"
-        "<table><thead><tr><th>날짜</th><th>대회</th>"
+        + fmt_filter
+        + "<table><thead><tr><th>날짜</th><th>대회</th>"
         + meta_th
         + "<th>티어</th><th class='num col-players'>인원</th><th class='col-winner'>우승</th></tr></thead>"
         "<tbody>" + "".join(rows) + "</tbody></table>"
@@ -681,8 +696,43 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     });
   });
 
+  // 포맷 필터 (텍스트 토글) — 컨테이너가 있고 포맷이 2개 이상일 때만
+  var fmtBox = wrap.querySelector('.fmt-filter');
+  var activeF = null;
+  if (fmtBox) {
+    var fcounts = {};
+    rows.forEach(function (r) {
+      var f = r.dataset.format;
+      if (f) fcounts[f] = (fcounts[f] || 0) + 1;
+    });
+    var fmts = Object.keys(fcounts);
+    if (fmts.length > 1) {
+      activeF = {};
+      fmts.forEach(function (f) { activeF[f] = true; });
+      fmts.forEach(function (f) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'fmtbtn';
+        b.appendChild(document.createTextNode(f + ' '));
+        var n = document.createElement('span'); n.className = 'n'; n.textContent = fcounts[f];
+        b.appendChild(n);
+        b.addEventListener('click', function () {
+          activeF[f] = !activeF[f];
+          b.classList.toggle('off', !activeF[f]);
+          page = 1; render();
+        });
+        fmtBox.appendChild(b);
+      });
+    } else {
+      fmtBox.style.display = 'none';
+    }
+  }
+
   function render() {
-    var vis = rows.filter(function (r) { return active[r.dataset.tier]; });
+    var vis = rows.filter(function (r) {
+      if (!active[r.dataset.tier]) return false;
+      if (activeF && r.dataset.format && !activeF[r.dataset.format]) return false;
+      return true;
+    });
     rows.forEach(function (r) { r.style.display = 'none'; });
     var pages = Math.max(1, Math.ceil(vis.length / PER));
     if (page > pages) page = pages;

@@ -73,7 +73,7 @@ def meta_key(t):
 def meta_label(key):
     fmt, cardpool, ban = key
     parts = [FORMAT_LABELS.get(fmt, fmt or "?"), cardpool]
-    parts.append(f"밴리스트 {ban}" if ban else "밴리스트 미상")
+    parts.append(ban if ban else "밴리스트 미상")
     return " · ".join(parts)
 
 
@@ -570,7 +570,7 @@ def tournament_table(tournaments, prefix="", show_meta=True):
         if show_meta:
             ban = banlist_version(t["mwl"])
             meta = f"{FORMAT_LABELS.get(t['format'], t['format'])}"
-            tip = f"{t['cardpool']}" + (f" · 밴리스트 {ban}" if ban else "")
+            tip = f"{t['cardpool']}" + (f" · {ban}" if ban else "")
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
         tier = t.get("tier_label") or t["type"] or "?"
         mob_extra = (
@@ -785,7 +785,7 @@ def render_tournament(t, settings):
     has_cut = t["cut_size"] > 0
     ban = banlist_version(t["mwl"])
     meta_txt = f"{FORMAT_LABELS.get(t['format'], t['format'])} · {t['cardpool']}" + (
-        f" · 밴리스트 {ban}" if ban else ""
+        f" · {ban}" if ban else ""
     )
     head = f"""
 <p class="crumb"><a href="../index.html">← 전체 통계</a></p>

@@ -2,7 +2,8 @@ name: fetch
 
 on:
   schedule:
-    - cron: "17 3 * * *"        # 매일 03:17 UTC (한국시간 12:17)
+    - cron: "17 3 * * *"        # 매일 03:17 UTC (한국시간 12:17) — 지연될 수 있음
+    - cron: "17 13 * * *"       # 매일 13:17 UTC (한국시간 22:17) — 하루 2회로 지연 보완
   push:
     branches: [claude/website-automation-programming-6umiay]
     paths: ["src/**", "config/**"]   # 코드/설정 변경 시에만 (봇의 결과 커밋은 제외)

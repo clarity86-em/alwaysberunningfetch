@@ -1,0 +1,254 @@
+{
+ "name": "Summer Solstice Snackbar Startup CTK Rotterdam",
+ "date": "2026-06-21",
+ "cutToTop": 0,
+ "preliminaryRounds": 3,
+ "tournamentOrganiser": {
+  "nrdbId": 53201,
+  "nrdbUsername": "juno"
+ },
+ "players": [
+  {
+   "id": 55855,
+   "name": "Verendum",
+   "rank": 1,
+   "corpIdentity": "Haas-Bioroid: Precision Design",
+   "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+   "matchPoints": 15,
+   "strengthOfSchedule": "2.0",
+   "extendedStrengthOfSchedule": "3.8333333333333333333333333333333"
+  },
+  {
+   "id": 55879,
+   "name": "honeybuzzard",
+   "rank": 2,
+   "corpIdentity": "The Zwicky Group: Invisible Hands",
+   "runnerIdentity": "MuslihaT: Multifarious Marketeer",
+   "matchPoints": 12,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.3333333333333333333333333333333"
+  },
+  {
+   "id": 55959,
+   "name": "Lyon",
+   "rank": 3,
+   "corpIdentity": "PT Untaian: Life's Building Blocks",
+   "runnerIdentity": "Barry \"Baz\" Wong: Tri-Maf Veteran",
+   "matchPoints": 12,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.1666666666666666666666666666667"
+  },
+  {
+   "id": 55852,
+   "name": "juno",
+   "rank": 4,
+   "corpIdentity": "The Zwicky Group: Invisible Hands",
+   "runnerIdentity": "Hiram \"0mission\" Svensson: Shadow of the Past",
+   "matchPoints": 9,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.5"
+  },
+  {
+   "id": 55956,
+   "name": "ltm3x6",
+   "rank": 5,
+   "corpIdentity": "Editorial Division: Ad Nihilum",
+   "runnerIdentity": "René \"Loup\" Arcemont: Party Animal",
+   "matchPoints": 6,
+   "strengthOfSchedule": "4.0",
+   "extendedStrengthOfSchedule": "2.6666666666666666666666666666667"
+  },
+  {
+   "id": 55961,
+   "name": "Lucy",
+   "rank": 6,
+   "corpIdentity": "Méliès U: Only the Brightest",
+   "runnerIdentity": "MuslihaT: Multifarious Marketeer",
+   "matchPoints": 0,
+   "strengthOfSchedule": "4.5",
+   "extendedStrengthOfSchedule": "2.5"
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 55956,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 55852,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 55879,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 55959,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 55855,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 55961,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 55855,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 55956,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 55961,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 55959,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 55879,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 55852,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 55855,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 55959,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 55879,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 55956,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 55852,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": null,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "http://steffens.org/nrtm/nrtm-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/B4D"
+  }
+ ]
+}

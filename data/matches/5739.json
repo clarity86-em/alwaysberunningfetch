@@ -1,0 +1,142 @@
+{
+ "name": "Startup Hasselt",
+ "date": "2026-07-05",
+ "cutToTop": 0,
+ "preliminaryRounds": 2,
+ "tournamentOrganiser": {
+  "nrdbId": 39502,
+  "nrdbUsername": "AlPi"
+ },
+ "players": [
+  {
+   "id": 56395,
+   "name": "juno",
+   "rank": 1,
+   "corpIdentity": "Weyland Consortium: Built to Last",
+   "runnerIdentity": "MuslihaT: Multifarious Marketeer",
+   "matchPoints": 7,
+   "strengthOfSchedule": "2.5",
+   "extendedStrengthOfSchedule": "3.25"
+  },
+  {
+   "id": 56393,
+   "name": "ryanbantwins",
+   "rank": 2,
+   "corpIdentity": "Weyland Consortium: Built to Last",
+   "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+   "matchPoints": 6,
+   "strengthOfSchedule": "3.25",
+   "extendedStrengthOfSchedule": "2.5"
+  },
+  {
+   "id": 56394,
+   "name": "Bram",
+   "rank": 3,
+   "corpIdentity": "Weyland Consortium: Built to Last",
+   "runnerIdentity": "Magdalene Keino-Chemutai: Cryptarchitect",
+   "matchPoints": 6,
+   "strengthOfSchedule": "2.5",
+   "extendedStrengthOfSchedule": "3.25"
+  },
+  {
+   "id": 56396,
+   "name": "114141 Freja ",
+   "rank": 4,
+   "corpIdentity": "Haas-Bioroid: Precision Design",
+   "runnerIdentity": "Tāo Salonga: Telepresence Magician",
+   "matchPoints": 4,
+   "strengthOfSchedule": "3.25",
+   "extendedStrengthOfSchedule": "2.5"
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 56394,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 56396,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 56393,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 56395,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 56394,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 56393,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 56395,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 4
+    },
+    "player2": {
+     "id": 56396,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 1
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "http://steffens.org/nrtm/nrtm-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/YLC7"
+  }
+ ]
+}

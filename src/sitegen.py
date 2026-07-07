@@ -18,6 +18,7 @@ import html
 import json
 import math
 import re
+import unicodedata
 from collections import defaultdict
 from pathlib import Path
 
@@ -384,8 +385,14 @@ def bars_block(identity_rows, has_cut):
     return "".join(out)
 
 
-def winrate_bars(rows_dict, faction_of, min_games):
-    """identity별 승률 편차 바 — 50% 기준선에서 좌우로 뻗음."""
+def ident_slug(title):
+    """identity 제목 -> URL용 슬러그 ('Méliès U: ...' -> 'melies-u-only-the-brightest')."""
+    ascii_t = unicodedata.normalize("NFKD", norm_title(title)).encode("ascii", "ignore").decode()
+    return re.sub(r"[^a-z0-9]+", "-", ascii_t.lower()).strip("-") or "id"
+
+
+def winrate_bars(rows_dict, faction_of, min_games, link_of=None, sort_by="winrate"):
+    """identity별 승률 바 (50% 기준선). link_of(title) -> href면 이름에 링크."""
     rows = [
         (title, r, r["wins"] / r["games"] * 100)
         for title, r in rows_dict.items()
@@ -393,7 +400,10 @@ def winrate_bars(rows_dict, faction_of, min_games):
     ]
     if not rows:
         return f"<p class='sub'>{min_games}게임 이상인 identity가 없습니다.</p>"
-    rows.sort(key=lambda x: -x[2])
+    if sort_by == "games":
+        rows.sort(key=lambda x: (-x[1]["games"], -x[2]))
+    else:
+        rows.sort(key=lambda x: -x[2])
     out = ["<div class='bars wr'>"]
     for title, r, wr in rows:
         faction = faction_of.get(norm_title(title).casefold(), "unknown")
@@ -406,7 +416,10 @@ def winrate_bars(rows_dict, faction_of, min_games):
             '<rect x="49.6" y="0" width="0.8" height="18" fill="var(--baseline)"/>',
             f"<title>{esc(tip)}</title></svg>",
         ]
-        out.append(f"<div class='name' title='{esc(title)}'>{esc(shorten_identity(title))}</div>")
+        name = esc(shorten_identity(title))
+        if link_of:
+            name = f"<a href='{esc(link_of(title))}'>{name}</a>"
+        out.append(f"<div class='name' title='{esc(title)}'>{name}</div>")
         out.append("".join(bar))
         out.append(f"<div class='val'>{wr:.0f}% · {r['games']}판</div>")
     out.append("</div>")
@@ -419,24 +432,32 @@ def winrate_bars(rows_dict, faction_of, min_games):
     return "".join(out)
 
 
-def winrate_block(wr, faction_of, min_games, heading="Identity 승률"):
-    """승률 카드 — 사이드 밸런스 + corp/runner 승률 바."""
+def winrate_block(wr, faction_of, min_games, heading="Identity 승률", matchup_base=None):
+    """승률 카드 — 사이드 밸런스 + corp/runner 승률 바.
+
+    matchup_base가 있으면 identity 이름을 매치업 상세 페이지로 링크.
+    """
     if not wr:
         return ""
     corp_pct = wr["corp_side_wins"] / wr["games"] * 100
     n_t = wr.get("tournaments")
     src = f"matchdata가 업로드된 대회 {n_t}개 · " if n_t else ""
+    click_hint = " · identity를 클릭하면 매치업별 승률" if matchup_base else ""
     note = (
         f"<p class='agg-note'>{src}총 {wr['games']}게임 기준 · 무승부는 0.5승 처리 · "
-        f"기준선 = 50%</p>"
+        f"기준선 = 50%{click_hint}</p>"
         f"<p style='margin:0 0 14px;font-size:14.5px'><b>사이드 밸런스:</b> "
         f"Corp {corp_pct:.1f}% · Runner {100 - corp_pct:.1f}%</p>"
     )
+    def linker(side):
+        if not matchup_base:
+            return None
+        return lambda title: f"{matchup_base}{side}-{ident_slug(title)}.html"
     return (
         f"<div class='card'><h2>{esc(heading)}</h2>" + note
         + "<div class='grid2'>"
-        + f"<div><h3>Corp</h3>{winrate_bars(wr['corp'], faction_of, min_games)}</div>"
-        + f"<div><h3>Runner</h3>{winrate_bars(wr['runner'], faction_of, min_games)}</div>"
+        + f"<div><h3>Corp</h3>{winrate_bars(wr['corp'], faction_of, min_games, link_of=linker('corp'))}</div>"
+        + f"<div><h3>Runner</h3>{winrate_bars(wr['runner'], faction_of, min_games, link_of=linker('runner'))}</div>"
         + "</div></div>"
     )
 
@@ -498,7 +519,7 @@ def toggle_html():
     )
 
 
-def agg_charts(tournaments, min_wr_games=10):
+def agg_charts(tournaments, min_wr_games=10, matchup_base=None):
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)
     note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}</p>"
@@ -511,16 +532,16 @@ def agg_charts(tournaments, min_wr_games=10):
     wr = aggregate_winrates(tournaments)
     if wr:
         faction_of = _faction_lookup([agg["corp"], agg["runner"]])
-        html_out += winrate_block(wr, faction_of, min_wr_games)
+        html_out += winrate_block(wr, faction_of, min_wr_games, matchup_base=matchup_base)
     return html_out
 
 
-def agg_variants(tournaments):
+def agg_variants(tournaments, matchup_base=None):
     """캐주얼 포함(기본)/경쟁만 두 버전 — 체크박스로 전환."""
     comp = [t for t in tournaments if t.get("formality") == "competitive"]
-    all_html = f"<div class='agg-all'>{agg_charts(tournaments)}</div>"
+    all_html = f"<div class='agg-all'>{agg_charts(tournaments, matchup_base=matchup_base)}</div>"
     if comp:
-        comp_html = f"<div class='agg-comp'>{agg_charts(comp)}</div>"
+        comp_html = f"<div class='agg-comp'>{agg_charts(comp, matchup_base=matchup_base)}</div>"
     else:
         comp_html = "<div class='agg-comp'><p class='sub'>이 그룹에는 경쟁 티어 대회가 없습니다.</p></div>"
     return all_html + comp_html
@@ -714,7 +735,7 @@ def render_index(per_tournament, settings):
         sec = [f"<h2 style='font-size:22px;margin:28px 0 12px'>{esc(FORMAT_LABELS.get(fmt, fmt))}</h2>"]
         sec.append(
             f"<div class='card'><h2>{esc(meta_label(latest))} <span class='badge'>현재 메타</span></h2>"
-            + agg_variants(groups[latest])
+            + agg_variants(groups[latest], matchup_base=f"matchup/{meta_slug(latest)}/")
             + f"<p style='margin:12px 0 0'><a href='meta/{meta_slug(latest)}.html'>이 메타의 대회 목록 →</a></p></div>"
         )
         if len(fmt_keys) > 1:
@@ -751,7 +772,7 @@ def render_meta(key, tournaments, settings):
 <h1>{esc(label)}</h1>
 <p class="sub">{esc(dates[0])} ~ {esc(dates[-1])} · 대회 {len(tournaments)}개</p>
 """ + toggle_html()
-    body = agg_variants(tournaments)
+    body = agg_variants(tournaments, matchup_base=f"../matchup/{meta_slug(key)}/")
     table = (
         "<div class='card'><h2>대회 목록</h2>"
         + tournament_table(tournaments, prefix="../", show_meta=False)
@@ -790,7 +811,11 @@ def render_tournament(t, settings):
     )
     if t.get("winrates"):
         faction_of = _faction_lookup([t["corp"], t["runner"]])
-        charts += winrate_block(t["winrates"], faction_of, min_games=3, heading="이 대회의 identity 승률")
+        charts += winrate_block(
+            t["winrates"], faction_of, min_games=3,
+            heading="이 대회의 identity 승률",
+            matchup_base=f"../matchup/{meta_slug(meta_key(t))}/",
+        )
     rows = []
     for s in t["standings"]:
         rank = s["rank_top"] or s["rank_swiss"] or ""
@@ -808,6 +833,68 @@ def render_tournament(t, settings):
         + "</tbody></table></div>"
     )
     return page(t["title"], head + winner_html + charts + table, root="../")
+
+
+def _matchup_rows(wr, side, title):
+    """매치업 딕셔너리에서 title(side) 관점의 상대별 전적을 뽑는다.
+
+    반환: {상대 identity: {"wins": title 기준 승수, "ties", "games"}}
+    """
+    rows = {}
+    key_norm = norm_title(title)
+    for key, mu in (wr.get("matchups") or {}).items():
+        corp_t, _, runner_t = key.partition("\t")
+        if side == "corp" and corp_t == key_norm:
+            opp, wins = runner_t, mu["corp_wins"]
+        elif side == "runner" and runner_t == key_norm:
+            opp, wins = corp_t, mu["games"] - mu["corp_wins"]
+        else:
+            continue
+        rows[opp] = {"wins": wins, "ties": mu["ties"], "games": mu["games"]}
+    return rows
+
+
+def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
+    """identity 하나의 매치업별 승률 페이지."""
+    opp_side = "runner" if side == "corp" else "corp"
+    side_label = "Corp" if side == "corp" else "Runner"
+    opp_label = "Runner" if side == "corp" else "Corp"
+    faction = faction_of.get(norm_title(title).casefold(), "unknown")
+    f_css = faction if faction in FACTION_COLORS else "unknown"
+    nrdb_id = nrdb_of.get(norm_title(title).casefold())
+    nrdb_link = (
+        f" · <a href='https://netrunnerdb.com/en/card/{esc(nrdb_id)}' target='_blank' rel='noopener'>카드 보기</a>"
+        if nrdb_id
+        else ""
+    )
+
+    def variant(wr):
+        if not wr or norm_title(title) not in wr.get(side, {}):
+            return "<p class='sub'>이 구분에는 이 identity의 게임 기록이 없습니다.</p>"
+        me = wr[side][norm_title(title)]
+        my_wr = me["wins"] / me["games"] * 100
+        tie_txt = f" · 무 {me['ties']}" if me["ties"] else ""
+        head = (
+            f"<p style='margin:0 0 14px;font-size:14.5px'><b>종합 승률 {my_wr:.1f}%</b>"
+            f" · {me['games']}판{tie_txt}</p>"
+        )
+        rows = _matchup_rows(wr, side, title)
+        link_of = lambda opp: f"{opp_side}-{ident_slug(opp)}.html"
+        bars = winrate_bars(rows, faction_of, min_games=1, link_of=link_of, sort_by="games")
+        return head + f"<h3>상대 {opp_label} identity별 승률 (게임 수 순)</h3>" + bars
+
+    body = f"""
+<p class="crumb"><a href="../../index.html">← 전체 통계</a> ·
+<a href="../../meta/{meta_slug(key)}.html">{esc(meta_label(key))}</a></p>
+<h1><span class='dot' style='display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--f-{f_css});margin-right:6px'></span>{esc(shorten_identity(title))}</h1>
+<p class="sub">{side_label} · {esc(meta_label(key))}{nrdb_link}</p>
+""" + toggle_html() + (
+        f"<div class='card'><div class='agg-all'>{variant(wr_all)}</div>"
+        f"<div class='agg-comp'>{variant(wr_comp)}</div>"
+        "<p class='agg-note' style='margin-top:10px'>상대 identity를 클릭하면 그쪽 관점의 매치업 페이지로 이동합니다. "
+        "표본이 작은 매치업(수 판 이하)은 참고만 하세요.</p></div>"
+    )
+    return page(f"{shorten_identity(title)} 매치업", body, root="../../")
 
 
 # ---------------------------------------------------------------- 빌드
@@ -834,6 +921,29 @@ def build_site(per_tournament, settings):
         (DOCS / "meta" / f"{meta_slug(key)}.html").write_text(
             render_meta(key, groups[key], settings), encoding="utf-8"
         )
+        # 매치업 상세 페이지 (메타 그룹 x identity)
+        ts = groups[key]
+        wr_all = aggregate_winrates(ts)
+        if not wr_all:
+            continue
+        comp = [t for t in ts if t.get("formality") == "competitive"]
+        wr_comp = aggregate_winrates(comp)
+        agg = aggregate(ts)
+        faction_of = _faction_lookup([agg["corp"], agg["runner"]])
+        nrdb_of = {
+            norm_title(t2).casefold(): row.get("nrdb_id")
+            for side_rows in (agg["corp"], agg["runner"])
+            for t2, row in side_rows.items()
+            if row.get("nrdb_id")
+        }
+        mdir = DOCS / "matchup" / meta_slug(key)
+        mdir.mkdir(parents=True, exist_ok=True)
+        for side in ("corp", "runner"):
+            for title in wr_all[side]:
+                (mdir / f"{side}-{ident_slug(title)}.html").write_text(
+                    render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of),
+                    encoding="utf-8",
+                )
     for t in per_tournament:
         (DOCS / "t" / f"{t['id']}.html").write_text(render_tournament(t, settings), encoding="utf-8")
     summary = {

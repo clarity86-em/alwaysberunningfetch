@@ -115,6 +115,7 @@ def parse_matchdata(tjson):
         "corp": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
         "runner": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
     }
+    matchups = defaultdict(lambda: {"corp_wins": 0.0, "ties": 0, "games": 0})
     state = {"games": 0, "corp_side_wins": 0.0}
     _complement = {3: 0, 0: 3, 1: 1}
 
@@ -140,6 +141,12 @@ def parse_matchdata(tjson):
                 row["wins"] += w
                 if tie:
                     row["ties"] += 1
+        if corp_title and runner_title:
+            mu = matchups[norm_title(corp_title) + "\t" + norm_title(runner_title)]
+            mu["games"] += 1
+            mu["corp_wins"] += cw
+            if tie:
+                mu["ties"] += 1
 
     for rnd in tjson.get("rounds") or []:
         for tbl in rnd or []:
@@ -171,6 +178,7 @@ def parse_matchdata(tjson):
     return {
         "corp": dict(res["corp"]),
         "runner": dict(res["runner"]),
+        "matchups": dict(matchups),  # "코퍼\t러너" -> {corp_wins, ties, games}
         "corp_side_wins": state["corp_side_wins"],
         "games": state["games"],
     }
@@ -182,6 +190,7 @@ def aggregate_winrates(per_tournament):
         "corp": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
         "runner": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
     }
+    matchups = defaultdict(lambda: {"corp_wins": 0.0, "ties": 0, "games": 0})
     n_t, games, corp_wins = 0, 0, 0.0
     for t in per_tournament:
         wr = t.get("winrates")
@@ -196,11 +205,17 @@ def aggregate_winrates(per_tournament):
                 a["wins"] += row["wins"]
                 a["ties"] += row["ties"]
                 a["games"] += row["games"]
+        for key, mu in (wr.get("matchups") or {}).items():
+            m = matchups[key]
+            m["games"] += mu["games"]
+            m["corp_wins"] += mu["corp_wins"]
+            m["ties"] += mu["ties"]
     if n_t == 0:
         return None
     return {
         "corp": dict(agg["corp"]),
         "runner": dict(agg["runner"]),
+        "matchups": dict(matchups),
         "corp_side_wins": corp_wins,
         "games": games,
         "tournaments": n_t,

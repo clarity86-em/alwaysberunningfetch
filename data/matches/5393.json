@@ -1,0 +1,328 @@
+{
+ "name": "St. Hackersburg Showdown: Netrunner LIVE Cube Draft Derby ",
+ "date": "2026-02-14",
+ "cutToTop": 0,
+ "preliminaryRounds": 3,
+ "tournamentOrganiser": {
+  "nrdbId": 39503,
+  "nrdbUsername": "Amarum"
+ },
+ "players": [
+  {
+   "id": 51411,
+   "name": "xiaat",
+   "rank": 1,
+   "corpIdentity": "NBN: Reality Plus",
+   "runnerIdentity": "MaxX: Maximum Punk Rock",
+   "matchPoints": 18,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.4444444444444433333333333333333"
+  },
+  {
+   "id": 51416,
+   "name": "exzo777",
+   "rank": 2,
+   "corpIdentity": "Sportsmetal: Go Big or Go Home",
+   "runnerIdentity": "Rielle \"Kit\" Peddler: Transhuman",
+   "matchPoints": 12,
+   "strengthOfSchedule": "3.3333333333333333333333333333333",
+   "extendedStrengthOfSchedule": "3.1111111111111113333333333333333"
+  },
+  {
+   "id": 51414,
+   "name": "relamer",
+   "rank": 3,
+   "corpIdentity": "Haas-Bioroid: Precision Design",
+   "runnerIdentity": "Sunny Lebeau: Security Specialist",
+   "matchPoints": 9,
+   "strengthOfSchedule": "3.4444444444444433333333333333333",
+   "extendedStrengthOfSchedule": "2.9444444444444446666666666666667"
+  },
+  {
+   "id": 51417,
+   "name": "volande",
+   "rank": 4,
+   "corpIdentity": "Jinteki: Personal Evolution",
+   "runnerIdentity": null,
+   "matchPoints": 8,
+   "strengthOfSchedule": "2.111111111111111",
+   "extendedStrengthOfSchedule": "3.24074074074074"
+  },
+  {
+   "id": 51412,
+   "name": "sbrshk",
+   "rank": 5,
+   "corpIdentity": "Industrial Genomics: Growing Solutions",
+   "runnerIdentity": null,
+   "matchPoints": 7,
+   "strengthOfSchedule": "2.8333333333333335",
+   "extendedStrengthOfSchedule": "2.777777777777777"
+  },
+  {
+   "id": 51415,
+   "name": "Trostnick",
+   "rank": 6,
+   "corpIdentity": "Jinteki: Replicating Perfection",
+   "runnerIdentity": "Leela Patel: Trained Pragmatist",
+   "matchPoints": 6,
+   "strengthOfSchedule": "3.5555555555555533333333333333333",
+   "extendedStrengthOfSchedule": "2.7037037037037033333333333333333"
+  },
+  {
+   "id": 51410,
+   "name": "Amarum",
+   "rank": 7,
+   "corpIdentity": "Near-Earth Hub: Broadcast Center",
+   "runnerIdentity": "Armand \"Geist\" Walker: Tech Lord",
+   "matchPoints": 6,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.4444444444444433333333333333333"
+  },
+  {
+   "id": 51413,
+   "name": "xou",
+   "rank": 8,
+   "corpIdentity": null,
+   "runnerIdentity": null,
+   "matchPoints": 4,
+   "strengthOfSchedule": "3.3333333333333335",
+   "extendedStrengthOfSchedule": "2.7222222222222225"
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51413,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 4
+    },
+    "player2": {
+     "id": 51417,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 1
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51416,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 51410,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 51412,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 51414,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 51415,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 51411,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51411,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 51414,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51413,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 51416,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 51417,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 4
+    },
+    "player2": {
+     "id": 51412,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 1
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 51415,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 51410,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51411,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 51416,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51414,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 51410,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 51417,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 51415,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": null,
+     "runnerScore": null,
+     "corpScore": null,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 51412,
+     "runnerScore": null,
+     "corpScore": null,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "http://steffens.org/nrtm/nrtm-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/D6O5"
+  }
+ ]
+}

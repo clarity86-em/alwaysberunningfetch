@@ -1,0 +1,180 @@
+{
+ "name": "Adelaide Startup GNK",
+ "date": "2026-01-31",
+ "cutToTop": 0,
+ "preliminaryRounds": 3,
+ "tournamentOrganiser": {
+  "nrdbId": 53081,
+  "nrdbUsername": "backtrackjack"
+ },
+ "players": [
+  {
+   "id": 51075,
+   "name": "Multifish",
+   "rank": 1,
+   "corpIdentity": "Jinteki: Restoring Humanity",
+   "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+   "matchPoints": 7,
+   "strengthOfSchedule": "3.25",
+   "extendedStrengthOfSchedule": "2.5"
+  },
+  {
+   "id": 51073,
+   "name": "Mitch",
+   "rank": 2,
+   "corpIdentity": "Poétrï Luxury Brands: All the Rage",
+   "runnerIdentity": "Sebastião Souza Pessoa: Activist Organizer",
+   "matchPoints": 7,
+   "strengthOfSchedule": "2.5",
+   "extendedStrengthOfSchedule": "3.25"
+  },
+  {
+   "id": 51072,
+   "name": "backtrackjack",
+   "rank": 3,
+   "corpIdentity": "Nuvem SA: Law of the Land",
+   "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+   "matchPoints": 6,
+   "strengthOfSchedule": "2.5",
+   "extendedStrengthOfSchedule": "3.25"
+  },
+  {
+   "id": 51074,
+   "name": "tiffany",
+   "rank": 4,
+   "corpIdentity": "Poétrï Luxury Brands: All the Rage",
+   "runnerIdentity": "Barry \"Baz\" Wong: Tri-Maf Veteran",
+   "matchPoints": 3,
+   "strengthOfSchedule": "3.25",
+   "extendedStrengthOfSchedule": "2.5"
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51072,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 51075,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51074,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 51073,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51073,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 4
+    },
+    "player2": {
+     "id": 51075,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 1
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51072,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 51074,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 51072,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 51073,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 51075,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 51074,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "http://steffens.org/nrtm/nrtm-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/GT45"
+  }
+ ]
+}

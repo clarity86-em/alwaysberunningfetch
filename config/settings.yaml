@@ -17,8 +17,9 @@ min_players:
   startup: 4
   default: 8
 
-# 한 번에 스캔할 최근 종료 대회 수 (ABR API limit)
-scan_limit: 200
+# 한 번에 스캔할 최근 종료 대회 수 (ABR API limit).
+# 목록은 캐시와 누적 병합되므로, 한 번 잡힌 대회는 밀려나도 유지됨
+scan_limit: 500
 
 # 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서/공식성
 # formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어

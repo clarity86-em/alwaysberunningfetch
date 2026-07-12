@@ -58,18 +58,30 @@ def _write_cache(path, data):
 
 
 def fetch_results(limit=200, offline=False):
-    """종료된 대회 목록. 온라인이면 새로 받아 캐시 갱신."""
-    if not offline:
-        try:
-            data = _get_json(f"{ABR_BASE}/api/tournaments/results", {"limit": limit})
-            _write_cache(RESULTS_CACHE, data)
-            return data
-        except requests.RequestException as e:
-            print(f"경고: 대회 목록 fetch 실패, 캐시 사용: {e}", file=sys.stderr)
-    cached = _read_cache(RESULTS_CACHE)
-    if cached is None:
-        raise RuntimeError("대회 목록 캐시가 없습니다 (data/results.json)")
-    return cached
+    """종료된 대회 목록 (누적).
+
+    ABR API는 최근 limit개만 주므로, 캐시와 병합해서 한 번 본 대회는
+    목록 뒤로 밀려나도 계속 유지한다 (최신 응답이 기존 항목을 갱신).
+    """
+    cached = _read_cache(RESULTS_CACHE) or []
+    if offline:
+        if not cached:
+            raise RuntimeError("대회 목록 캐시가 없습니다 (data/results.json)")
+        return cached
+    try:
+        data = _get_json(f"{ABR_BASE}/api/tournaments/results", {"limit": limit})
+    except requests.RequestException as e:
+        print(f"경고: 대회 목록 fetch 실패, 캐시 사용: {e}", file=sys.stderr)
+        if not cached:
+            raise
+        return cached
+    by_id = {t["id"]: t for t in cached if t.get("id") is not None}
+    for t in data:
+        if t.get("id") is not None:
+            by_id[t["id"]] = t
+    merged = sorted(by_id.values(), key=lambda t: t.get("date") or "", reverse=True)
+    _write_cache(RESULTS_CACHE, merged)
+    return merged
 
 
 def fetch_entries(tournament_id, refresh=False, offline=False):

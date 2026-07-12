@@ -2,6 +2,382 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5714,
+   "title": "SanSan South July Standard CTK",
+   "date": "2026.07.11.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 9,
+   "cut_size": 0,
+   "winner": {
+    "player": "CantWakeJake",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Poétrï Luxury Brands: All the Rage",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "35036"
+    },
+    "runner": {
+     "identity": "Lat: Ethical Freelancer",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "26019"
+    }
+   },
+   "corp": {
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "runner": {
+    "Lat: Ethical Freelancer": {
+     "count": 3,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      5,
+      8
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Nuvem SA: Law of the Land": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "matchups": {
+     "Nuvem SA: Law of the Land\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 13.0,
+    "games": 24
+   }
+  },
+  {
    "id": 5739,
    "title": "Startup side event Megacity Hasselt",
    "date": "2026.07.05.",

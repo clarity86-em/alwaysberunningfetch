@@ -365,6 +365,447 @@
    }
   },
   {
+   "id": 5688,
+   "title": "Andycards - Let Them Picnic",
+   "date": "2026.07.12.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 13,
+   "cut_size": 2,
+   "winner": {
+    "player": "Porkobolo",
+    "rank_swiss": 1,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Nuvem SA: Law of the Land",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "34121"
+    },
+    "runner": {
+     "identity": "Lat: Ethical Freelancer",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "26019"
+    }
+   },
+   "corp": {
+    "Nuvem SA: Law of the Land": {
+     "count": 2,
+     "cut": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      13
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      8
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 2,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      11
+     ]
+    },
+    "Pravdivost Consulting: Political Solutions": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "33048",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Ampère: Cybernetics For Anyone": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "33128",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 12,
+     "ranks": [
+      12
+     ]
+    }
+   },
+   "runner": {
+    "Lat: Ethical Freelancer": {
+     "count": 4,
+     "cut": 2,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      3,
+      11
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      9
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Az McCaffrey: Mechanical Prodigy": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "26010",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Nova Initiumia: Catalyst & Impetus": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "33093",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 12,
+     "ranks": [
+      12
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 13,
+     "ranks": [
+      13
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Nuvem SA: Law of the Land": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Ampère: Cybernetics For Anyone": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Pravdivost Consulting: Political Solutions": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 5
+     }
+    },
+    "runner": {
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 7.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Az McCaffrey: Mechanical Prodigy": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nova Initiumia: Catalyst & Impetus": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Nuvem SA: Law of the Land\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ampère: Cybernetics For Anyone\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Pravdivost Consulting: Political Solutions\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Thule Subsea: Safety Below\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tNova Initiumia: Catalyst & Impetus": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMercury: Chrome Libertador": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Pravdivost Consulting: Political Solutions\tNova Initiumia: Catalyst & Impetus": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ampère: Cybernetics For Anyone\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 22.0,
+    "games": 37
+   }
+  },
+  {
    "id": 5714,
    "title": "SanSan South July Standard CTK",
    "date": "2026.07.11.",
@@ -382,13 +823,13 @@
     "corp": {
      "identity": "Poétrï Luxury Brands: All the Rage",
      "faction": "haas-bioroid",
-     "url": null,
+     "url": "https://netrunnerdb.com/en/decklist/97270",
      "nrdb_id": "35036"
     },
     "runner": {
      "identity": "Lat: Ethical Freelancer",
      "faction": "shaper",
-     "url": null,
+     "url": "https://netrunnerdb.com/en/decklist/97271",
      "nrdb_id": "26019"
     }
    },
@@ -2672,6 +3113,2532 @@
     },
     "corp_side_wins": 197.0,
     "games": 351
+   }
+  },
+  {
+   "id": 5612,
+   "title": "Zeebag's Suburban Wasteland Volume 5",
+   "date": "2026.07.11.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "casual",
+   "players": 26,
+   "cut_size": 4,
+   "winner": {
+    "player": "The King",
+    "rank_swiss": 3,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Haas-Bioroid: Precision Design",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "30035"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 5,
+     "cut": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      11,
+      14,
+      15,
+      22
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 4,
+     "cut": 2,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      16,
+      18
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 5,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      9,
+      10,
+      13,
+      17
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "35058",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 2,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      20
+     ]
+    },
+    "PT Untaian: Life's Building Blocks": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35047",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 12,
+     "ranks": [
+      12
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 19,
+     "ranks": [
+      19,
+      23
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "36046",
+     "best_rank": 21,
+     "ranks": [
+      21
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 24,
+     "ranks": [
+      24,
+      26
+     ]
+    },
+    "Epiphany Analytica: Nations Undivided": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "34048",
+     "best_rank": 25,
+     "ranks": [
+      25
+     ]
+    }
+   },
+   "runner": {
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 2,
+     "cut": 1,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      20
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 2,
+     "cut": 1,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      8
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 5,
+     "cut": 1,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      7,
+      10,
+      12,
+      13
+     ]
+    },
+    "Az McCaffrey: Mechanical Prodigy": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "26010",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      17
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      21
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 3,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 11,
+     "ranks": [
+      11,
+      18,
+      22
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 3,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 14,
+     "ranks": [
+      14,
+      16,
+      23
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 3,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 15,
+     "ranks": [
+      15,
+      19,
+      24
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 25,
+     "ranks": [
+      25
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 26,
+     "ranks": [
+      26
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Haas-Bioroid: Precision Design": {
+      "wins": 10.0,
+      "ties": 0,
+      "games": 19
+     },
+     "Synapse Global: Faster than Thought": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 10.0,
+      "ties": 0,
+      "games": 16
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 20
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Epiphany Analytica: Nations Undivided": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 8
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 5
+     },
+     "PT Untaian: Life's Building Blocks": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Editorial Division: Ad Nihilum": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "runner": {
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 7
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 12
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 19
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 12
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 12
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Az McCaffrey: Mechanical Prodigy": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 9
+     }
+    },
+    "matchups": {
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Epiphany Analytica: Nations Undivided\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "PT Untaian: Life's Building Blocks\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Editorial Division: Ad Nihilum\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "The Zwicky Group: Invisible Hands\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Editorial Division: Ad Nihilum\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Epiphany Analytica: Nations Undivided\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 53.0,
+    "games": 102
+   }
+  },
+  {
+   "id": 5440,
+   "title": "Warsaw Megacity 2026",
+   "date": "2026.07.11.",
+   "type": "megacity championship",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "competitive",
+   "players": 46,
+   "cut_size": 8,
+   "winner": {
+    "player": "Matuszczak",
+    "rank_swiss": 2,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Méliès U: Only the Brightest",
+     "faction": "jinteki",
+     "url": null,
+     "nrdb_id": "36036"
+    },
+    "runner": {
+     "identity": "Sebastião Souza Pessoa: Activist Organizer",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "34066"
+    }
+   },
+   "corp": {
+    "Nuvem SA: Law of the Land": {
+     "count": 8,
+     "cut": 4,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4,
+      5,
+      7,
+      17,
+      20,
+      28,
+      35
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 11,
+     "cut": 1,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      9,
+      11,
+      13,
+      14,
+      15,
+      16,
+      19,
+      32,
+      38,
+      42
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 4,
+     "cut": 1,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      18,
+      23,
+      25
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 8,
+     "cut": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      12,
+      22,
+      27,
+      30,
+      34,
+      37,
+      43
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 4,
+     "cut": 1,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 8,
+     "ranks": [
+      8,
+      21,
+      26,
+      31
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 10,
+     "ranks": [
+      10,
+      24
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 29,
+     "ranks": [
+      29
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "36046",
+     "best_rank": 33,
+     "ranks": [
+      33
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 36,
+     "ranks": [
+      36,
+      40
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 39,
+     "ranks": [
+      39,
+      44
+     ]
+    },
+    "Issuaq Adaptics: Sustaining Diversity": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "33104",
+     "best_rank": 41,
+     "ranks": [
+      41
+     ]
+    },
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 45,
+     "ranks": [
+      45
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "35058",
+     "best_rank": 46,
+     "ranks": [
+      46
+     ]
+    }
+   },
+   "runner": {
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 8,
+     "cut": 3,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3,
+      6,
+      21,
+      33,
+      37,
+      42,
+      45
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 3,
+     "cut": 1,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      16,
+      18
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 7,
+     "cut": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      19,
+      22,
+      23,
+      29,
+      30,
+      41
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 12,
+     "cut": 1,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      11,
+      12,
+      13,
+      14,
+      15,
+      20,
+      24,
+      27,
+      32,
+      35,
+      43
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 1,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 3,
+     "cut": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 8,
+     "ranks": [
+      8,
+      9,
+      31
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 2,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 10,
+     "ranks": [
+      10,
+      46
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 2,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 17,
+     "ranks": [
+      17,
+      28
+     ]
+    },
+    "Dewi Subrotoputri: Pedagogical Dhalang": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "35023",
+     "best_rank": 25,
+     "ranks": [
+      25
+     ]
+    },
+    "Az McCaffrey: Mechanical Prodigy": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "26010",
+     "best_rank": 26,
+     "ranks": [
+      26
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 34,
+     "ranks": [
+      34
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 36,
+     "ranks": [
+      36
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 2,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 38,
+     "ranks": [
+      38,
+      39
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 40,
+     "ranks": [
+      40,
+      44
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Méliès U: Only the Brightest": {
+      "wins": 34.0,
+      "ties": 0,
+      "games": 46
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 18
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 24.0,
+      "ties": 0,
+      "games": 38
+     },
+     "Editorial Division: Ad Nihilum": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 16.0,
+      "ties": 0,
+      "games": 33
+     },
+     "Synapse Global: Faster than Thought": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 13.0,
+      "ties": 0,
+      "games": 17
+     },
+     "Issuaq Adaptics: Sustaining Diversity": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 7
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "runner": {
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 14.0,
+      "ties": 0,
+      "games": 28
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 14.0,
+      "ties": 0,
+      "games": 37
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 19.0,
+      "ties": 0,
+      "games": 49
+     },
+     "Dewi Subrotoputri: Pedagogical Dhalang": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 14
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 13
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Az McCaffrey: Mechanical Prodigy": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "matchups": {
+     "Méliès U: Only the Brightest\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 7.0,
+      "ties": 0,
+      "games": 7
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Méliès U: Only the Brightest\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 6.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Editorial Division: Ad Nihilum\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Méliès U: Only the Brightest\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Haas-Bioroid: Precision Design\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Synapse Global: Faster than Thought\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 10.0,
+      "ties": 0,
+      "games": 15
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Weyland Consortium: Built to Last\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Earth Station: SEA Headquarters\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Méliès U: Only the Brightest\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Nebula Talent Management: Making Stars\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Editorial Division: Ad Nihilum\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 113.0,
+    "games": 195
+   }
+  },
+  {
+   "id": 5380,
+   "title": "Cambridge, MA Megacity Championship",
+   "date": "2026.07.11.",
+   "type": "megacity championship",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "competitive",
+   "players": 42,
+   "cut_size": 8,
+   "winner": {
+    "player": "floatingFast",
+    "rank_swiss": 3,
+    "rank_top": 1,
+    "corp": {
+     "identity": "AU Co.: The Gold Standard in Clones",
+     "faction": "jinteki",
+     "url": null,
+     "nrdb_id": "35046"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 1,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 7,
+     "cut": 2,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      6,
+      13,
+      17,
+      22,
+      25,
+      40
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 5,
+     "cut": 1,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      16,
+      20,
+      26,
+      30
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 9,
+     "cut": 2,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      8,
+      11,
+      14,
+      18,
+      21,
+      33,
+      36,
+      41
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 11,
+     "cut": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      9,
+      12,
+      19,
+      23,
+      29,
+      34,
+      35,
+      37,
+      38,
+      39
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 2,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 10,
+     "ranks": [
+      10,
+      24
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 15,
+     "ranks": [
+      15
+     ]
+    },
+    "GameNET: Where Dreams are Real": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "26113",
+     "best_rank": 27,
+     "ranks": [
+      27
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 28,
+     "ranks": [
+      28
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 31,
+     "ranks": [
+      31,
+      32
+     ]
+    },
+    "Epiphany Analytica: Nations Undivided": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "34048",
+     "best_rank": 42,
+     "ranks": [
+      42
+     ]
+    }
+   },
+   "runner": {
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 5,
+     "cut": 1,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      16,
+      17,
+      35,
+      42
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 3,
+     "cut": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      19,
+      27
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 6,
+     "cut": 2,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      7,
+      15,
+      18,
+      24,
+      29
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 11,
+     "cut": 3,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      5,
+      8,
+      10,
+      11,
+      12,
+      21,
+      22,
+      26,
+      30,
+      37
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 4,
+     "cut": 1,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      9,
+      36,
+      40
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 13,
+     "ranks": [
+      13
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 14,
+     "ranks": [
+      14
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 4,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 20,
+     "ranks": [
+      20,
+      28,
+      38,
+      39
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 23,
+     "ranks": [
+      23
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 25,
+     "ranks": [
+      25,
+      32
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 31,
+     "ranks": [
+      31
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 33,
+     "ranks": [
+      33,
+      34
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 41,
+     "ranks": [
+      41
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Thule Subsea: Safety Below": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 18.0,
+      "ties": 0,
+      "games": 40
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 19.0,
+      "ties": 0,
+      "games": 34
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 15.0,
+      "ties": 0,
+      "games": 28
+     },
+     "Epiphany Analytica: Nations Undivided": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 15.0,
+      "ties": 0,
+      "games": 21
+     },
+     "GameNET: Where Dreams are Real": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 7
+     }
+    },
+    "runner": {
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 20.0,
+      "ties": 0,
+      "games": 43
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 21
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 15.0,
+      "ties": 0,
+      "games": 25
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 8.0,
+      "ties": 0,
+      "games": 12
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 8.0,
+      "ties": 0,
+      "games": 15
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 12
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Thule Subsea: Safety Below\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 6
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 6.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Epiphany Analytica: Nations Undivided\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 7
+     },
+     "The Zwicky Group: Invisible Hands\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "GameNET: Where Dreams are Real\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "AU Co.: The Gold Standard in Clones\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "GameNET: Where Dreams are Real\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Thule Subsea: Safety Below\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "GameNET: Where Dreams are Real\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Epiphany Analytica: Nations Undivided\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 85.0,
+    "games": 161
    }
   },
   {

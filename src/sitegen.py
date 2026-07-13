@@ -458,10 +458,8 @@ def winrate_block(wr, faction_of, min_games, heading="Identity 승률", matchup_
     corp_pct = wr["corp_side_wins"] / wr["games"] * 100
     n_t = wr.get("tournaments")
     src = f"matchdata가 업로드된 대회 {n_t}개 · " if n_t else ""
-    click_hint = " · identity를 클릭하면 매치업별 승률" if matchup_base else ""
     note = (
-        f"<p class='agg-note'>{src}총 {wr['games']}게임 기준 · 무승부는 0.5승 처리 · "
-        f"기준선 = 50%{click_hint}</p>"
+        f"<p class='agg-note'>{src}총 {wr['games']}게임 기준</p>"
         f"<p style='margin:0 0 14px;font-size:14.5px'><b>사이드 밸런스:</b> "
         f"Corp {corp_pct:.1f}% · Runner {100 - corp_pct:.1f}%</p>"
     )
@@ -548,8 +546,7 @@ def champion_board(per_tournament, limit=10):
         )
     return (
         "<div class='card'><h2>최근 공식 대회 우승</h2>"
-        "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds 최근 "
-        f"{len(champs)}개</p>"
+        "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds</p>"
         "<table class='champs'><thead><tr><th>날짜</th><th>대회</th>"
         "<th>Corp 우승</th><th>Runner 우승</th></tr></thead><tbody>"
         + "".join(rows)
@@ -591,7 +588,11 @@ def toggle_html():
     )
 
 
-def agg_charts(tournaments, min_wr_games=10, matchup_base=None):
+def agg_charts(tournaments, min_wr_games=None, matchup_base=None):
+    if min_wr_games is None:
+        # 표본이 작은 startup은 5게임, standard는 10게임 이상만 승률 표시
+        is_startup = bool(tournaments) and tournaments[0].get("format") == "startup"
+        min_wr_games = 5 if is_startup else 10
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)
     note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}</p>"

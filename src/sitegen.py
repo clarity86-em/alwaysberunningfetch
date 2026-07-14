@@ -67,12 +67,33 @@ def banlist_version(mwl):
     return m.group(1) if m else None
 
 
+def derive_banlist(t, settings):
+    """대회 날짜로 밴리스트 버전 판정 (발효일 표 기반).
+
+    ABR의 주최자 입력(mwl)은 오표기가 많아 신뢰하지 않는다.
+    발효일 표에 없는 날짜만 mwl 파싱으로 폴백.
+    """
+    if t["format"] == "startup":
+        return ""  # startup 메타는 카드풀로만 구분
+    schedule = (settings.get("banlist_schedule") or {}).get(t["format"]) or []
+    parts = str(t.get("date") or "").strip(".").split(".")
+    if len(parts) == 3 and len(parts[0]) == 4:
+        d = f"{parts[0]}-{parts[1]}-{parts[2]}"
+        best = None
+        for entry in schedule:
+            frm = str(entry.get("from"))
+            if frm <= d and (best is None or frm > best[0]):
+                best = (frm, str(entry.get("version")))
+        if best:
+            return best[1]
+    return banlist_version(t["mwl"])
+
+
 def meta_key(t):
     # startup은 최신 확장(카드풀)이 메타를 결정 — 밴리스트 버전은 묶는다.
     # standard는 밴리스트에 따라 메타가 크게 바뀌므로 카드풀 x 밴리스트로 구분.
-    if t["format"] == "startup":
-        return (t["format"], t["cardpool"], "")
-    return (t["format"], t["cardpool"], banlist_version(t["mwl"]))
+    # banlist는 annotate()에서 날짜 기반으로 미리 계산됨.
+    return (t["format"], t["cardpool"], t.get("banlist") or None)
 
 
 def meta_label(key):
@@ -647,7 +668,7 @@ def tournament_table(tournaments, prefix="", show_meta=True, tier_order=None):
         )
         meta_td = ""
         if show_meta:
-            ban = banlist_version(t["mwl"])
+            ban = t.get("banlist")
             meta = f"{FORMAT_LABELS.get(t['format'], t['format'])}"
             tip = f"{t['cardpool']}" + (f" · {ban}" if ban else "")
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
@@ -922,7 +943,7 @@ def render_meta(key, tournaments, settings):
 
 def render_tournament(t, settings):
     has_cut = t["cut_size"] > 0
-    ban = banlist_version(t["mwl"])
+    ban = t.get("banlist")
     meta_txt = f"{FORMAT_LABELS.get(t['format'], t['format'])} · {t['cardpool']}" + (
         f" · {ban}" if ban else ""
     )
@@ -1045,6 +1066,7 @@ def annotate(per_tournament, settings):
         info = tiers.get(t["type"]) or {}
         t["formality"] = info.get("formality", "casual")
         t["tier_label"] = info.get("label")
+        t["banlist"] = derive_banlist(t, settings)
     return per_tournament
 
 
@@ -1099,7 +1121,7 @@ def build_site(per_tournament, settings):
                 "type": t["type"],
                 "format": t["format"],
                 "cardpool": t["cardpool"],
-                "banlist": banlist_version(t["mwl"]),
+                "banlist": t.get("banlist"),
                 "formality": t["formality"],
                 "players": t["players"],
                 "cut_size": t["cut_size"],

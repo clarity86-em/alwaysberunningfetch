@@ -21,6 +21,15 @@ min_players:
 # 목록은 캐시와 누적 병합되므로, 한 번 잡힌 대회는 밀려나도 유지됨
 scan_limit: 500
 
+# 밴리스트 발효일 (경쟁 티어 기준). 대회 날짜로 밴리스트를 판정한다 —
+# ABR의 주최자 입력(mwl)은 오표기가 많아 신뢰하지 않음.
+# 새 밴리스트가 나오면 여기에 한 줄 추가하면 됨.
+banlist_schedule:
+  standard:
+    - {version: "26.05", from: "2026-05-01"}
+    - {version: "26.03", from: "2026-03-13"}
+    - {version: "25.12", from: "2025-12-01"}
+
 # 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서/공식성
 # formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어
 # 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)

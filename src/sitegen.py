@@ -18,6 +18,7 @@ import html
 import json
 import math
 import re
+import shutil
 import unicodedata
 from collections import defaultdict
 from pathlib import Path
@@ -67,19 +68,24 @@ def banlist_version(mwl):
 
 
 def meta_key(t):
+    # startup은 최신 확장(카드풀)이 메타를 결정 — 밴리스트 버전은 묶는다.
+    # standard는 밴리스트에 따라 메타가 크게 바뀌므로 카드풀 x 밴리스트로 구분.
+    if t["format"] == "startup":
+        return (t["format"], t["cardpool"], "")
     return (t["format"], t["cardpool"], banlist_version(t["mwl"]))
 
 
 def meta_label(key):
     fmt, cardpool, ban = key
     parts = [FORMAT_LABELS.get(fmt, fmt or "?"), cardpool]
-    parts.append(ban if ban else "밴리스트 미상")
+    if fmt != "startup":
+        parts.append(ban if ban else "밴리스트 미상")
     return " · ".join(parts)
 
 
 def meta_slug(key):
     fmt, cardpool, ban = key
-    raw = f"{fmt}-{cardpool}-{ban or 'etc'}"
+    raw = f"{fmt}-{cardpool}" + ("" if fmt == "startup" else f"-{ban or 'etc'}")
     return re.sub(r"[^a-z0-9]+", "-", raw.lower()).strip("-")
 
 
@@ -1045,6 +1051,9 @@ def annotate(per_tournament, settings):
 def build_site(per_tournament, settings):
     annotate(per_tournament, settings)
     DOCS.mkdir(parents=True, exist_ok=True)
+    # 생성 페이지 디렉터리는 매번 비우고 다시 만든다 (슬러그가 바뀌어도 고아 파일 없음)
+    for sub in ("t", "meta", "matchup"):
+        shutil.rmtree(DOCS / sub, ignore_errors=True)
     (DOCS / "t").mkdir(exist_ok=True)
     (DOCS / "meta").mkdir(exist_ok=True)
     (DOCS / ".nojekyll").write_text("")

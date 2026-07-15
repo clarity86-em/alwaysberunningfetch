@@ -26,6 +26,10 @@ NRDB_CACHE = DATA_DIR / "nrdb_identities.json"
 
 ABR_BASE = "https://alwaysberunning.net"
 NRDB_CARDS_URL = "https://netrunnerdb.com/api/2.0/public/cards"
+NRDB_MWL_URL = "https://netrunnerdb.com/api/2.0/public/mwl"
+NRDB_PACKS_URL = "https://netrunnerdb.com/api/2.0/public/packs"
+MWL_CACHE = DATA_DIR / "nrdb_mwl.json"
+PACKS_CACHE = DATA_DIR / "nrdb_packs.json"
 
 HEADERS = {"User-Agent": "alwaysberunningfetch (github.com/clarity86-em/alwaysberunningfetch)"}
 TIMEOUT = 60
@@ -117,6 +121,41 @@ def fetch_tjson(tournament_id, refresh=False, offline=False):
         raise
     _write_cache(cache_path, data)
     return data
+
+
+def fetch_nrdb_mwl(offline=False):
+    """NRDB 공식 밴리스트 목록 [{name, date_start}] — 발효일 자동 동기화용."""
+    if not offline:
+        try:
+            data = _get_json(NRDB_MWL_URL)
+            entries = [
+                {"name": m.get("name") or "", "date_start": m.get("date_start") or ""}
+                for m in (data.get("data") or [])
+            ]
+            if entries:
+                _write_cache(MWL_CACHE, entries)
+                return entries
+        except requests.RequestException as e:
+            print(f"경고: NRDB mwl fetch 실패, 캐시 사용: {e}", file=sys.stderr)
+    return _read_cache(MWL_CACHE) or []
+
+
+def fetch_nrdb_packs(offline=False):
+    """NRDB 팩 목록 {이름: 출시일} — 새 확장 출시일 자동 감지용."""
+    if not offline:
+        try:
+            data = _get_json(NRDB_PACKS_URL)
+            packs = {
+                p["name"]: p.get("date_release") or ""
+                for p in (data.get("data") or [])
+                if p.get("name")
+            }
+            if packs:
+                _write_cache(PACKS_CACHE, packs)
+                return packs
+        except requests.RequestException as e:
+            print(f"경고: NRDB packs fetch 실패, 캐시 사용: {e}", file=sys.stderr)
+    return _read_cache(PACKS_CACHE) or {}
 
 
 def identity_map(offline=False, want_titles=()):

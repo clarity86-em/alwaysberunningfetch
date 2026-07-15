@@ -23,12 +23,19 @@ scan_limit: 500
 
 # 밴리스트 발효일 (경쟁 티어 기준). 대회 날짜로 밴리스트를 판정한다 —
 # ABR의 주최자 입력(mwl)은 오표기가 많아 신뢰하지 않음.
-# 새 밴리스트가 나오면 여기에 한 줄 추가하면 됨.
+# NetrunnerDB의 공식 밴리스트 목록(date_start)이 매 실행마다 자동 병합되므로
+# 보통은 손댈 필요 없음. 아래 수동 항목은 자동 값보다 우선함.
 banlist_schedule:
   standard:
     - {version: "26.05", from: "2026-05-01"}
     - {version: "26.03", from: "2026-03-13"}
     - {version: "25.12", from: "2025-12-01"}
+
+# 카드풀(확장) 출시일. 대회 날짜로 카드풀을 판정한다 (주최자 입력 오표기 보정).
+# 새 확장이 ABR 대회에 등장하면 NetrunnerDB 팩 출시일로 자동 추가됨. 수동 항목 우선.
+cardpool_schedule:
+  - {cardpool: "Vantage Point", from: "2026-03-02"}
+  - {cardpool: "Elevation", from: "2025-04-24"}
 
 # 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서/공식성
 # formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어

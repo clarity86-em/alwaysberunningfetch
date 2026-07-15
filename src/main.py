@@ -124,10 +124,41 @@ def probe(settings):
     return 0
 
 
+def sync_schedules(settings, selected, offline):
+    """NRDB 공식 데이터로 밴리스트/카드풀 발효일 표를 자동 보강 (수동 항목 우선)."""
+    import re as _re
+
+    # 1) 밴리스트: NRDB mwl의 'Standard Ban List XX.YY' + date_start
+    sched = settings.setdefault("banlist_schedule", {}).setdefault("standard", [])
+    manual = {str(e["version"]) for e in sched}
+    for m in abr.fetch_nrdb_mwl(offline=offline):
+        name = m.get("name") or ""
+        if "standard ban list" not in name.lower() or not m.get("date_start"):
+            continue
+        ver = _re.search(r"(\d{2}\.\d{2})", name)
+        if ver and ver.group(1) not in manual:
+            sched.append({"version": ver.group(1), "from": m["date_start"]})
+            print(f"밴리스트 자동 추가: {ver.group(1)} (발효 {m['date_start']})")
+
+    # 2) 카드풀: 대회에 등장했는데 표에 없는 확장 -> NRDB 팩 출시일로 추가
+    cp_sched = settings.setdefault("cardpool_schedule", [])
+    known = {str(e["cardpool"]) for e in cp_sched}
+    observed = {t.get("cardpool") for t in selected if t.get("cardpool")}
+    unknown = sorted(observed - known - {"?"})
+    if unknown:
+        packs = abr.fetch_nrdb_packs(offline=offline)
+        for name in unknown:
+            release = packs.get(name)
+            if release:
+                cp_sched.append({"cardpool": name, "from": release})
+                print(f"카드풀 자동 추가: {name} (출시 {release})")
+
+
 def run(offline=False):
     settings = load_settings()
     results = abr.fetch_results(limit=settings.get("scan_limit", 200), offline=offline)
     selected = select_tournaments(results, settings)
+    sync_schedules(settings, selected, offline)
 
     # 최근 종료 대회는 결과가 늦게 갱신될 수 있어 2주간은 다시 fetch
     refresh_after = date.today() - timedelta(days=14)

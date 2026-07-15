@@ -89,10 +89,30 @@ def derive_banlist(t, settings):
     return banlist_version(t["mwl"])
 
 
+def derive_cardpool(t, settings):
+    """대회 날짜로 카드풀(확장) 판정 — 주최자 입력 오표기 보정.
+
+    출시일 표에서 대회 날짜 이전에 나온 가장 최신 확장을 고른다.
+    날짜 파싱 실패 또는 표가 비어 있으면 ABR 값 그대로.
+    """
+    schedule = settings.get("cardpool_schedule") or []
+    parts = str(t.get("date") or "").strip(".").split(".")
+    if len(parts) == 3 and len(parts[0]) == 4 and schedule:
+        d = f"{parts[0]}-{parts[1]}-{parts[2]}"
+        best = None
+        for entry in schedule:
+            frm = str(entry.get("from"))
+            if frm <= d and (best is None or frm > best[0]):
+                best = (frm, str(entry.get("cardpool")))
+        if best:
+            return best[1]
+    return t.get("cardpool") or "?"
+
+
 def meta_key(t):
     # startup은 최신 확장(카드풀)이 메타를 결정 — 밴리스트 버전은 묶는다.
     # standard는 밴리스트에 따라 메타가 크게 바뀌므로 카드풀 x 밴리스트로 구분.
-    # banlist는 annotate()에서 날짜 기반으로 미리 계산됨.
+    # banlist/cardpool은 annotate()에서 날짜 기반으로 미리 계산됨.
     return (t["format"], t["cardpool"], t.get("banlist") or None)
 
 
@@ -1067,6 +1087,7 @@ def annotate(per_tournament, settings):
         t["formality"] = info.get("formality", "casual")
         t["tier_label"] = info.get("label")
         t["banlist"] = derive_banlist(t, settings)
+        t["cardpool"] = derive_cardpool(t, settings)
     return per_tournament
 
 

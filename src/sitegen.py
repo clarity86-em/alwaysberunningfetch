@@ -640,9 +640,13 @@ def agg_charts(tournaments, min_wr_games=None, matchup_base=None):
         # 표본이 작은 startup은 5게임, standard는 10게임 이상만 승률 표시
         is_startup = bool(tournaments) and tournaments[0].get("format") == "startup"
         min_wr_games = 5 if is_startup else 10
+    tournaments, removed = strip_illegal(tournaments)
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)
-    note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}</p>"
+    removed_txt = (
+        f" · 사용 불가 identity(밴/로테이션/미상) 엔트리 {removed}개 제외" if removed else ""
+    )
+    note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}{removed_txt}</p>"
     html_out = note + (
         "<div class='grid2'>"
         + side_section(agg["corp"], "corp", has_cut)
@@ -1080,6 +1084,66 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
 
 # ---------------------------------------------------------------- 빌드
 
+def _illegal_titles(t, settings):
+    """이 대회의 메타에서 사용 불가능한 identity 제목들.
+
+    - 카드 코드가 Standard 합법 범위 밖 (로테이션된 옛 ID, 자리표시자 등)
+    - 대회 시점 밴리스트에 밴된 ID (standard만, NRDB 자동 동기화)
+    코드 미상 identity는 판단하지 않고 유지.
+    """
+    ranges = settings.get("standard_legal_id_ranges") or []
+    banned = (settings.get("_banned_by_version") or {}).get(t.get("banlist") or "") or set()
+    bad = set()
+    for side in ("corp", "runner"):
+        for title, row in t[side].items():
+            code = row.get("nrdb_id")
+            if not code:
+                continue
+            try:
+                c = int(code)
+            except (TypeError, ValueError):
+                continue
+            if ranges and not any(lo <= c <= hi for lo, hi in ranges):
+                bad.add(title)
+            elif t["format"] == "standard" and str(code) in banned:
+                bad.add(title)
+    return bad
+
+
+def strip_illegal(tournaments):
+    """집계용 사본 — 사용 불가 identity의 엔트리/승률/매치업을 제거.
+
+    대회 상세 페이지는 원본(t)을 그대로 쓰므로 영향 없음.
+    반환: (필터된 목록, 제외된 엔트리 수)
+    """
+    out, removed = [], 0
+    for t in tournaments:
+        bad = t.get("_illegal") or set()
+        if not bad:
+            out.append(t)
+            continue
+        t2 = dict(t)
+        for side in ("corp", "runner"):
+            t2[side] = {k: v for k, v in t[side].items() if k not in bad}
+            removed += sum(v["count"] for k, v in t[side].items() if k in bad)
+        wr = t.get("winrates")
+        if wr:
+            badn = {norm_title(b).casefold() for b in bad}
+            wr2 = dict(wr)
+            for side in ("corp", "runner"):
+                wr2[side] = {
+                    k: v for k, v in wr[side].items() if norm_title(k).casefold() not in badn
+                }
+            wr2["matchups"] = {
+                k: v
+                for k, v in (wr.get("matchups") or {}).items()
+                if not any(norm_title(p).casefold() in badn for p in k.split("\t"))
+            }
+            t2["winrates"] = wr2
+        out.append(t2)
+    return out, removed
+
+
 def annotate(per_tournament, settings):
     tiers = settings.get("tiers") or {}
     for t in per_tournament:
@@ -1088,6 +1152,7 @@ def annotate(per_tournament, settings):
         t["tier_label"] = info.get("label")
         t["banlist"] = derive_banlist(t, settings)
         t["cardpool"] = derive_cardpool(t, settings)
+        t["_illegal"] = _illegal_titles(t, settings)
     return per_tournament
 
 
@@ -1107,8 +1172,8 @@ def build_site(per_tournament, settings):
         (DOCS / "meta" / f"{meta_slug(key)}.html").write_text(
             render_meta(key, groups[key], settings), encoding="utf-8"
         )
-        # 매치업 상세 페이지 (메타 그룹 x identity)
-        ts = groups[key]
+        # 매치업 상세 페이지 (메타 그룹 x identity) — 사용 불가 identity 제외
+        ts, _ = strip_illegal(groups[key])
         wr_all = aggregate_winrates(ts)
         if not wr_all:
             continue

@@ -37,6 +37,15 @@ cardpool_schedule:
   - {cardpool: "Vantage Point", from: "2026-03-02"}
   - {cardpool: "Elevation", from: "2025-04-24"}
 
+# Standard에서 사용 가능한 identity의 NRDB 카드 코드 범위 (로테이션 반영).
+# 범위 밖 identity(FFG 시대, System Update 2021, 자리표시자 등)는 메타 집계에서 제외됨
+# (대회 상세 페이지에는 그대로 표시). 로테이션이 일어나면 여기서 범위를 조정.
+# 26xxx=Ashes, 30xxx=System Gateway, 33xxx 이후=Borealis~현재(신규 세트 자동 포함)
+standard_legal_id_ranges:
+  - [26000, 26999]
+  - [30000, 30999]
+  - [33000, 99999]
+
 # 대회 위상(티어). ABR의 type 필드값(소문자) -> 티어 이름/순서/공식성
 # formality: competitive = NSG 경쟁 티어(리얼 대회), casual = 캐주얼 티어
 # 참고: NSG Competitive Season Tracker (worlds > continentals > megacity > district > casual)

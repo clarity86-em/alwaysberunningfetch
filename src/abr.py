@@ -124,14 +124,24 @@ def fetch_tjson(tournament_id, refresh=False, offline=False):
 
 
 def fetch_nrdb_mwl(offline=False):
-    """NRDB 공식 밴리스트 목록 [{name, date_start}] — 발효일 자동 동기화용."""
+    """NRDB 공식 밴리스트 목록 [{name, date_start, banned}] — 발효일/밴 카드 동기화용."""
     if not offline:
         try:
             data = _get_json(NRDB_MWL_URL)
-            entries = [
-                {"name": m.get("name") or "", "date_start": m.get("date_start") or ""}
-                for m in (data.get("data") or [])
-            ]
+            entries = []
+            for m in data.get("data") or []:
+                banned = [
+                    code
+                    for code, rule in (m.get("cards") or {}).items()
+                    if isinstance(rule, dict) and rule.get("deck_limit") == 0
+                ]
+                entries.append(
+                    {
+                        "name": m.get("name") or "",
+                        "date_start": m.get("date_start") or "",
+                        "banned": banned,
+                    }
+                )
             if entries:
                 _write_cache(MWL_CACHE, entries)
                 return entries

@@ -128,17 +128,23 @@ def sync_schedules(settings, selected, offline):
     """NRDB 공식 데이터로 밴리스트/카드풀 발효일 표를 자동 보강 (수동 항목 우선)."""
     import re as _re
 
-    # 1) 밴리스트: NRDB mwl의 'Standard Ban List XX.YY' + date_start
+    # 1) 밴리스트: NRDB mwl의 'Standard Ban List XX.YY' + date_start (+ 밴 카드 목록)
     sched = settings.setdefault("banlist_schedule", {}).setdefault("standard", [])
     manual = {str(e["version"]) for e in sched}
+    banned_by_version = {}
     for m in abr.fetch_nrdb_mwl(offline=offline):
         name = m.get("name") or ""
-        if "standard ban list" not in name.lower() or not m.get("date_start"):
+        if "standard ban list" not in name.lower():
             continue
         ver = _re.search(r"(\d{2}\.\d{2})", name)
-        if ver and ver.group(1) not in manual:
+        if not ver:
+            continue
+        if m.get("banned"):
+            banned_by_version[ver.group(1)] = set(m["banned"])
+        if m.get("date_start") and ver.group(1) not in manual:
             sched.append({"version": ver.group(1), "from": m["date_start"]})
             print(f"밴리스트 자동 추가: {ver.group(1)} (발효 {m['date_start']})")
+    settings["_banned_by_version"] = banned_by_version
 
     # 2) 카드풀: 대회에 등장했는데 표에 없는 확장 -> NRDB 팩 출시일로 추가
     cp_sched = settings.setdefault("cardpool_schedule", [])

@@ -59108,6 +59108,102 @@
    }
   },
   {
+   "id": 5566,
+   "title": "Ligue asynchrone Toulouse Q2 2026",
+   "date": "2026.04.08.",
+   "type": "asynchronous tournament",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.03",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "Yidaho",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "AU Co.: The Gold Standard in Clones",
+     "faction": "jinteki",
+     "url": "https://netrunnerdb.com/en/decklist/93696",
+     "nrdb_id": "35046"
+    },
+    "runner": {
+     "identity": "Arissana Rocha Nahu: Street Artist",
+     "faction": "shaper",
+     "url": "https://netrunnerdb.com/en/decklist/95884",
+     "nrdb_id": "34020"
+    }
+   },
+   "corp": {
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 9,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    }
+   },
+   "runner": {
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 9,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {},
+    "runner": {},
+    "matchups": {},
+    "corp_side_wins": 10.0,
+    "games": 22
+   }
+  },
+  {
    "id": 5557,
    "title": "Startup AdVantage tournament at Victory Point Cafe",
    "date": "2026.04.07.",

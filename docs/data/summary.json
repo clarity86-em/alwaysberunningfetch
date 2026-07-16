@@ -4138,7 +4138,7 @@
    "cardpool": "Vantage Point",
    "banlist": "26.05",
    "formality": "competitive",
-   "players": 46,
+   "players": 47,
    "cut_size": 8,
    "winner": {
     "player": "Matuszczak",
@@ -4269,6 +4269,16 @@
       33
      ]
     },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 35,
+     "ranks": [
+      35
+     ]
+    },
     "The Zwicky Group: Invisible Hands": {
      "count": 2,
      "cut": 0,
@@ -4324,7 +4334,7 @@
    },
    "runner": {
     "Arissana Rocha Nahu: Street Artist": {
-     "count": 8,
+     "count": 9,
      "cut": 3,
      "faction": "shaper",
      "nrdb_id": "34020",
@@ -4335,6 +4345,7 @@
       6,
       21,
       33,
+      35,
       37,
       42,
       45
@@ -17727,6 +17738,150 @@
    }
   },
   {
+   "id": 5755,
+   "title": "NRANZ Standard League - s02#01",
+   "date": "2026.06.08.",
+   "type": "asynchronous tournament",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 25,
+   "cut_size": 0,
+   "winner": {
+    "player": "Styx",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Shadow: Pulling the Strings",
+     "faction": "neutral-corp",
+     "url": null,
+     "nrdb_id": "00005"
+    },
+    "runner": {
+     "identity": "The Masque: Cyber General",
+     "faction": "neutral-runner",
+     "url": null,
+     "nrdb_id": "00006"
+    }
+   },
+   "corp": {
+    "The Shadow: Pulling the Strings": {
+     "count": 24,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    }
+   },
+   "runner": {
+    "The Masque: Cyber General": {
+     "count": 24,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "The Shadow: Pulling the Strings": {
+      "wins": 48.0,
+      "ties": 0,
+      "games": 84
+     }
+    },
+    "runner": {
+     "The Masque: Cyber General": {
+      "wins": 36.0,
+      "ties": 0,
+      "games": 84
+     }
+    },
+    "matchups": {
+     "The Shadow: Pulling the Strings\tThe Masque: Cyber General": {
+      "corp_wins": 48.0,
+      "ties": 0,
+      "games": 84
+     }
+    },
+    "corp_side_wins": 48.0,
+    "games": 84
+   }
+  },
+  {
    "id": 5700,
    "title": "Hobbies & Sheets - June GNK, Road to PH Megacity 2026",
    "date": "2026.06.07.",
@@ -20610,7 +20765,7 @@
   },
   {
    "id": 5732,
-   "title": "NRANZ Standard League #8",
+   "title": "NRANZ Standard League - s01#08",
    "date": "2026.05.31.",
    "type": "asynchronous tournament",
    "format": "standard",
@@ -85696,7 +85851,7 @@
   },
   {
    "id": 5592,
-   "title": "NRANZ Standard League #7",
+   "title": "NRANZ Standard League - s01#07",
    "date": "2026.03.09.",
    "type": "asynchronous tournament",
    "format": "standard",

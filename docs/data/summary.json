@@ -373,17 +373,17 @@
    "cardpool": "Vantage Point",
    "banlist": "26.05",
    "formality": "casual",
-   "players": 14,
-   "cut_size": 2,
+   "players": 13,
+   "cut_size": 1,
    "winner": {
-    "player": "Porkobolo",
-    "rank_swiss": 1,
-    "rank_top": 1,
+    "player": "b4ralai",
+    "rank_swiss": 2,
+    "rank_top": 2,
     "corp": {
-     "identity": "Nuvem SA: Law of the Land",
-     "faction": "weyland-consortium",
+     "identity": "Thule Subsea: Safety Below",
+     "faction": "haas-bioroid",
      "url": null,
-     "nrdb_id": "34121"
+     "nrdb_id": "33095"
     },
     "runner": {
      "identity": "Lat: Ethical Freelancer",
@@ -394,13 +394,12 @@
    },
    "corp": {
     "Nuvem SA: Law of the Land": {
-     "count": 3,
-     "cut": 1,
+     "count": 2,
+     "cut": 0,
      "faction": "weyland-consortium",
      "nrdb_id": "34121",
      "best_rank": 1,
      "ranks": [
-      1,
       1,
       3
      ]
@@ -491,13 +490,12 @@
    },
    "runner": {
     "Lat: Ethical Freelancer": {
-     "count": 5,
-     "cut": 2,
+     "count": 4,
+     "cut": 1,
      "faction": "shaper",
      "nrdb_id": "26019",
      "best_rank": 1,
      "ranks": [
-      1,
       1,
       2,
       3,
@@ -5085,7 +5083,7 @@
    "cardpool": "Vantage Point",
    "banlist": "26.05",
    "formality": "competitive",
-   "players": 43,
+   "players": 42,
    "cut_size": 8,
    "winner": {
     "player": "floatingFast",
@@ -5105,17 +5103,6 @@
     }
    },
    "corp": {
-    "Thule Subsea: Safety Below": {
-     "count": 2,
-     "cut": 1,
-     "faction": "haas-bioroid",
-     "nrdb_id": "33095",
-     "best_rank": 1,
-     "ranks": [
-      1,
-      7
-     ]
-    },
     "Nebula Talent Management: Making Stars": {
      "count": 1,
      "cut": 1,
@@ -5194,6 +5181,16 @@
       39
      ]
     },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
     "LEO Construction: Labor Solutions": {
      "count": 2,
      "cut": 0,
@@ -5258,22 +5255,6 @@
     }
    },
    "runner": {
-    "MuslihaT: Multifarious Marketeer": {
-     "count": 7,
-     "cut": 2,
-     "faction": "criminal",
-     "nrdb_id": "35013",
-     "best_rank": 1,
-     "ranks": [
-      1,
-      3,
-      7,
-      15,
-      18,
-      24,
-      29
-     ]
-    },
     "Arissana Rocha Nahu: Street Artist": {
      "count": 5,
      "cut": 1,
@@ -5298,6 +5279,21 @@
       2,
       19,
       27
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 6,
+     "cut": 2,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      7,
+      15,
+      18,
+      24,
+      29
      ]
     },
     "René \"Loup\" Arcemont: Party Animal": {

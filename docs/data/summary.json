@@ -2,6 +2,456 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5733,
+   "title": "Bellevue Summer GNK",
+   "date": "2026.07.15.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 16,
+   "cut_size": 0,
+   "winner": {
+    "player": "SMITTYL",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Shadow: Pulling the Strings",
+     "faction": "neutral-corp",
+     "url": null,
+     "nrdb_id": "00005"
+    },
+    "runner": {
+     "identity": "The Masque: Cyber General",
+     "faction": "neutral-runner",
+     "url": null,
+     "nrdb_id": "00006"
+    }
+   },
+   "corp": {
+    "The Shadow: Pulling the Strings": {
+     "count": 2,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      14
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 2,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      9
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 3,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      6
+     ]
+    },
+    "Hyoubu Institute: Absolute Clarity": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "26039",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 3,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 12,
+     "ranks": [
+      12,
+      15,
+      16
+     ]
+    },
+    "Pravdivost Consulting: Political Solutions": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "33048",
+     "best_rank": 13,
+     "ranks": [
+      13
+     ]
+    }
+   },
+   "runner": {
+    "The Masque: Cyber General": {
+     "count": 2,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      14
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 5,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      8,
+      9,
+      12,
+      15
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      11
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 13,
+     "ranks": [
+      13
+     ]
+    },
+    "Nova Initiumia: Catalyst & Impetus": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "33093",
+     "best_rank": 16,
+     "ranks": [
+      16
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Hyoubu Institute: Absolute Clarity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Pravdivost Consulting: Political Solutions": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Nova Initiumia: Catalyst & Impetus": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Poétrï Luxury Brands: All the Rage\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones\tNova Initiumia: Catalyst & Impetus": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Méliès U: Only the Brightest\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Pravdivost Consulting: Political Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Poétrï Luxury Brands: All the Rage\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Hyoubu Institute: Absolute Clarity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tNova Initiumia: Catalyst & Impetus": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Hyoubu Institute: Absolute Clarity\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Pravdivost Consulting: Political Solutions\tNova Initiumia: Catalyst & Impetus": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 21.0,
+    "games": 40
+   }
+  },
+  {
    "id": 5741,
    "title": "Hobbies & Sheets - July GNK",
    "date": "2026.07.12.",
@@ -4145,13 +4595,13 @@
     "corp": {
      "identity": "Méliès U: Only the Brightest",
      "faction": "jinteki",
-     "url": null,
+     "url": "https://netrunnerdb.com/en/decklist/97451",
      "nrdb_id": "36036"
     },
     "runner": {
      "identity": "Sebastião Souza Pessoa: Activist Organizer",
      "faction": "anarch",
-     "url": null,
+     "url": "https://netrunnerdb.com/en/decklist/97452",
      "nrdb_id": "34066"
     }
    },

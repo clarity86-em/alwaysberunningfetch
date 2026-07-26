@@ -2,6 +2,415 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5718,
+   "title": "Atomic Empire Casual Tournament",
+   "date": "2026.07.25.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.05",
+   "formality": "casual",
+   "players": 9,
+   "cut_size": 0,
+   "winner": {
+    "player": "cat",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "AU Co.: The Gold Standard in Clones",
+     "faction": "jinteki",
+     "url": null,
+     "nrdb_id": "35046"
+    },
+    "runner": {
+     "identity": "Virtual Intelligence, P.I.: “You Can Call Me Vic”",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "36009"
+    }
+   },
+   "corp": {
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 2,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      6
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 1,
+     "cut": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "MirrorMorph: Endless Iteration": {
+     "count": 1,
+     "cut": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "26031",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Issuaq Adaptics: Sustaining Diversity": {
+     "count": 1,
+     "cut": 0,
+     "faction": "jinteki",
+     "nrdb_id": "33104",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "runner": {
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 1,
+     "cut": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Thule Subsea: Safety Below": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Issuaq Adaptics: Sustaining Diversity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MirrorMorph: Endless Iteration": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Mercury: Chrome Libertador": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Thule Subsea: Safety Below\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "MirrorMorph: Endless Iteration\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "MirrorMorph: Endless Iteration\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "MirrorMorph: Endless Iteration\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "corp_side_wins": 11.0,
+    "games": 24
+   }
+  },
+  {
    "id": 5740,
    "title": "Winnipeg July Tournament - Heatwave Edition",
    "date": "2026.07.19.",

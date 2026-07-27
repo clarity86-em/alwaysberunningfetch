@@ -162,6 +162,7 @@ def base_css():
   --ink: #0b0b0b; --ink-2: #52514e; --muted: #898781;
   --grid: #e1e0d9; --baseline: #c3c2b7;
   --border: rgba(11,11,11,0.10);
+  --win-overlay: rgba(0,0,0,0.45);
 {light}
 }}
 @media (prefers-color-scheme: dark) {{
@@ -170,6 +171,7 @@ def base_css():
     --ink: #ffffff; --ink-2: #c3c2b7; --muted: #898781;
     --grid: #2c2c2a; --baseline: #383835;
     --border: rgba(255,255,255,0.10);
+    --win-overlay: rgba(255,255,255,0.60);
 {dark}
   }}
 }}
@@ -445,7 +447,7 @@ def bars_block(identity_rows, has_cut):
             w = max(w_win, 1.5)
             bar.append(
                 f'<rect x="0" y="2" width="{w:.2f}" height="14" rx="1.2" fill="{color}"/>'
-                f'<rect x="0" y="2" width="{w:.2f}" height="14" rx="1.2" fill="rgba(0,0,0,0.45)"/>'
+                f'<rect x="0" y="2" width="{w:.2f}" height="14" rx="1.2" fill="var(--win-overlay)"/>'
             )
         bar.append(f"<title>{esc(tip)}</title></svg>")
         name = esc(shorten_identity(title))
@@ -629,7 +631,7 @@ def side_section(stats_side, side, has_cut):
     total = sum(r["count"] for _, r in pairs)
     side_label = "Corp" if side == "corp" else "Runner"
     note = (
-        "<p class='agg-note'>표기: 출전/컷 진출/우승 · 바 색: 연함=출전, 진함=컷, 가장 진함=우승</p>"
+        "<p class='agg-note'>표기: 출전/컷 진출/우승 · 바 색: 연함=출전, 진함=컷, 강조(맨 앞)=우승</p>"
         if has_cut
         else ""
     )

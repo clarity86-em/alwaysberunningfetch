@@ -261,6 +261,11 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
         winner = cut_ranks.get(min(cut_ranks))
     elif standings and standings[0]["rank_swiss"] == 1:
         winner = standings[0]
+    if winner:
+        for side in ("corp", "runner"):
+            deck = winner.get(side)
+            if deck and deck.get("identity") in sides[side]:
+                sides[side][deck["identity"]]["wins"] += 1
 
     return {
         "id": tournament.get("id"),
@@ -282,7 +287,10 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
 
 
 def _new_row():
-    return {"count": 0, "cut": 0, "faction": "unknown", "nrdb_id": None, "best_rank": None, "ranks": []}
+    return {
+        "count": 0, "cut": 0, "wins": 0,
+        "faction": "unknown", "nrdb_id": None, "best_rank": None, "ranks": [],
+    }
 
 
 def faction_breakdown(identity_rows, side):
@@ -307,6 +315,7 @@ def aggregate(per_tournament):
                 a = agg[side][title]
                 a["count"] += row["count"]
                 a["cut"] += row["cut"]
+                a["wins"] += row.get("wins", 0)
                 a["faction"] = row["faction"]
                 a["nrdb_id"] = a["nrdb_id"] or row.get("nrdb_id")
                 a["ranks"].extend(row["ranks"])

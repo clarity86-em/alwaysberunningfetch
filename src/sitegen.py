@@ -422,11 +422,15 @@ def bars_block(identity_rows, has_cut):
     max_count = rows[0][1]["count"]
     out = ["<div class='bars'>"]
     for title, row in rows:
+        wins = row.get("wins", 0)
         w_total = row["count"] / max_count * 100
         w_cut = row["cut"] / max_count * 100
+        w_win = wins / max_count * 100
         color = f"var(--f-{row['faction'] if row['faction'] in FACTION_COLORS else 'unknown'})"
-        cut_txt = f"({row['cut']})" if (has_cut and row["cut"]) else ""
-        tip = f"{title}: {row['count']} entries" + (f", top cut {row['cut']}" if row["cut"] else "")
+        val_txt = f"{row['count']}/{row['cut']}/{wins}" if has_cut else str(row["count"])
+        tip = f"{title}: 출전 {row['count']}" + (
+            f", 컷 {row['cut']}, 우승 {wins}" if has_cut else (f", 우승 {wins}" if wins else "")
+        )
         bar = [
             f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
         ]
@@ -437,6 +441,12 @@ def bars_block(identity_rows, has_cut):
             bar.append(
                 f'<rect x="0" y="2" width="{max(w_cut, 1.5):.2f}" height="14" rx="1.2" fill="{color}"/>'
             )
+        if wins:
+            w = max(w_win, 1.5)
+            bar.append(
+                f'<rect x="0" y="2" width="{w:.2f}" height="14" rx="1.2" fill="{color}"/>'
+                f'<rect x="0" y="2" width="{w:.2f}" height="14" rx="1.2" fill="rgba(0,0,0,0.45)"/>'
+            )
         bar.append(f"<title>{esc(tip)}</title></svg>")
         name = esc(shorten_identity(title))
         if row.get("nrdb_id"):
@@ -446,7 +456,7 @@ def bars_block(identity_rows, has_cut):
             )
         out.append(f"<div class='name' title='{esc(title)}'>{name}</div>")
         out.append("".join(bar))
-        out.append(f"<div class='val'>{row['count']}{cut_txt}</div>")
+        out.append(f"<div class='val'>{val_txt}</div>")
     out.append("</div>")
     return "".join(out)
 
@@ -619,7 +629,7 @@ def side_section(stats_side, side, has_cut):
     total = sum(r["count"] for _, r in pairs)
     side_label = "Corp" if side == "corp" else "Runner"
     note = (
-        "<p class='agg-note'>표기: 출전 수(컷 진출 수) · 진한 부분 = 탑컷 진출</p>"
+        "<p class='agg-note'>표기: 출전/컷 진출/우승 · 바 색: 연함=출전, 진함=컷, 가장 진함=우승</p>"
         if has_cut
         else ""
     )

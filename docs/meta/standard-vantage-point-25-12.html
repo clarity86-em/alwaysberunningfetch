@@ -155,6 +155,9 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 .champs th:nth-child(1) { width: 74px; }
 .champs th:nth-child(2) { width: 34%; }
 .champs .trunc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cell-flex { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.cell-flex .trunc { flex: 1 1 auto; min-width: 0; }
+.players { flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
 @media (max-width: 640px) {
   main { padding: 16px 10px 48px; }
   .card { padding: 14px 12px; }
@@ -203,45 +206,48 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
   var chipBox = wrap.querySelector('.tier-chips');
   var pager = wrap.querySelector('.pager');
   var pcount = wrap.querySelector('.pcount');
-  var counts = {};
-  rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
-  // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
-  var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
-  var tierNames = pinned.slice();
-  pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
-  Object.keys(counts).forEach(function (t) {
-    if (tierNames.indexOf(t) === -1) tierNames.push(t);
-  });
-  var active = {};
-  tierNames.forEach(function (t) { active[t] = true; });
   var page = 1;
+  var active = null;   // null이면 티어 필터 없음 (페이지네이션만)
+  if (chipBox) {
+    var counts = {};
+    rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
+    // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
+    var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
+    var tierNames = pinned.slice();
+    pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
+    Object.keys(counts).forEach(function (t) {
+      if (tierNames.indexOf(t) === -1) tierNames.push(t);
+    });
+    active = {};
+    tierNames.forEach(function (t) { active[t] = true; });
 
-  tierNames.forEach(function (t) {
-    var lab = document.createElement('label');
-    lab.className = 'chip on';
-    var cb = document.createElement('input');
-    cb.type = 'checkbox'; cb.checked = true;
-    lab.appendChild(cb);
-    lab.appendChild(document.createTextNode(' ' + t + ' '));
-    var n = document.createElement('span'); n.textContent = counts[t];
-    lab.appendChild(n);
-    cb.addEventListener('change', function () {
-      active[t] = cb.checked;
-      lab.classList.toggle('on', cb.checked);
-      page = 1; render();
-    });
-    chipBox.appendChild(lab);
-  });
-  if (tierNames.length > 1) {
-    var allBtn = document.createElement('button');
-    allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
-    allBtn.addEventListener('click', function () {
-      var anyOff = tierNames.some(function (t) { return !active[t]; });
-      chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
-        if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+    tierNames.forEach(function (t) {
+      var lab = document.createElement('label');
+      lab.className = 'chip on';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.checked = true;
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(' ' + t + ' '));
+      var n = document.createElement('span'); n.textContent = counts[t];
+      lab.appendChild(n);
+      cb.addEventListener('change', function () {
+        active[t] = cb.checked;
+        lab.classList.toggle('on', cb.checked);
+        page = 1; render();
       });
+      chipBox.appendChild(lab);
     });
-    chipBox.appendChild(allBtn);
+    if (tierNames.length > 1) {
+      var allBtn = document.createElement('button');
+      allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
+      allBtn.addEventListener('click', function () {
+        var anyOff = tierNames.some(function (t) { return !active[t]; });
+        chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
+          if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+        });
+      });
+      chipBox.appendChild(allBtn);
+    }
   }
 
   rows.forEach(function (r) {
@@ -284,7 +290,7 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
 
   function render() {
     var vis = rows.filter(function (r) {
-      if (!active[r.dataset.tier]) return false;
+      if (active && !active[r.dataset.tier]) return false;
       if (activeF && r.dataset.format && !activeF[r.dataset.format]) return false;
       return true;
     });

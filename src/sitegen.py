@@ -278,6 +278,9 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 .champs th:nth-child(1) {{ width: 74px; }}
 .champs th:nth-child(2) {{ width: 34%; }}
 .champs .trunc {{ white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.cell-flex {{ display: flex; align-items: baseline; gap: 6px; min-width: 0; }}
+.cell-flex .trunc {{ flex: 1 1 auto; min-width: 0; }}
+.players {{ flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }}
 @media (max-width: 640px) {{
   main {{ padding: 16px 10px 48px; }}
   .card {{ padding: 14px 12px; }}
@@ -568,14 +571,13 @@ def tier_filter_order(per_tournament, settings):
     return [l for l, _ in sorted(entries.items(), key=lambda kv: (kv[1], kv[0]))]
 
 
-def champion_board(per_tournament, limit=10):
-    """최근 챔피언십(Standard) 우승 요약 표."""
+def champion_board(per_tournament):
+    """공식 챔피언십(Standard) 우승 요약 표 — 전체, 10개씩 페이지네이션."""
     champs = [
         t for t in per_tournament
         if t["format"] == "standard" and t["type"] in CHAMPIONSHIP_TYPES and t["winner"]
     ]
     champs.sort(key=lambda t: t.get("date") or "", reverse=True)
-    champs = champs[:limit]
     if not champs:
         return ""
     rows = []
@@ -585,19 +587,22 @@ def champion_board(per_tournament, limit=10):
         runner_full = w["runner"]["identity"] if w.get("runner") else ""
         rows.append(
             f"<tr><td class='col-date'>{esc(short_date(t['date']))}</td>"
-            f"<td><div class='trunc' title='{esc(t['title'])}'>"
-            f"<a href='t/{t['id']}.html'>{esc(t['title'])}</a> "
-            f"<span class='n' style='color:var(--ink-2);font-size:12px'>({t['players']}명)</span></div></td>"
+            f"<td><div class='cell-flex'><div class='trunc' title='{esc(t['title'])}'>"
+            f"<a href='t/{t['id']}.html'>{esc(t['title'])}</a></div>"
+            f"<span class='players'>({t['players']}명)</span></div></td>"
             f"<td><div class='trunc' title='{esc(corp_full)}'>{idtag(w.get('corp')) or '—'}</div></td>"
             f"<td><div class='trunc' title='{esc(runner_full)}'>{idtag(w.get('runner')) or '—'}</div></td></tr>"
         )
     return (
         "<div class='card'><h2>최근 공식 대회 우승</h2>"
         "<p class='agg-note'>Standard의 District/Megacity/Continentals/Worlds</p>"
+        "<div data-ptable>"
         "<table class='champs'><thead><tr><th>날짜</th><th>대회</th>"
         "<th>Corp 우승</th><th>Runner 우승</th></tr></thead><tbody>"
         + "".join(rows)
-        + "</tbody></table></div>"
+        + "</tbody></table>"
+        "<div class='table-foot'><span class='pcount'></span><nav class='pager'></nav></div>"
+        "</div></div>"
     )
 
 
@@ -779,45 +784,48 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
   var chipBox = wrap.querySelector('.tier-chips');
   var pager = wrap.querySelector('.pager');
   var pcount = wrap.querySelector('.pcount');
-  var counts = {};
-  rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
-  // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
-  var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
-  var tierNames = pinned.slice();
-  pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
-  Object.keys(counts).forEach(function (t) {
-    if (tierNames.indexOf(t) === -1) tierNames.push(t);
-  });
-  var active = {};
-  tierNames.forEach(function (t) { active[t] = true; });
   var page = 1;
+  var active = null;   // null이면 티어 필터 없음 (페이지네이션만)
+  if (chipBox) {
+    var counts = {};
+    rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
+    // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
+    var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
+    var tierNames = pinned.slice();
+    pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
+    Object.keys(counts).forEach(function (t) {
+      if (tierNames.indexOf(t) === -1) tierNames.push(t);
+    });
+    active = {};
+    tierNames.forEach(function (t) { active[t] = true; });
 
-  tierNames.forEach(function (t) {
-    var lab = document.createElement('label');
-    lab.className = 'chip on';
-    var cb = document.createElement('input');
-    cb.type = 'checkbox'; cb.checked = true;
-    lab.appendChild(cb);
-    lab.appendChild(document.createTextNode(' ' + t + ' '));
-    var n = document.createElement('span'); n.textContent = counts[t];
-    lab.appendChild(n);
-    cb.addEventListener('change', function () {
-      active[t] = cb.checked;
-      lab.classList.toggle('on', cb.checked);
-      page = 1; render();
-    });
-    chipBox.appendChild(lab);
-  });
-  if (tierNames.length > 1) {
-    var allBtn = document.createElement('button');
-    allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
-    allBtn.addEventListener('click', function () {
-      var anyOff = tierNames.some(function (t) { return !active[t]; });
-      chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
-        if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+    tierNames.forEach(function (t) {
+      var lab = document.createElement('label');
+      lab.className = 'chip on';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.checked = true;
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(' ' + t + ' '));
+      var n = document.createElement('span'); n.textContent = counts[t];
+      lab.appendChild(n);
+      cb.addEventListener('change', function () {
+        active[t] = cb.checked;
+        lab.classList.toggle('on', cb.checked);
+        page = 1; render();
       });
+      chipBox.appendChild(lab);
     });
-    chipBox.appendChild(allBtn);
+    if (tierNames.length > 1) {
+      var allBtn = document.createElement('button');
+      allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
+      allBtn.addEventListener('click', function () {
+        var anyOff = tierNames.some(function (t) { return !active[t]; });
+        chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
+          if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+        });
+      });
+      chipBox.appendChild(allBtn);
+    }
   }
 
   rows.forEach(function (r) {
@@ -860,7 +868,7 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
 
   function render() {
     var vis = rows.filter(function (r) {
-      if (!active[r.dataset.tier]) return false;
+      if (active && !active[r.dataset.tier]) return false;
       if (activeF && r.dataset.format && !activeF[r.dataset.format]) return false;
       return true;
     });

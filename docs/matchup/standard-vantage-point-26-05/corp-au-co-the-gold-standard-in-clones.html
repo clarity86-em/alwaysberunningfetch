@@ -155,6 +155,9 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 .champs th:nth-child(1) { width: 74px; }
 .champs th:nth-child(2) { width: 34%; }
 .champs .trunc { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cell-flex { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
+.cell-flex .trunc { flex: 1 1 auto; min-width: 0; }
+.players { flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
 @media (max-width: 640px) {
   main { padding: 16px 10px 48px; }
   .card { padding: 14px 12px; }

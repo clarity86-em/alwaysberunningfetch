@@ -111,15 +111,27 @@ def parse_matchdata(tjson):
         if pid is not None and pid not in idents:
             idents[pid] = (p.get("corpIdentity"), p.get("runnerIdentity"))
 
+    names = {}
+    for p in (tjson.get("players") or []) + (tjson.get("eliminationPlayers") or []):
+        pid = p.get("id")
+        if pid is not None and p.get("name"):
+            names.setdefault(pid, norm_title(str(p["name"])).casefold())
+
     res = {
         "corp": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
         "runner": defaultdict(lambda: {"wins": 0.0, "ties": 0, "games": 0}),
     }
     matchups = defaultdict(lambda: {"corp_wins": 0.0, "ties": 0, "games": 0})
+    players_perf = defaultdict(
+        lambda: {
+            "corp": {"wins": 0.0, "ties": 0, "games": 0},
+            "runner": {"wins": 0.0, "ties": 0, "games": 0},
+        }
+    )
     state = {"games": 0, "corp_side_wins": 0.0}
     _complement = {3: 0, 0: 3, 1: 1}
 
-    def record(corp_title, runner_title, corp_score, runner_score):
+    def record(corp_title, runner_title, corp_score, runner_score, corp_pid=None, runner_pid=None):
         if corp_score is None and runner_score is not None:
             corp_score = _complement.get(runner_score)
         if runner_score is None and corp_score is not None:
@@ -147,6 +159,14 @@ def parse_matchdata(tjson):
             mu["corp_wins"] += cw
             if tie:
                 mu["ties"] += 1
+        for pid, pside, w in ((corp_pid, "corp", cw), (runner_pid, "runner", 1.0 - cw)):
+            name = names.get(pid)
+            if name:
+                pr = players_perf[name][pside]
+                pr["games"] += 1
+                pr["wins"] += w
+                if tie:
+                    pr["ties"] += 1
 
     for rnd in tjson.get("rounds") or []:
         for tbl in rnd or []:
@@ -165,13 +185,13 @@ def parse_matchdata(tjson):
                 if winner1 is None:
                     continue
                 if role1 == "corp":
-                    record(c1, r2, 3 if winner1 else 0, 0 if winner1 else 3)
+                    record(c1, r2, 3 if winner1 else 0, 0 if winner1 else 3, id1, id2)
                 else:
-                    record(c2, r1, 0 if winner1 else 3, 3 if winner1 else 0)
+                    record(c2, r1, 0 if winner1 else 3, 3 if winner1 else 0, id2, id1)
             else:
                 # 스위스 양판
-                record(c1, r2, p1.get("corpScore"), p2.get("runnerScore"))
-                record(c2, r1, p2.get("corpScore"), p1.get("runnerScore"))
+                record(c1, r2, p1.get("corpScore"), p2.get("runnerScore"), id1, id2)
+                record(c2, r1, p2.get("corpScore"), p1.get("runnerScore"), id2, id1)
 
     if state["games"] == 0:
         return None
@@ -179,6 +199,7 @@ def parse_matchdata(tjson):
         "corp": dict(res["corp"]),
         "runner": dict(res["runner"]),
         "matchups": dict(matchups),  # "코퍼\t러너" -> {corp_wins, ties, games}
+        "players": {k: dict(v) for k, v in players_perf.items()},  # 정규화된 이름 -> 사이드별 전적
         "corp_side_wins": state["corp_side_wins"],
         "games": state["games"],
     }
@@ -232,6 +253,9 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
     sides = {"corp": defaultdict(lambda: _new_row()), "runner": defaultdict(lambda: _new_row())}
     standings = []
     cut_ranks = {}
+    winrates = parse_matchdata(tjson)
+    player_perf = (winrates or {}).get("players") or {}
+    decks = []  # 덱리스트가 공개된 엔트리 (카드 통계용, 플레이어 전적 조인)
 
     for e in entries:
         rank_swiss = e.get("rank_swiss") or None
@@ -251,6 +275,20 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
                 if row["best_rank"] is None or rank_swiss < row["best_rank"]:
                     row["best_rank"] = rank_swiss
             row_std[side] = {"identity": title, "faction": faction, "url": url, "nrdb_id": nrdb_id}
+            if url:
+                perf = (
+                    player_perf.get(norm_title(row_std["player"]).casefold()) or {}
+                ).get(side) or {}
+                decks.append(
+                    {
+                        "side": side,
+                        "identity": title,
+                        "url": url,
+                        "wins": perf.get("wins", 0.0),
+                        "ties": perf.get("ties", 0),
+                        "games": perf.get("games", 0),
+                    }
+                )
         standings.append(row_std)
         if rank_top:
             cut_ranks[rank_top] = row_std
@@ -282,7 +320,8 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
         "runner": dict(sides["runner"]),
         "winner": winner,
         "standings": standings,
-        "winrates": parse_matchdata(tjson),
+        "winrates": winrates,
+        "decks": decks,
     }
 
 

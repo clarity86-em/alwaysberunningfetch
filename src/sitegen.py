@@ -1040,6 +1040,98 @@ def render_tournament(t, settings):
     return page(t["title"], head + winner_html + charts + table, root="../")
 
 
+def _group_decks(ts, side, title):
+    """메타 그룹 대회들에서 (side, identity)의 카드 확보된 공개 덱 목록."""
+    key = norm_title(title).casefold()
+    return [
+        d
+        for t in ts
+        for d in t.get("decks", [])
+        if d["side"] == side and norm_title(d["identity"]).casefold() == key and d.get("cards")
+    ]
+
+
+def card_blocks(decks, color_css, card_idx, baseline_wr=None):
+    """identity의 카드 통계 — 채용률 top 15 + 카드별 승률."""
+    n = len(decks)
+    if n < 3:
+        return "<p class='sub'>공개된 덱리스트 표본이 부족해 카드 통계를 생략합니다 (3덱 미만).</p>"
+    stat = defaultdict(lambda: {"decks": 0, "qty": 0, "wins": 0.0, "games": 0})
+    for d in decks:
+        for code, q in d["cards"].items():
+            code = str(code)
+            info = card_idx.get(code) or {}
+            if info.get("type") == "identity":
+                continue
+            s = stat[code]
+            s["decks"] += 1
+            try:
+                s["qty"] += int(q)
+            except (TypeError, ValueError):
+                s["qty"] += 1
+            s["wins"] += d["wins"]
+            s["games"] += d["games"]
+
+    def card_name(code):
+        t = (card_idx.get(code) or {}).get("title") or f"#{code}"
+        return (
+            f"<a href='https://netrunnerdb.com/en/card/{esc(code)}' "
+            f"target='_blank' rel='noopener'>{esc(t)}</a>"
+        )
+
+    # 1) 채용률 top 15
+    top = sorted(stat.items(), key=lambda kv: (-kv[1]["decks"], kv[0]))[:15]
+    incl = ["<div class='bars'>"]
+    for code, s in top:
+        pct = s["decks"] / n * 100
+        avg = s["qty"] / s["decks"]
+        tip = f"{s['decks']}/{n}덱 채용 · 평균 {avg:.1f}장"
+        incl.append(f"<div class='name' title='{esc(tip)}'>{card_name(code)}</div>")
+        incl.append(
+            f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
+            f'<rect x="0" y="2" width="{max(pct, 1):.1f}" height="14" rx="1.2" fill="{color_css}" opacity="0.55"/>'
+            f"<title>{esc(tip)}</title></svg>"
+        )
+        incl.append(f"<div class='val'>{pct:.0f}% · x{avg:.1f}</div>")
+    incl.append("</div>")
+
+    # 2) 카드별 승률 (충분한 표본 + 변별력 있는 카드만)
+    wr_rows = [
+        (code, s, s["wins"] / s["games"] * 100)
+        for code, s in stat.items()
+        if s["games"] >= 20 and s["decks"] >= 4 and s["decks"] <= n * 0.95
+    ]
+    wr_rows.sort(key=lambda x: -x[2])
+    wr_rows = wr_rows[:15]
+    if wr_rows:
+        wrb = ["<div class='bars wr'>"]
+        for code, s, wrv in wr_rows:
+            tip = f"채용 덱 승률 {wrv:.1f}% · {s['decks']}덱 {s['games']}게임"
+            wrb.append(f"<div class='name' title='{esc(tip)}'>{card_name(code)}</div>")
+            wrb.append(
+                f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
+                f'<rect x="0" y="2" width="{max(wrv, 1.0):.2f}" height="14" rx="1.2" fill="{color_css}"/>'
+                '<rect x="49.6" y="0" width="0.8" height="18" fill="var(--baseline)"/>'
+                f"<title>{esc(tip)}</title></svg>"
+            )
+            wrb.append(f"<div class='val'>{wrv:.0f}% · {s['decks']}덱</div>")
+        wrb.append("</div>")
+        wr_html = "".join(wrb)
+    else:
+        wr_html = "<p class='sub'>표본 기준(4덱·20게임 이상)을 만족하는 카드가 없습니다.</p>"
+
+    base_txt = f" · 이 identity 평균 승률 {baseline_wr:.0f}%" if baseline_wr is not None else ""
+    return (
+        f"<h3 style='margin-top:18px'>많이 쓰는 카드</h3>"
+        f"<p class='agg-note'>덱리스트 공개 {n}덱 기준 · 채용률 · x = 평균 장수</p>"
+        + "".join(incl)
+        + "<h3 style='margin-top:18px'>카드별 승률</h3>"
+        f"<p class='agg-note'>해당 카드를 채용한 덱들의 게임 승률 · 4덱/20게임 이상 · "
+        f"항상 채용되는 카드(95%+)는 제외{base_txt}</p>"
+        + wr_html
+    )
+
+
 def _matchup_rows(wr, side, title):
     """매치업 딕셔너리에서 title(side) 관점의 상대별 전적을 뽑는다.
 
@@ -1059,8 +1151,8 @@ def _matchup_rows(wr, side, title):
     return rows
 
 
-def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
-    """identity 하나의 매치업별 승률 페이지."""
+def render_matchup(key, side, title, wr_all, wr_comp, ts_all, ts_comp, faction_of, nrdb_of, card_idx):
+    """identity 하나의 매치업별 승률 + 카드 통계 페이지."""
     opp_side = "runner" if side == "corp" else "corp"
     side_label = "Corp" if side == "corp" else "Runner"
     opp_label = "Runner" if side == "corp" else "Corp"
@@ -1074,7 +1166,7 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
             f"rel='noopener' title='NetrunnerDB에서 카드 보기'>{title_html}</a>"
         )
 
-    def variant(wr):
+    def variant(wr, ts):
         if not wr or norm_title(title) not in wr.get(side, {}):
             return "<p class='sub'>이 구분에는 이 identity의 게임 기록이 없습니다.</p>"
         me = wr[side][norm_title(title)]
@@ -1087,7 +1179,13 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
         rows = _matchup_rows(wr, side, title)
         link_of = lambda opp: f"{opp_side}-{ident_slug(opp)}.html"
         bars = winrate_bars(rows, faction_of, min_games=1, link_of=link_of, sort_by="games")
-        return head + f"<h3>상대 {opp_label} identity별 승률 (게임 수 순)</h3>" + bars
+        cards = card_blocks(
+            _group_decks(ts, side, title),
+            f"var(--f-{f_css})",
+            card_idx,
+            baseline_wr=my_wr,
+        )
+        return head + f"<h3>상대 {opp_label} identity별 승률 (게임 수 순)</h3>" + bars + cards
 
     body = f"""
 <p class="crumb"><a href="../../index.html">← 전체 통계</a> ·
@@ -1095,8 +1193,8 @@ def render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of):
 <h1><span class='dot' style='display:inline-block;width:14px;height:14px;border-radius:4px;background:var(--f-{f_css});margin-right:6px'></span>{title_html}</h1>
 <p class="sub">{side_label} · {esc(meta_label(key))}</p>
 """ + toggle_html() + (
-        f"<div class='card'><div class='agg-all'>{variant(wr_all)}</div>"
-        f"<div class='agg-comp'>{variant(wr_comp)}</div>"
+        f"<div class='card'><div class='agg-all'>{variant(wr_all, ts_all)}</div>"
+        f"<div class='agg-comp'>{variant(wr_comp, ts_comp)}</div>"
         "<p class='agg-note' style='margin-top:10px'>상대 identity를 클릭하면 그쪽 관점의 매치업 페이지로 이동합니다. "
         "표본이 작은 매치업(수 판 이하)은 참고만 하세요.</p></div>"
     )
@@ -1213,7 +1311,10 @@ def build_site(per_tournament, settings):
         for side in ("corp", "runner"):
             for title in wr_all[side]:
                 (mdir / f"{side}-{ident_slug(title)}.html").write_text(
-                    render_matchup(key, side, title, wr_all, wr_comp, faction_of, nrdb_of),
+                    render_matchup(
+                        key, side, title, wr_all, wr_comp, ts, comp,
+                        faction_of, nrdb_of, settings.get("_card_index") or {},
+                    ),
                     encoding="utf-8",
                 )
     for t in per_tournament:

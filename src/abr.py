@@ -11,6 +11,7 @@ NetrunnerDB API:
 """
 
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -28,8 +29,14 @@ ABR_BASE = "https://alwaysberunning.net"
 NRDB_CARDS_URL = "https://netrunnerdb.com/api/2.0/public/cards"
 NRDB_MWL_URL = "https://netrunnerdb.com/api/2.0/public/mwl"
 NRDB_PACKS_URL = "https://netrunnerdb.com/api/2.0/public/packs"
+NRDB_DECKLIST_V2 = "https://netrunnerdb.com/api/2.0/public/decklist/{}"
+NRDB_DECKLIST_V3 = "https://netrunnerdb.com/api/v3/public/decklists/{}"
 MWL_CACHE = DATA_DIR / "nrdb_mwl.json"
 PACKS_CACHE = DATA_DIR / "nrdb_packs.json"
+CARD_INDEX_CACHE = DATA_DIR / "nrdb_card_index.json"
+DECKLISTS_DIR = DATA_DIR / "decklists"
+
+_cards_memo = None  # 같은 실행 안에서 NRDB 전체 카드 fetch는 1번만
 
 HEADERS = {"User-Agent": "alwaysberunningfetch (github.com/clarity86-em/alwaysberunningfetch)"}
 TIMEOUT = 60
@@ -168,6 +175,22 @@ def fetch_nrdb_packs(offline=False):
     return _read_cache(PACKS_CACHE) or {}
 
 
+def _fetch_all_cards(offline=False):
+    """NRDB 전체 카드 목록 (실행당 1회 fetch, 메모이즈). 실패/오프라인 -> None."""
+    global _cards_memo
+    if _cards_memo is not None:
+        return _cards_memo
+    if offline:
+        return None
+    try:
+        data = _get_json(NRDB_CARDS_URL)
+        _cards_memo = data.get("data") or []
+        return _cards_memo
+    except requests.RequestException as e:
+        print(f"경고: NRDB cards fetch 실패: {e}", file=sys.stderr)
+        return None
+
+
 def identity_map(offline=False, want_titles=()):
     """NRDB 카드 데이터에서 identity 제목 -> {faction, side} 매핑을 만든다.
 
@@ -177,13 +200,11 @@ def identity_map(offline=False, want_titles=()):
     missing = [t for t in want_titles if t and t not in cached]
     if offline or (cached and not missing):
         return cached
-    try:
-        data = _get_json(NRDB_CARDS_URL)
-    except requests.RequestException as e:
-        print(f"경고: NRDB fetch 실패, 캐시 사용: {e}", file=sys.stderr)
+    data = _fetch_all_cards(offline)
+    if data is None:
         return cached
     mapping = {}
-    for card in data.get("data", []):
+    for card in data:
         if card.get("type_code") == "identity":
             mapping[card["title"]] = {
                 "faction": card.get("faction_code", "unknown"),
@@ -193,3 +214,67 @@ def identity_map(offline=False, want_titles=()):
         _write_cache(NRDB_CACHE, mapping)
         return mapping
     return cached
+
+
+def card_index(offline=False, want_codes=()):
+    """카드 코드 -> {title, type} 인덱스 (카드 통계 표시용)."""
+    cached = _read_cache(CARD_INDEX_CACHE) or {}
+    missing = [c for c in want_codes if c not in cached]
+    if offline or (cached and not missing):
+        return cached
+    data = _fetch_all_cards(offline)
+    if data is None:
+        return cached
+    idx = {
+        c["code"]: {"title": c.get("title") or "", "type": c.get("type_code") or ""}
+        for c in data
+        if c.get("code")
+    }
+    if idx:
+        _write_cache(CARD_INDEX_CACHE, idx)
+        return idx
+    return cached
+
+
+def deck_token(url):
+    """덱리스트 URL에서 id/uuid 추출. 없으면 None."""
+    m = re.search(r"/decklist/([A-Za-z0-9-]+)", url or "")
+    return m.group(1) if m else None
+
+
+def fetch_decklist(url, offline=False):
+    """NRDB 덱리스트의 카드 목록 {code: 수량}. 캐시 영구 (덱리스트는 불변).
+
+    v2 API(숫자 id) 우선, 404면 v3(uuid) 시도. 못 찾으면 marker 캐시 후 None.
+    """
+    token = deck_token(url)
+    if not token:
+        return None
+    path = DECKLISTS_DIR / f"{token}.json"
+    cached = _read_cache(path)
+    if cached is not None:
+        return None if cached.get("unavailable") else cached
+    if offline:
+        return None
+    for api in (NRDB_DECKLIST_V2, NRDB_DECKLIST_V3):
+        try:
+            data = _get_json(api.format(token))
+        except requests.HTTPError as e:
+            if e.response is not None and e.response.status_code in (400, 404):
+                continue
+            raise
+        except requests.RequestException as e:
+            print(f"경고: 덱리스트 {token} fetch 실패: {e}", file=sys.stderr)
+            return None
+        cards = None
+        d = data.get("data")
+        if isinstance(d, list) and d:
+            cards = d[0].get("cards")
+        elif isinstance(d, dict):
+            cards = (d.get("attributes") or {}).get("card_slots")
+        if cards:
+            out = {"cards": cards}
+            _write_cache(path, out)
+            return out
+    _write_cache(path, {"unavailable": True})
+    return None

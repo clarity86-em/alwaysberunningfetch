@@ -198,6 +198,35 @@ def run(offline=False):
     for t, entries, tjson in raw:
         per_tournament.append(tournament_stats(t, entries, id_map, tjson=tjson))
 
+    # 공개된 덱리스트의 카드 목록 수집/부착 (카드 통계용, 영구 캐시)
+    deck_cache, fetched = {}, 0
+    for t in per_tournament:
+        for d in t.get("decks", []):
+            tok = abr.deck_token(d["url"])
+            if not tok:
+                continue
+            if tok not in deck_cache:
+                try:
+                    deck_cache[tok] = abr.fetch_decklist(d["url"], offline=offline)
+                except Exception as e:
+                    print(f"경고: 덱리스트 {tok} fetch 실패: {e}", file=sys.stderr)
+                    deck_cache[tok] = None
+                fetched += 1
+                if not offline and fetched % 200 == 0:
+                    print(f"덱리스트 처리 중... {fetched}개")
+            dl = deck_cache[tok]
+            if dl:
+                d["cards"] = dl.get("cards") or {}
+    with_cards = sum(1 for t in per_tournament for d in t.get("decks", []) if d.get("cards"))
+    print(f"덱리스트: 고유 {len(deck_cache)}개, 카드 확보 {with_cards}건")
+
+    # 카드 코드 -> 이름/타입 인덱스 (표시용)
+    want_codes = set()
+    for t in per_tournament:
+        for d in t.get("decks", []):
+            want_codes.update((d.get("cards") or {}).keys())
+    settings["_card_index"] = abr.card_index(offline=offline, want_codes=sorted(want_codes))
+
     if not per_tournament:
         print("통계를 낼 대회가 없습니다 (필터를 확인하세요)", file=sys.stderr)
         return 1

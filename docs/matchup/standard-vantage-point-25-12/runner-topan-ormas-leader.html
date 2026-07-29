@@ -160,6 +160,11 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 .cell-flex { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
 .cell-flex .trunc { flex: 1 1 auto; min-width: 0; }
 .players { flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
+.cardt { table-layout: fixed; width: 100%; }
+.cardt td { padding: 4px 8px; border-bottom: 1px solid var(--grid); }
+.cardt .cname { width: 230px; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardt .cval { width: 110px; font-size: 12.5px; color: var(--ink-2); white-space: nowrap; }
+.cardt svg { display: block; width: 100%; height: 18px; }
 @media (max-width: 640px) {
   main { padding: 16px 10px 48px; }
   .card { padding: 14px 12px; }
@@ -181,6 +186,9 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
   .champs .players { display: none; }
   .champs th:nth-child(1) { width: 58px; }
   .champs .idtag { font-size: 12px; }
+  /* 카드 통계 표: 이름 폭 축소 */
+  .cardt .cname { width: 128px; font-size: 12px; }
+  .cardt .cval { width: 86px; font-size: 11.5px; }
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {
     max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
@@ -202,6 +210,125 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 Identities: <a href="https://netrunnerdb.com" target="_blank" rel="noopener">NetrunnerDB</a> ·
 자동 생성 (<a href="https://github.com/clarity86-em/alwaysberunningfetch" target="_blank" rel="noopener">alwaysberunningfetch</a>)</footer>
 </main>
+<script>
+document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
+  var PER = 10;
+  var rows = Array.prototype.slice.call(wrap.querySelectorAll('tbody tr'));
+  if (!rows.length) return;
+  var chipBox = wrap.querySelector('.tier-chips');
+  var pager = wrap.querySelector('.pager');
+  var pcount = wrap.querySelector('.pcount');
+  var page = 1;
+  var active = null;   // null이면 티어 필터 없음 (페이지네이션만)
+  if (chipBox) {
+    var counts = {};
+    rows.forEach(function (r) { var t = r.dataset.tier; counts[t] = (counts[t] || 0) + 1; });
+    // 항상 노출할 티어(대회 0개 포함) 먼저, 나머지는 관측 순서대로
+    var pinned = (wrap.dataset.pinned || '').split('|').filter(Boolean);
+    var tierNames = pinned.slice();
+    pinned.forEach(function (t) { if (!(t in counts)) counts[t] = 0; });
+    Object.keys(counts).forEach(function (t) {
+      if (tierNames.indexOf(t) === -1) tierNames.push(t);
+    });
+    active = {};
+    tierNames.forEach(function (t) { active[t] = true; });
 
+    tierNames.forEach(function (t) {
+      var lab = document.createElement('label');
+      lab.className = 'chip on';
+      var cb = document.createElement('input');
+      cb.type = 'checkbox'; cb.checked = true;
+      lab.appendChild(cb);
+      lab.appendChild(document.createTextNode(' ' + t + ' '));
+      var n = document.createElement('span'); n.textContent = counts[t];
+      lab.appendChild(n);
+      cb.addEventListener('change', function () {
+        active[t] = cb.checked;
+        lab.classList.toggle('on', cb.checked);
+        page = 1; render();
+      });
+      chipBox.appendChild(lab);
+    });
+    if (tierNames.length > 1) {
+      var allBtn = document.createElement('button');
+      allBtn.type = 'button'; allBtn.className = 'chip-all'; allBtn.textContent = '전체 선택/해제';
+      allBtn.addEventListener('click', function () {
+        var anyOff = tierNames.some(function (t) { return !active[t]; });
+        chipBox.querySelectorAll('label.chip input').forEach(function (cb) {
+          if (cb.checked !== anyOff) { cb.checked = anyOff; cb.dispatchEvent(new Event('change')); }
+        });
+      });
+      chipBox.appendChild(allBtn);
+    }
+  }
+
+  rows.forEach(function (r) {
+    r.addEventListener('click', function (e) {
+      if (e.target.closest('a, input, label, button')) return;
+      r.classList.toggle('open');
+    });
+  });
+
+  // 포맷 필터 (텍스트 토글) — 컨테이너가 있고 포맷이 2개 이상일 때만
+  var fmtBox = wrap.querySelector('.fmt-filter');
+  var activeF = null;
+  if (fmtBox) {
+    var fcounts = {};
+    rows.forEach(function (r) {
+      var f = r.dataset.format;
+      if (f) fcounts[f] = (fcounts[f] || 0) + 1;
+    });
+    var fmts = Object.keys(fcounts);
+    if (fmts.length > 1) {
+      activeF = {};
+      fmts.forEach(function (f) { activeF[f] = true; });
+      fmts.forEach(function (f) {
+        var b = document.createElement('button');
+        b.type = 'button'; b.className = 'fmtbtn';
+        b.appendChild(document.createTextNode(f + ' '));
+        var n = document.createElement('span'); n.className = 'n'; n.textContent = fcounts[f];
+        b.appendChild(n);
+        b.addEventListener('click', function () {
+          activeF[f] = !activeF[f];
+          b.classList.toggle('off', !activeF[f]);
+          page = 1; render();
+        });
+        fmtBox.appendChild(b);
+      });
+    } else {
+      fmtBox.style.display = 'none';
+    }
+  }
+
+  function render() {
+    var vis = rows.filter(function (r) {
+      if (active && !active[r.dataset.tier]) return false;
+      if (activeF && r.dataset.format && !activeF[r.dataset.format]) return false;
+      return true;
+    });
+    rows.forEach(function (r) { r.style.display = 'none'; });
+    var pages = Math.max(1, Math.ceil(vis.length / PER));
+    if (page > pages) page = pages;
+    vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
+    var unit = wrap.dataset.unit || '대회';
+    pcount.textContent = vis.length
+      ? vis.length + '개 ' + unit + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
+      : '조건에 맞는 ' + unit + '가 없습니다' + (chipBox ? ' — 위의 필터를 확인하세요' : '');
+    pager.innerHTML = '';
+    if (pages > 1) {
+      for (var p = 1; p <= pages; p++) {
+        (function (p) {
+          var b = document.createElement('button');
+          b.type = 'button'; b.textContent = p;
+          if (p === page) b.className = 'cur';
+          b.addEventListener('click', function () { page = p; render(); });
+          pager.appendChild(b);
+        })(p);
+      }
+    }
+  }
+  render();
+});
+</script>
 </body>
 </html>

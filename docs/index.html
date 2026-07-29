@@ -160,6 +160,11 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
 .cell-flex { display: flex; align-items: baseline; gap: 6px; min-width: 0; }
 .cell-flex .trunc { flex: 1 1 auto; min-width: 0; }
 .players { flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }
+.cardt { table-layout: fixed; width: 100%; }
+.cardt td { padding: 4px 8px; border-bottom: 1px solid var(--grid); }
+.cardt .cname { width: 230px; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cardt .cval { width: 110px; font-size: 12.5px; color: var(--ink-2); white-space: nowrap; }
+.cardt svg { display: block; width: 100%; height: 18px; }
 @media (max-width: 640px) {
   main { padding: 16px 10px 48px; }
   .card { padding: 14px 12px; }
@@ -181,6 +186,9 @@ body:has(#comp-only:checked) .agg-comp { display: block; }
   .champs .players { display: none; }
   .champs th:nth-child(1) { width: 58px; }
   .champs .idtag { font-size: 12px; }
+  /* 카드 통계 표: 이름 폭 축소 */
+  .cardt .cname { width: 128px; font-size: 12px; }
+  .cardt .cval { width: 86px; font-size: 11.5px; }
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {
     max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
@@ -306,9 +314,10 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     var pages = Math.max(1, Math.ceil(vis.length / PER));
     if (page > pages) page = pages;
     vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
+    var unit = wrap.dataset.unit || '대회';
     pcount.textContent = vis.length
-      ? vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
-      : '조건에 맞는 대회가 없습니다 — 위의 티어/포맷 필터를 확인하세요';
+      ? vis.length + '개 ' + unit + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
+      : '조건에 맞는 ' + unit + '가 없습니다' + (chipBox ? ' — 위의 필터를 확인하세요' : '');
     pager.innerHTML = '';
     if (pages > 1) {
       for (var p = 1; p <= pages; p++) {

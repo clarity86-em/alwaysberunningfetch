@@ -283,6 +283,11 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
 .cell-flex {{ display: flex; align-items: baseline; gap: 6px; min-width: 0; }}
 .cell-flex .trunc {{ flex: 1 1 auto; min-width: 0; }}
 .players {{ flex: none; color: var(--ink-2); font-size: 12px; white-space: nowrap; }}
+.cardt {{ table-layout: fixed; width: 100%; }}
+.cardt td {{ padding: 4px 8px; border-bottom: 1px solid var(--grid); }}
+.cardt .cname {{ width: 230px; font-size: 13px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }}
+.cardt .cval {{ width: 110px; font-size: 12.5px; color: var(--ink-2); white-space: nowrap; }}
+.cardt svg {{ display: block; width: 100%; height: 18px; }}
 @media (max-width: 640px) {{
   main {{ padding: 16px 10px 48px; }}
   .card {{ padding: 14px 12px; }}
@@ -304,6 +309,9 @@ body:has(#comp-only:checked) .agg-comp {{ display: block; }}
   .champs .players {{ display: none; }}
   .champs th:nth-child(1) {{ width: 58px; }}
   .champs .idtag {{ font-size: 12px; }}
+  /* 카드 통계 표: 이름 폭 축소 */
+  .cardt .cname {{ width: 128px; font-size: 12px; }}
+  .cardt .cval {{ width: 86px; font-size: 11.5px; }}
   /* 순위표: 플레이어 이름 칸 폭 제한 + 긴 이름 줄바꿈 */
   .standings td:nth-child(2), .standings th:nth-child(2) {{
     max-width: 88px; overflow-wrap: anywhere; font-size: 12px;
@@ -889,9 +897,10 @@ document.querySelectorAll('[data-ptable]').forEach(function (wrap) {
     var pages = Math.max(1, Math.ceil(vis.length / PER));
     if (page > pages) page = pages;
     vis.slice((page - 1) * PER, page * PER).forEach(function (r) { r.style.display = ''; });
+    var unit = wrap.dataset.unit || '대회';
     pcount.textContent = vis.length
-      ? vis.length + '개 대회' + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
-      : '조건에 맞는 대회가 없습니다 — 위의 티어/포맷 필터를 확인하세요';
+      ? vis.length + '개 ' + unit + (pages > 1 ? ' · ' + page + '/' + pages + ' 페이지' : '')
+      : '조건에 맞는 ' + unit + '가 없습니다' + (chipBox ? ' — 위의 필터를 확인하세요' : '');
     pager.innerHTML = '';
     if (pages > 1) {
       for (var p = 1; p <= pages; p++) {
@@ -1051,7 +1060,7 @@ def _group_decks(ts, side, title):
     ]
 
 
-def card_blocks(decks, color_css, card_idx, baseline_wr=None):
+def card_blocks(decks, card_idx, baseline_wr=None):
     """identity의 카드 통계 — 채용률 top 15 + 카드별 승률."""
     n = len(decks)
     if n < 3:
@@ -1079,54 +1088,65 @@ def card_blocks(decks, color_css, card_idx, baseline_wr=None):
             f"target='_blank' rel='noopener'>{esc(t)}</a>"
         )
 
-    # 1) 채용률 top 15
-    top = sorted(stat.items(), key=lambda kv: (-kv[1]["decks"], kv[0]))[:15]
-    incl = ["<div class='bars'>"]
-    for code, s in top:
+    def bar_color(code):
+        f = (card_idx.get(code) or {}).get("faction") or "unknown"
+        return f"var(--f-{f if f in FACTION_COLORS else 'unknown'})"
+
+    def card_table(rows):
+        return (
+            "<div data-ptable data-unit='카드'><table class='cardt'><tbody>"
+            + "".join(rows)
+            + "</tbody></table>"
+            "<div class='table-foot'><span class='pcount'></span><nav class='pager'></nav></div></div>"
+        )
+
+    # 1) 채용률 (2덱 이상 채용 카드 전체, 15개씩 페이지)
+    incl_rows = []
+    for code, s in sorted(stat.items(), key=lambda kv: (-kv[1]["decks"], kv[0])):
+        if s["decks"] < 2:
+            continue
         pct = s["decks"] / n * 100
         avg = s["qty"] / s["decks"]
         tip = f"{s['decks']}/{n}덱 채용 · 평균 {avg:.1f}장"
-        incl.append(f"<div class='name' title='{esc(tip)}'>{card_name(code)}</div>")
-        incl.append(
-            f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
-            f'<rect x="0" y="2" width="{max(pct, 1):.1f}" height="14" rx="1.2" fill="{color_css}" opacity="0.55"/>'
-            f"<title>{esc(tip)}</title></svg>"
+        incl_rows.append(
+            f"<tr><td class='cname' title='{esc(tip)}'>{card_name(code)}</td>"
+            f"<td class='cbar'><svg viewBox='0 0 100 18' preserveAspectRatio='none' role='img' aria-label='{esc(tip)}'>"
+            f"<rect x='0' y='2' width='{max(pct, 1):.1f}' height='14' rx='1.2' fill='{bar_color(code)}' opacity='0.6'/>"
+            f"<title>{esc(tip)}</title></svg></td>"
+            f"<td class='num cval'>{pct:.0f}% · x{avg:.1f}</td></tr>"
         )
-        incl.append(f"<div class='val'>{pct:.0f}% · x{avg:.1f}</div>")
-    incl.append("</div>")
+    incl_html = card_table(incl_rows) if incl_rows else "<p class='sub'>데이터 없음</p>"
 
-    # 2) 카드별 승률 (충분한 표본 + 변별력 있는 카드만)
+    # 2) 카드별 승률 (2덱/15게임 이상, 승률순 전체를 15개씩 페이지)
     wr_rows = [
         (code, s, s["wins"] / s["games"] * 100)
         for code, s in stat.items()
-        if s["games"] >= 20 and s["decks"] >= 4 and s["decks"] <= n * 0.95
+        if s["games"] >= 15 and s["decks"] >= 2 and s["decks"] <= n * 0.95
     ]
     wr_rows.sort(key=lambda x: -x[2])
-    wr_rows = wr_rows[:15]
     if wr_rows:
-        wrb = ["<div class='bars wr'>"]
+        rows = []
         for code, s, wrv in wr_rows:
             tip = f"채용 덱 승률 {wrv:.1f}% · {s['decks']}덱 {s['games']}게임"
-            wrb.append(f"<div class='name' title='{esc(tip)}'>{card_name(code)}</div>")
-            wrb.append(
-                f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
-                f'<rect x="0" y="2" width="{max(wrv, 1.0):.2f}" height="14" rx="1.2" fill="{color_css}"/>'
-                '<rect x="49.6" y="0" width="0.8" height="18" fill="var(--baseline)"/>'
-                f"<title>{esc(tip)}</title></svg>"
+            rows.append(
+                f"<tr><td class='cname' title='{esc(tip)}'>{card_name(code)}</td>"
+                f"<td class='cbar'><svg viewBox='0 0 100 18' preserveAspectRatio='none' role='img' aria-label='{esc(tip)}'>"
+                f"<rect x='0' y='2' width='{max(wrv, 1.0):.2f}' height='14' rx='1.2' fill='{bar_color(code)}'/>"
+                "<rect x='49.6' y='0' width='0.8' height='18' fill='var(--baseline)'/>"
+                f"<title>{esc(tip)}</title></svg></td>"
+                f"<td class='num cval'>{wrv:.0f}% · {s['decks']}덱</td></tr>"
             )
-            wrb.append(f"<div class='val'>{wrv:.0f}% · {s['decks']}덱</div>")
-        wrb.append("</div>")
-        wr_html = "".join(wrb)
+        wr_html = card_table(rows)
     else:
-        wr_html = "<p class='sub'>표본 기준(4덱·20게임 이상)을 만족하는 카드가 없습니다.</p>"
+        wr_html = "<p class='sub'>표본 기준(2덱·15게임 이상)을 만족하는 카드가 없습니다.</p>"
 
     base_txt = f" · 이 identity 평균 승률 {baseline_wr:.0f}%" if baseline_wr is not None else ""
     return (
         f"<h3 style='margin-top:18px'>많이 쓰는 카드</h3>"
-        f"<p class='agg-note'>덱리스트 공개 {n}덱 기준 · 채용률 · x = 평균 장수</p>"
-        + "".join(incl)
+        f"<p class='agg-note'>덱리스트 공개 {n}덱 기준 · 채용률 · x = 평균 장수 · 바 색 = 카드 팩션</p>"
+        + incl_html
         + "<h3 style='margin-top:18px'>카드별 승률</h3>"
-        f"<p class='agg-note'>해당 카드를 채용한 덱들의 게임 승률 · 4덱/20게임 이상 · "
+        f"<p class='agg-note'>해당 카드를 채용한 덱들의 게임 승률 · 2덱/15게임 이상 · "
         f"항상 채용되는 카드(95%+)는 제외{base_txt}</p>"
         + wr_html
     )
@@ -1181,7 +1201,6 @@ def render_matchup(key, side, title, wr_all, wr_comp, ts_all, ts_comp, faction_o
         bars = winrate_bars(rows, faction_of, min_games=1, link_of=link_of, sort_by="games")
         cards = card_blocks(
             _group_decks(ts, side, title),
-            f"var(--f-{f_css})",
             card_idx,
             baseline_wr=my_wr,
         )
@@ -1198,7 +1217,7 @@ def render_matchup(key, side, title, wr_all, wr_comp, ts_all, ts_comp, faction_o
         "<p class='agg-note' style='margin-top:10px'>상대 identity를 클릭하면 그쪽 관점의 매치업 페이지로 이동합니다. "
         "표본이 작은 매치업(수 판 이하)은 참고만 하세요.</p></div>"
     )
-    return page(f"{shorten_identity(title)} 매치업", body, root="../../")
+    return page(f"{shorten_identity(title)} 매치업", body, scripts=PTABLE_JS, root="../../")
 
 
 # ---------------------------------------------------------------- 빌드

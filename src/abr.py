@@ -217,19 +217,28 @@ def identity_map(offline=False, want_titles=()):
 
 
 def card_index(offline=False, want_codes=()):
-    """카드 코드 -> {title, type} 인덱스 (카드 통계 표시용)."""
+    """카드 코드 -> {title, type, faction} 인덱스 (카드 통계 표시용)."""
     cached = _read_cache(CARD_INDEX_CACHE) or {}
     missing = [c for c in want_codes if c not in cached]
-    if offline or (cached and not missing):
+    # 구버전 캐시(팩션 없음)면 온라인일 때 갱신
+    stale = bool(cached) and "faction" not in next(iter(cached.values()), {})
+    if offline or (cached and not missing and not stale):
         return cached
     data = _fetch_all_cards(offline)
     if data is None:
         return cached
-    idx = {
-        c["code"]: {"title": c.get("title") or "", "type": c.get("type_code") or ""}
-        for c in data
-        if c.get("code")
-    }
+    idx = {}
+    for c in data:
+        if not c.get("code"):
+            continue
+        faction = c.get("faction_code") or "unknown"
+        if faction == "neutral":
+            faction = f"neutral-{c.get('side_code') or 'corp'}"
+        idx[c["code"]] = {
+            "title": c.get("title") or "",
+            "type": c.get("type_code") or "",
+            "faction": faction,
+        }
     if idx:
         _write_cache(CARD_INDEX_CACHE, idx)
         return idx

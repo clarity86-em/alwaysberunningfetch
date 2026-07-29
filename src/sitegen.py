@@ -1140,7 +1140,15 @@ def card_blocks(decks, card_idx, baseline_wr=None):
     else:
         wr_html = "<p class='sub'>표본 기준(2덱·15게임 이상)을 만족하는 카드가 없습니다.</p>"
 
-    base_txt = f" · 이 identity 평균 승률 {baseline_wr:.0f}%" if baseline_wr is not None else ""
+    # 비교 기준: 카드 승률과 같은 모집단(공개 덱)의 평균. 전체 평균은 참고로 병기.
+    # 덱을 공개한 플레이어가 평균적으로 성적이 좋아 전체 평균보다 높게 나온다.
+    pub_g = sum(d["games"] for d in decks)
+    pub_w = sum(d["wins"] for d in decks)
+    base_txt = ""
+    if pub_g:
+        base_txt = f" · 공개 덱 평균 승률 {pub_w / pub_g * 100:.0f}%"
+        if baseline_wr is not None:
+            base_txt += f" (비공개 포함 전체 {baseline_wr:.0f}%)"
     return (
         f"<h3 style='margin-top:18px'>많이 쓰는 카드</h3>"
         f"<p class='agg-note'>덱리스트 공개 {n}덱 기준 · 채용률 · x = 평균 장수 · 바 색 = 카드 팩션</p>"

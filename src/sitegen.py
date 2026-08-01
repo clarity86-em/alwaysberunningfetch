@@ -1145,16 +1145,15 @@ def card_blocks(decks, card_idx, baseline_wr=None):
     pub_w = sum(d["wins"] for d in decks)
     base_txt = ""
     if pub_g:
-        base_txt = f" · 공개 덱 평균 승률 {pub_w / pub_g * 100:.0f}%"
+        base_txt = f" · 공개 덱 승률 {pub_w / pub_g * 100:.0f}%"
         if baseline_wr is not None:
-            base_txt += f" (비공개 포함 전체 {baseline_wr:.0f}%)"
+            base_txt += f" (전체 {baseline_wr:.0f}%)"
     return (
         f"<h3 style='margin-top:18px'>많이 쓰는 카드</h3>"
         f"<p class='agg-note'>덱리스트 공개 {n}덱 기준</p>"
         + incl_html
         + "<h3 style='margin-top:18px'>카드별 승률</h3>"
-        f"<p class='agg-note'>해당 카드를 채용한 덱들의 게임 승률 · 2덱/15게임 이상 · "
-        f"항상 채용되는 카드(95%+)는 제외{base_txt}</p>"
+        f"<p class='agg-note'>2덱/15게임 이상 · 95%+는 제외{base_txt}</p>"
         + wr_html
     )
 
@@ -1221,8 +1220,7 @@ def render_matchup(key, side, title, wr_all, wr_comp, ts_all, ts_comp, faction_o
 """ + toggle_html() + (
         f"<div class='card'><div class='agg-all'>{variant(wr_all, ts_all)}</div>"
         f"<div class='agg-comp'>{variant(wr_comp, ts_comp)}</div>"
-        "<p class='agg-note' style='margin-top:10px'>상대 identity를 클릭하면 그쪽 관점의 매치업 페이지로 이동합니다. "
-        "표본이 작은 매치업(수 판 이하)은 참고만 하세요.</p></div>"
+        "</div>"
     )
     return page(f"{shorten_identity(title)} 매치업", body, scripts=PTABLE_JS, root="../../")
 

@@ -14,6 +14,7 @@ import json
 import re
 import sys
 import time
+from datetime import date
 from pathlib import Path
 
 import requests
@@ -262,8 +263,19 @@ def fetch_decklist(url, offline=False):
     path = DECKLISTS_DIR / f"{token}.json"
     cached = _read_cache(path)
     if cached is not None:
-        return None if cached.get("unavailable") else cached
-    if offline:
+        if not cached.get("unavailable"):
+            return cached
+        # 비공개/실패 덱은 1주에 한 번만 재시도 (나중에 공개되는 경우 대비)
+        if offline:
+            return None
+        checked = str(cached.get("checked") or "1970-01-01")
+        try:
+            age = (date.today() - date.fromisoformat(checked)).days
+        except ValueError:
+            age = 999
+        if age < 7:
+            return None
+    elif offline:
         return None
     for api in (NRDB_DECKLIST_V2, NRDB_DECKLIST_V3):
         try:
@@ -285,5 +297,5 @@ def fetch_decklist(url, offline=False):
             out = {"cards": cards}
             _write_cache(path, out)
             return out
-    _write_cache(path, {"unavailable": True})
+    _write_cache(path, {"unavailable": True, "checked": date.today().isoformat()})
     return None

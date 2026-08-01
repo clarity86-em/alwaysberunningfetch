@@ -640,7 +640,7 @@ def side_section(stats_side, side, has_cut):
     total = sum(r["count"] for _, r in pairs)
     side_label = "Corp" if side == "corp" else "Runner"
     note = (
-        "<p class='agg-note'>표기: 출전/컷 진출/우승 · 바 색: 연함=출전, 진함=컷, 강조(맨 앞)=우승</p>"
+        "<p class='agg-note'>표기: 출전/컷 진출/우승 · 연함=출전, 진함=컷, 강조=우승</p>"
         if has_cut
         else ""
     )
@@ -670,7 +670,7 @@ def agg_charts(tournaments, min_wr_games=None, matchup_base=None):
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)
     removed_txt = (
-        f" · 사용 불가 identity(밴/로테이션/미상) 엔트리 {removed}개 제외" if removed else ""
+        f" · 사용 불가 ID {removed}개 제외" if removed else ""
     )
     note = f"<p class='agg-note'>대회 {agg['tournaments']}개 · 엔트리 {agg['players']}{removed_txt}</p>"
     html_out = note + (
@@ -790,7 +790,6 @@ def tier_legend(tournaments, settings):
         )
     return (
         "<div class='card'><h2>대회 티어 안내</h2>"
-        "<p class='agg-note'>위상이 높은 순서. '경쟁' 티어가 상단 통계의 \"경쟁 대회만 보기\"에 포함되는 대회입니다.</p>"
         "<table><thead><tr><th>티어</th><th>구분</th><th>설명</th></tr></thead><tbody>"
         + "".join(rows)
         + "</tbody></table></div>"
@@ -1151,7 +1150,7 @@ def card_blocks(decks, card_idx, baseline_wr=None):
             base_txt += f" (비공개 포함 전체 {baseline_wr:.0f}%)"
     return (
         f"<h3 style='margin-top:18px'>많이 쓰는 카드</h3>"
-        f"<p class='agg-note'>덱리스트 공개 {n}덱 기준 · 채용률 · x = 평균 장수 · 바 색 = 카드 팩션</p>"
+        f"<p class='agg-note'>덱리스트 공개 {n}덱 기준</p>"
         + incl_html
         + "<h3 style='margin-top:18px'>카드별 승률</h3>"
         f"<p class='agg-note'>해당 카드를 채용한 덱들의 게임 승률 · 2덱/15게임 이상 · "

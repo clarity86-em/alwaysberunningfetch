@@ -1120,7 +1120,7 @@ def card_blocks(decks, card_idx, baseline_wr=None):
     wr_rows = [
         (code, s, s["wins"] / s["games"] * 100)
         for code, s in stat.items()
-        if s["games"] >= 15 and s["decks"] >= 2 and s["decks"] <= n * 0.95
+        if s["games"] >= 15 and s["decks"] >= 2
     ]
     wr_rows.sort(key=lambda x: -x[2])
     if wr_rows:
@@ -1153,7 +1153,7 @@ def card_blocks(decks, card_idx, baseline_wr=None):
         f"<p class='agg-note'>덱리스트 공개 {n}덱 기준</p>"
         + incl_html
         + "<h3 style='margin-top:18px'>카드별 승률</h3>"
-        f"<p class='agg-note'>2덱/15게임 이상 · 95%+는 제외{base_txt}</p>"
+        f"<p class='agg-note'>2덱/15게임 이상{base_txt}</p>"
         + wr_html
     )
 

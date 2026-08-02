@@ -133,9 +133,13 @@ def sync_schedules(settings, selected, offline):
     manual = {str(e["version"]) for e in sched}
     banned_by_version = {}
     for m in abr.fetch_nrdb_mwl(offline=offline):
-        name = m.get("name") or ""
-        if "standard ban list" not in name.lower():
+        # 'Standard Ban List XX.YY' 또는 'Standard Balance Update XX.YY' (2026.08부터 명칭 변경)
+        name_l = (m.get("name") or "").lower()
+        if not name_l.startswith("standard") or (
+            "ban list" not in name_l and "balance update" not in name_l
+        ):
             continue
+        name = m.get("name") or ""
         ver = _re.search(r"(\d{2}\.\d{2})", name)
         if not ver:
             continue

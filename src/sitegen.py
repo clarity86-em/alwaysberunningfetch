@@ -70,7 +70,10 @@ def banlist_version(mwl):
 def derive_banlist(t, settings):
     """대회 날짜로 밴리스트 버전 판정 (발효일 표 기반).
 
-    ABR의 주최자 입력(mwl)은 오표기가 많아 신뢰하지 않는다.
+    ABR의 주최자 입력(mwl)은 오표기가 많아 기본적으로 신뢰하지 않지만,
+    예외로 주최자가 날짜 판정보다 '최신' 버전을 입력한 경우는 새 밴리스트
+    선적용 대회(발매 기념 이벤트 등)로 보고 그 값을 쓴다 — 구식 입력은
+    거의 전부 오표기인 반면, 미래 버전 입력은 의도적이기 때문.
     발효일 표에 없는 날짜만 mwl 파싱으로 폴백.
     """
     if t["format"] == "startup":
@@ -85,6 +88,10 @@ def derive_banlist(t, settings):
             if frm <= d and (best is None or frm > best[0]):
                 best = (frm, str(entry.get("version")))
         if best:
+            to_ver = banlist_version(t["mwl"])
+            known = {str(e.get("version")) for e in schedule}
+            if to_ver and to_ver in known and to_ver > best[1]:
+                return to_ver  # 새 밴리스트 선적용 대회
             return best[1]
     return banlist_version(t["mwl"])
 

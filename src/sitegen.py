@@ -438,9 +438,11 @@ def bars_block(identity_rows, has_cut):
         w_cut = row["cut"] / max_count * 100
         w_win = wins / max_count * 100
         color = f"var(--f-{row['faction'] if row['faction'] in FACTION_COLORS else 'unknown'})"
-        val_txt = f"{row['count']}/{row['cut']}/{wins}" if has_cut else str(row["count"])
+        val_txt = (
+            f"{row['count']}/{row['cut']}/{wins}" if has_cut else f"{row['count']}/{wins}"
+        )
         tip = f"{title}: 출전 {row['count']}" + (
-            f", 컷 {row['cut']}, 우승 {wins}" if has_cut else (f", 우승 {wins}" if wins else "")
+            f", 컷 {row['cut']}, 우승 {wins}" if has_cut else f", 우승 {wins}"
         )
         bar = [
             f'<svg viewBox="0 0 100 18" preserveAspectRatio="none" role="img" aria-label="{esc(tip)}">'
@@ -642,7 +644,7 @@ def side_section(stats_side, side, has_cut):
     note = (
         "<p class='agg-note'>표기: 출전/컷 진출/우승 · 연함=출전, 진함=컷, 강조=우승</p>"
         if has_cut
-        else ""
+        else "<p class='agg-note'>표기: 출전/우승 · 연함=출전, 강조=우승</p>"
     )
     return (
         f"<div class='card'><h2>{side_label}</h2>"

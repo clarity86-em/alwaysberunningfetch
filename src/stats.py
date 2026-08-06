@@ -10,6 +10,7 @@ ABR 엔트리 필드 (apidoc 기준, 방어적으로 여러 키를 시도):
   corp_deck_url                   NetrunnerDB 덱리스트 링크
 """
 
+import re
 from collections import defaultdict
 
 CORP_FACTIONS = ["haas-bioroid", "jinteki", "nbn", "weyland-consortium", "neutral-corp"]
@@ -92,7 +93,31 @@ def shorten_identity(title):
     return title
 
 
-def parse_matchdata(tjson):
+def _loose_key(title):
+    """오타 관용 매칭 키: 따옴표/공백 정규화 + 소문자화 + 0→o + 영숫자만.
+
+    NRTM 업로드에는 손으로 친 identity 이름이 섞여 '0mission'을 'Omission'으로
+    쓰는 식의 오타가 있다. 이 키가 같으면 같은 identity로 본다.
+    """
+    t = norm_title(title or "").casefold().replace("0", "o")
+    return re.sub(r"[^a-z0-9]+", "", t)
+
+
+def _canon_index(id_map):
+    """NRDB identity 목록 -> {loose_key: 정식 제목}. 키 충돌 항목은 제외."""
+    idx, dupes = {}, set()
+    for title in id_map or {}:
+        k = _loose_key(title)
+        if k in idx and idx[k] != norm_title(title):
+            dupes.add(k)
+        else:
+            idx[k] = norm_title(title)
+    for k in dupes:
+        idx.pop(k, None)
+    return idx
+
+
+def parse_matchdata(tjson, id_map=None):
     """NRTM 토너먼트 JSON -> identity별 승/무/게임 수.
 
     점수 규약: 3=승, 1=무, 0=패. 스위스 한 테이블 = 두 게임
@@ -105,11 +130,21 @@ def parse_matchdata(tjson):
     """
     if not tjson or not isinstance(tjson, dict):
         return None
+    canon = _canon_index(id_map)
+
+    def _canon_title(title):
+        if not title:
+            return title
+        return canon.get(_loose_key(title), title)
+
     idents = {}
     for p in (tjson.get("players") or []) + (tjson.get("eliminationPlayers") or []):
         pid = p.get("id")
         if pid is not None and pid not in idents:
-            idents[pid] = (p.get("corpIdentity"), p.get("runnerIdentity"))
+            idents[pid] = (
+                _canon_title(p.get("corpIdentity")),
+                _canon_title(p.get("runnerIdentity")),
+            )
 
     names = {}
     for p in (tjson.get("players") or []) + (tjson.get("eliminationPlayers") or []):
@@ -253,7 +288,7 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
     sides = {"corp": defaultdict(lambda: _new_row()), "runner": defaultdict(lambda: _new_row())}
     standings = []
     cut_ranks = {}
-    winrates = parse_matchdata(tjson)
+    winrates = parse_matchdata(tjson, id_map)
     player_perf = (winrates or {}).get("players") or {}
     decks = []  # 덱리스트가 공개된 엔트리 (카드 통계용, 플레이어 전적 조인)
 

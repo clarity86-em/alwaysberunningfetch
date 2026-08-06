@@ -78,6 +78,9 @@ def derive_banlist(t, settings):
     """
     if t["format"] == "startup":
         return ""  # startup 메타는 카드풀로만 구분
+    override = (settings.get("banlist_overrides") or {}).get(t.get("id"))
+    if override:
+        return str(override)
     schedule = (settings.get("banlist_schedule") or {}).get(t["format"]) or []
     parts = str(t.get("date") or "").strip(".").split(".")
     if len(parts) == 3 and len(parts[0]) == 4:

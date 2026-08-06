@@ -31,6 +31,11 @@ banlist_schedule:
     - {version: "26.03", from: "2026-03-13"}
     - {version: "25.12", from: "2025-12-01"}
 
+# 개별 대회 밴리스트 수동 지정 (대회 ID -> 버전). 날짜/주최자 입력 판정보다 최우선.
+# 발효일에 걸쳐 진행돼 자동 판정이 어긋나는 대회에 사용.
+banlist_overrides:
+  5572: "26.08"  # Continentals - Cascadia Seattle: 7/31~8/1 진행, 26.08 선적용
+
 # 카드풀(확장) 출시일. 대회 날짜로 카드풀을 판정한다 (주최자 입력 오표기 보정).
 # 새 확장이 ABR 대회에 등장하면 NetrunnerDB 팩 출시일로 자동 추가됨. 수동 항목 우선.
 cardpool_schedule:

@@ -1071,24 +1071,64 @@ def _group_decks(ts, side, title):
     ]
 
 
+_reprint_canon_cache = {}
+
+
+def _reprint_canon(card_idx):
+    """재판 카드 통합용 코드 매핑 {코드: 대표 코드}.
+
+    같은 이름의 카드가 여러 세트에서 재판되면 NRDB 코드가 달라져 통계가
+    갈라진다. 이름(casefold) 기준으로 묶고 가장 최신(큰 번호) 인쇄를
+    대표 코드로 쓴다. card_idx 전체 순회라 실행당 1회만 계산.
+    """
+    key = id(card_idx)
+    got = _reprint_canon_cache.get(key)
+    if got is not None:
+        return got
+
+    def num(code):
+        try:
+            return int(code)
+        except (TypeError, ValueError):
+            return -1
+
+    latest = {}
+    for code, info in card_idx.items():
+        t = (info.get("title") or "").casefold()
+        if t and (t not in latest or num(code) > num(latest[t])):
+            latest[t] = code
+    mapping = {
+        code: latest.get((info.get("title") or "").casefold(), code)
+        for code, info in card_idx.items()
+    }
+    _reprint_canon_cache.clear()  # settings가 바뀌면 card_idx도 새 객체
+    _reprint_canon_cache[key] = mapping
+    return mapping
+
+
 def card_blocks(decks, card_idx, baseline_wr=None):
     """identity의 카드 통계 — 채용률 top 15 + 카드별 승률."""
     n = len(decks)
     if n < 3:
         return "<p class='sub'>공개된 덱리스트 표본이 부족해 카드 통계를 생략합니다 (3덱 미만).</p>"
+    canon = _reprint_canon(card_idx)
     stat = defaultdict(lambda: {"decks": 0, "qty": 0, "wins": 0.0, "games": 0})
     for d in decks:
+        merged = defaultdict(int)  # 같은 덱에 두 판본이 섞여도 1덱으로 집계
         for code, q in d["cards"].items():
             code = str(code)
+            code = canon.get(code, code)
+            try:
+                merged[code] += int(q)
+            except (TypeError, ValueError):
+                merged[code] += 1
+        for code, qty in merged.items():
             info = card_idx.get(code) or {}
             if info.get("type") == "identity":
                 continue
             s = stat[code]
             s["decks"] += 1
-            try:
-                s["qty"] += int(q)
-            except (TypeError, ValueError):
-                s["qty"] += 1
+            s["qty"] += qty
             s["wins"] += d["wins"]
             s["games"] += d["games"]
 

@@ -2,6 +2,541 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5784,
+   "title": "Pre-conts training aka CTK 2026 H1 @ Black Oil",
+   "date": "2026.08.09.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 3,
+   "winner": {
+    "player": "Battle_fennec",
+    "rank_swiss": 1,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "33057"
+    },
+    "runner": {
+     "identity": "Magdalene Keino-Chemutai: Cryptarchitect",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "35024"
+    }
+   },
+   "corp": {
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 3,
+     "cut": 2,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      9
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 2,
+     "cut": 1,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      8
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      10
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 2,
+     "cut": 2,
+     "wins": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 1,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      9
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 14
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 8
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Jinteki: Restoring Humanity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "runner": {
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "matchups": {
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Thule Subsea: Safety Below\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Jinteki: Restoring Humanity\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "mildesorte10": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "dreschus": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "battle_fennec": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "noxart": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "krasty": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "dante": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "twadacz": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "strawberry.p": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "sl33p3r": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "t.p": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     }
+    },
+    "corp_side_wins": 25.0,
+    "games": 42
+   }
+  },
+  {
    "id": 5777,
    "title": "Malmö GNK Summer 2026",
    "date": "2026.08.08.",
@@ -2281,8 +2816,8 @@
    "cardpool": "Vantage Point",
    "banlist": "26.08",
    "formality": "competitive",
-   "players": 89,
-   "cut_size": 16,
+   "players": 90,
+   "cut_size": 17,
    "winner": {
     "player": "Sam Keilback",
     "rank_swiss": 4,
@@ -2302,13 +2837,14 @@
    },
    "corp": {
     "Jinteki: Restoring Humanity": {
-     "count": 6,
-     "cut": 1,
+     "count": 7,
+     "cut": 2,
      "wins": 0,
      "faction": "jinteki",
      "nrdb_id": "30043",
      "best_rank": 1,
      "ranks": [
+      1,
       1,
       32,
       39,
@@ -2553,13 +3089,14 @@
    },
    "runner": {
     "René \"Loup\" Arcemont: Party Animal": {
-     "count": 17,
-     "cut": 5,
+     "count": 18,
+     "cut": 6,
      "wins": 0,
      "faction": "anarch",
      "nrdb_id": "30001",
      "best_rank": 1,
      "ranks": [
+      1,
       1,
       3,
       8,

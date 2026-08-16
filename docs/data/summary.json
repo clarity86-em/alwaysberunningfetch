@@ -1060,6 +1060,735 @@
    }
   },
   {
+   "id": 5713,
+   "title": "NANPC Pittsburgh 2026",
+   "date": "2026.08.15.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 16,
+   "cut_size": 2,
+   "winner": {
+    "player": "bubblingbeebles",
+    "rank_swiss": 2,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/97863",
+     "nrdb_id": "33057"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/97868",
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 1,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 2,
+     "cut": 1,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      8
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      7
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      14,
+      16
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      11,
+      12
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      13
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 15,
+     "ranks": [
+      15
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 3,
+     "cut": 1,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3,
+      14
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 1,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      5
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      10
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      15
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 8,
+     "ranks": [
+      8,
+      13
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 12,
+     "ranks": [
+      12
+     ]
+    },
+    "Dewi Subrotoputri: Pedagogical Dhalang": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35023",
+     "best_rank": 16,
+     "ranks": [
+      16
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Nuvem SA: Law of the Land": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Jinteki: Restoring Humanity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 9
+     }
+    },
+    "runner": {
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 10
+     },
+     "Dewi Subrotoputri: Pedagogical Dhalang": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Jinteki: Restoring Humanity\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "london": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "scott": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "sinstrata": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "stephienet": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "meat": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "nick_the_inquisitor": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "andy tucker": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "anoddradish": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jamesmarcus": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "wendysighs": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "sebastiank": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "funkeyman232": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "beatrice": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "diagonell": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "red40": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jon": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     }
+    },
+    "corp_side_wins": 26.0,
+    "games": 47
+   }
+  },
+  {
    "id": 5693,
    "title": "Running in the Dark - Eastern Melbourne CTK",
    "date": "2026.08.14.",
@@ -1068,37 +1797,10 @@
    "cardpool": "Vantage Point",
    "banlist": "26.08",
    "formality": "casual",
-   "players": 10,
+   "players": 9,
    "cut_size": 0,
-   "winner": {
-    "player": "HaverOfFun",
-    "rank_swiss": 1,
-    "rank_top": null,
-    "corp": {
-     "identity": "AU Co.: The Gold Standard in Clones",
-     "faction": "jinteki",
-     "url": null,
-     "nrdb_id": "35046"
-    },
-    "runner": {
-     "identity": "René \"Loup\" Arcemont: Party Animal",
-     "faction": "anarch",
-     "url": null,
-     "nrdb_id": "30001"
-    }
-   },
+   "winner": null,
    "corp": {
-    "AU Co.: The Gold Standard in Clones": {
-     "count": 1,
-     "cut": 0,
-     "wins": 1,
-     "faction": "jinteki",
-     "nrdb_id": "35046",
-     "best_rank": 1,
-     "ranks": [
-      1
-     ]
-    },
     "Nebula Talent Management: Making Stars": {
      "count": 1,
      "cut": 0,
@@ -1180,18 +1882,6 @@
     }
    },
    "runner": {
-    "René \"Loup\" Arcemont: Party Animal": {
-     "count": 2,
-     "cut": 0,
-     "wins": 1,
-     "faction": "anarch",
-     "nrdb_id": "30001",
-     "best_rank": 1,
-     "ranks": [
-      1,
-      6
-     ]
-    },
     "Magdalene Keino-Chemutai: Cryptarchitect": {
      "count": 2,
      "cut": 0,
@@ -1236,6 +1926,17 @@
      "best_rank": 5,
      "ranks": [
       5
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 6,
+     "ranks": [
+      6
      ]
     },
     "Mercury: Chrome Libertador": {

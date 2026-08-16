@@ -675,10 +675,8 @@ def toggle_html():
 
 def agg_charts(tournaments, min_wr_games=None, matchup_base=None):
     if min_wr_games is None:
-        # 표본이 작은 startup은 5게임, standard는 6게임 이상만 승률 표시
-        # (연 후반엔 큰 대회 몇 개로 좁아져 판수가 적어짐 — 한 대회 스위스 승률 정도는 보이게)
-        is_startup = bool(tournaments) and tournaments[0].get("format") == "startup"
-        min_wr_games = 5 if is_startup else 6
+        # 5게임 이상이면 승률 표시 (포맷 공통 — 한 대회 스위스 승률 정도는 보이게)
+        min_wr_games = 5
     tournaments, removed = strip_illegal(tournaments)
     agg = aggregate(tournaments)
     has_cut = any(t["cut_size"] > 0 for t in tournaments)

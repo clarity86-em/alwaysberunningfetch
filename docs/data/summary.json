@@ -2,6 +2,267 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5807,
+   "title": "STATION ONE | STARTUP LEAGUE | SEASON 23",
+   "date": "2026.08.16.",
+   "type": "asynchronous tournament",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 9,
+   "cut_size": 0,
+   "winner": {
+    "player": "Laojio",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Shadow: Pulling the Strings",
+     "faction": "neutral-corp",
+     "url": null,
+     "nrdb_id": "00005"
+    },
+    "runner": {
+     "identity": "The Masque: Cyber General",
+     "faction": "neutral-runner",
+     "url": null,
+     "nrdb_id": "00006"
+    }
+   },
+   "corp": {
+    "The Shadow: Pulling the Strings": {
+     "count": 7,
+     "cut": 0,
+     "wins": 1,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9
+     ]
+    },
+    "Spark Agency: Worldswide Reach": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "25105",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Custom Biotics: Engineered for Success": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "03002",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "runner": {
+    "The Masque: Cyber General": {
+     "count": 7,
+     "cut": 0,
+     "wins": 1,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      4,
+      5,
+      6,
+      8,
+      9
+     ]
+    },
+    "Hoshiko Shiro: Untold Protagonist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "26066",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Boris \"Syfr\" Kovac: Crafty Veteran": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "00008",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Custom Biotics: Engineered for Success": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Spark Agency: Worldswide Reach": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Boris \"Syfr\" Kovac: Crafty Veteran": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Hoshiko Shiro: Untold Protagonist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Custom Biotics: Engineered for Success\tHoshiko Shiro: Untold Protagonist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Spark Agency: Worldswide Reach\tBoris \"Syfr\" Kovac: Crafty Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "boardken": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "scarius": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "laojio": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "adox": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "melty coconut": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "dragonbob": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "neutron": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "snedd": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "i am the gull": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      }
+     }
+    },
+    "corp_side_wins": 15.0,
+    "games": 26
+   }
+  },
+  {
    "id": 5791,
    "title": "Shanghai August CTK 2026 H1",
    "date": "2026.08.15.",
@@ -1786,6 +2047,2403 @@
     },
     "corp_side_wins": 26.0,
     "games": 47
+   }
+  },
+  {
+   "id": 5761,
+   "title": "Americas Online Continental 2026",
+   "date": "2026.08.15.",
+   "type": "continental championship",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "competitive",
+   "players": 91,
+   "cut_size": 16,
+   "winner": {
+    "player": "ChonkySeal",
+    "rank_swiss": 15,
+    "rank_top": 1,
+    "corp": {
+     "identity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "33057"
+    },
+    "runner": {
+     "identity": "Esâ Afontov: Eco-Insurrectionist",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "33001"
+    }
+   },
+   "corp": {
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 24,
+     "cut": 8,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      4,
+      10,
+      11,
+      12,
+      15,
+      16,
+      17,
+      18,
+      26,
+      32,
+      35,
+      38,
+      53,
+      54,
+      55,
+      59,
+      60,
+      69,
+      82,
+      83,
+      87,
+      91
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 11,
+     "cut": 1,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      25,
+      33,
+      40,
+      47,
+      51,
+      52,
+      58,
+      61,
+      68,
+      70
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 2,
+     "cut": 1,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      37
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 15,
+     "cut": 1,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      19,
+      21,
+      24,
+      28,
+      29,
+      34,
+      39,
+      45,
+      46,
+      57,
+      62,
+      63,
+      72,
+      89
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 6,
+     "cut": 1,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      23,
+      36,
+      43,
+      64,
+      88
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 4,
+     "cut": 1,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 8,
+     "ranks": [
+      8,
+      27,
+      30,
+      81
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 3,
+     "cut": 1,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      22,
+      31
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 8,
+     "cut": 2,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 13,
+     "ranks": [
+      13,
+      14,
+      44,
+      48,
+      49,
+      66,
+      71,
+      75
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 20,
+     "ranks": [
+      20,
+      50
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 8,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 41,
+     "ranks": [
+      41,
+      42,
+      67,
+      77,
+      78,
+      84,
+      85,
+      90
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 56,
+     "ranks": [
+      56,
+      79
+     ]
+    },
+    "Issuaq Adaptics: Sustaining Diversity": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "33104",
+     "best_rank": 65,
+     "ranks": [
+      65,
+      74
+     ]
+    },
+    "Pravdivost Consulting: Political Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "33048",
+     "best_rank": 73,
+     "ranks": [
+      73
+     ]
+    },
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 76,
+     "ranks": [
+      76
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 80,
+     "ranks": [
+      80
+     ]
+    },
+    "A Teia: IP Recovery": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "34039",
+     "best_rank": 86,
+     "ranks": [
+      86
+     ]
+    }
+   },
+   "runner": {
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 18,
+     "cut": 5,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4,
+      5,
+      8,
+      12,
+      30,
+      33,
+      35,
+      41,
+      46,
+      48,
+      51,
+      55,
+      67,
+      72,
+      75,
+      82,
+      91
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 17,
+     "cut": 4,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      7,
+      13,
+      24,
+      26,
+      28,
+      29,
+      36,
+      38,
+      39,
+      50,
+      59,
+      61,
+      70,
+      74,
+      90
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 13,
+     "cut": 2,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      16,
+      20,
+      21,
+      27,
+      34,
+      53,
+      62,
+      63,
+      79,
+      80,
+      81,
+      85
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 1,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 7,
+     "cut": 1,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 10,
+     "ranks": [
+      10,
+      19,
+      22,
+      43,
+      45,
+      58,
+      68
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 6,
+     "cut": 1,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 11,
+     "ranks": [
+      11,
+      17,
+      32,
+      37,
+      54,
+      57
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 4,
+     "cut": 1,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 14,
+     "ranks": [
+      14,
+      18,
+      25,
+      42
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 11,
+     "cut": 1,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 15,
+     "ranks": [
+      15,
+      23,
+      31,
+      60,
+      65,
+      69,
+      76,
+      77,
+      83,
+      88,
+      89
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 40,
+     "ranks": [
+      40,
+      78,
+      87
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 4,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 44,
+     "ranks": [
+      44,
+      64,
+      66,
+      86
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 47,
+     "ranks": [
+      47,
+      52,
+      71
+     ]
+    },
+    "Az McCaffrey: Mechanical Prodigy": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "26010",
+     "best_rank": 49,
+     "ranks": [
+      49
+     ]
+    },
+    "Topan: Ormas Leader": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35002",
+     "best_rank": 56,
+     "ranks": [
+      56
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 73,
+     "ranks": [
+      73
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 84,
+     "ranks": [
+      84
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "NBN: Reality Plus": {
+      "wins": 15.0,
+      "ties": 0,
+      "games": 26
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 68.0,
+      "ties": 0,
+      "games": 114
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 20
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 10.0,
+      "ties": 0,
+      "games": 24
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 25.0,
+      "ties": 0,
+      "games": 47
+     },
+     "Pravdivost Consulting: Political Solutions": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 13
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 34.0,
+      "ties": 0,
+      "games": 64
+     },
+     "Jinteki: Restoring Humanity": {
+      "wins": 20.0,
+      "ties": 0,
+      "games": 39
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Issuaq Adaptics: Sustaining Diversity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 7
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 16
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 8.0,
+      "ties": 0,
+      "games": 9
+     },
+     "A Teia: IP Recovery": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Az McCaffrey: Mechanical Prodigy": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 17.0,
+      "ties": 0,
+      "games": 31
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 43.0,
+      "ties": 0,
+      "games": 83
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 15.0,
+      "ties": 0,
+      "games": 29
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 25.0,
+      "ties": 0,
+      "games": 60
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 40.0,
+      "ties": 0,
+      "games": 85
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 18.0,
+      "ties": 0,
+      "games": 36
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 11.0,
+      "ties": 0,
+      "games": 21
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 13
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 14
+     },
+     "Topan: Ormas Leader": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "NBN: Reality Plus\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 7.0,
+      "ties": 0,
+      "games": 9
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Nebula Talent Management: Making Stars\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 7.0,
+      "ties": 0,
+      "games": 14
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 13.0,
+      "ties": 0,
+      "games": 25
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Pravdivost Consulting: Political Solutions\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 9
+     },
+     "LEO Construction: Labor Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "NBN: Reality Plus\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 17.0,
+      "ties": 0,
+      "games": 29
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 8.0,
+      "ties": 0,
+      "games": 14
+     },
+     "BANGUN: When Disaster Strikes\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 8.0,
+      "ties": 0,
+      "games": 13
+     },
+     "Jinteki: Restoring Humanity\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "AU Co.: The Gold Standard in Clones\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nebula Talent Management: Making Stars\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Earth Station: SEA Headquarters\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Nebula Talent Management: Making Stars\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Jinteki: Restoring Humanity\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 9
+     },
+     "AU Co.: The Gold Standard in Clones\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land\tTopan: Ormas Leader": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Jinteki: Restoring Humanity\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Jinteki: Restoring Humanity\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 5
+     },
+     "The Zwicky Group: Invisible Hands\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 5
+     },
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 6.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Thule Subsea: Safety Below\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Jinteki: Restoring Humanity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 11
+     },
+     "NBN: Reality Plus\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 5.0,
+      "ties": 0,
+      "games": 8
+     },
+     "A Teia: IP Recovery\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones\tTopan: Ormas Leader": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Nuvem SA: Law of the Land\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 7
+     },
+     "NBN: Reality Plus\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Pravdivost Consulting: Political Solutions\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "NBN: Reality Plus\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tLat: Ethical Freelancer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "A Teia: IP Recovery\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tTopan: Ormas Leader": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Pravdivost Consulting: Political Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "A Teia: IP Recovery\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tLat: Ethical Freelancer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Pravdivost Consulting: Political Solutions\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "mechantgreg": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "lost my thumbs": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "cablooshe": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "neror": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "frederica bernkastel": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "cybershark": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "tanzzen": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "changedmyusername": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "weirddoe": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "icarus 1.0": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "34witches": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 6
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 6
+      }
+     },
+     "loade": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "neuralshock": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "silentword": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 6
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "melty coconut": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "aku": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "pinchejonny93": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "athlici": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 8
+      }
+     },
+     "santa": {
+      "corp": {
+       "wins": 6.0,
+       "ties": 0,
+       "games": 8
+      },
+      "runner": {
+       "wins": 7.0,
+       "ties": 0,
+       "games": 9
+      }
+     },
+     "admanb": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "limes": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     },
+     "viljums": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "chaoticsilo": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "staniach21": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "maninthemoon": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "sauc3": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 6
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 6
+      }
+     },
+     "mattohno": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "sumpurnis": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 8
+      }
+     },
+     "evie": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     },
+     "dubovik001": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "hotelfoxtrot": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "jfoley": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cado": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "hexnet": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 8
+      }
+     },
+     "tak": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "v1rtue": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "lukifer": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "sl33p3r": {
+      "corp": {
+       "wins": 6.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 6
+      }
+     },
+     "ladyduckland": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "pengguin": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "alexandrkusturika": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "banteng": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "analyzechris": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "theuglyred": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "wowarlok": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "ketzol": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "abyssstaresback": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "shadowthe6th": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "wynaut": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "diluvian": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "runningfast": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     },
+     "redino987": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "wuppin": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jev": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "myosotis": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "salwen": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "ultrafilter": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "suipe": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "vørt3x": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "icecreamcollege": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 6
+      }
+     },
+     "sleepypanda27": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "llblumire": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "nopius": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "sirfuzzywalls": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "metrixgo": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 8
+      },
+      "runner": {
+       "wins": 6.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "augustuscaesar": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 7
+      },
+      "runner": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 6
+      }
+     },
+     "mrvellis": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "tskcool": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "konfusion": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "snoobz": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "protheseus": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "wenjong": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "jasper higgins": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "olus2000": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "moroko": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "chonkyseal": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 8
+      },
+      "runner": {
+       "wins": 7.0,
+       "ties": 0,
+       "games": 7
+      }
+     },
+     "light the ire": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "zombiak": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "viola the goblin": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "chipsthenerd (grant)": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "rielle": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "ebrey": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "cat": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "xiaat": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "giventofly": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "spawacz": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "zhae": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "phenixrogue": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "plural": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 5
+      }
+     },
+     "jgod": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 5
+      }
+     }
+    },
+    "corp_side_wins": 214.0,
+    "games": 403
    }
   },
   {

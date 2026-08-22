@@ -2,6 +2,384 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5799,
+   "title": "Game Night @ B-Side - Start-Up Format",
+   "date": "2026.08.21.",
+   "type": "gnk / seasonal",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "",
+   "formality": "casual",
+   "players": 7,
+   "cut_size": 0,
+   "winner": {
+    "player": "MissInformation ",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "AU Co.: The Gold Standard in Clones",
+     "faction": "jinteki",
+     "url": null,
+     "nrdb_id": "35046"
+    },
+    "runner": {
+     "identity": "Magdalene Keino-Chemutai: Cryptarchitect",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "35024"
+    }
+   },
+   "corp": {
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "36046",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      6
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Dewi Subrotoputri: Pedagogical Dhalang": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35023",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Jinteki: Restoring Humanity": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Editorial Division: Ad Nihilum": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Dewi Subrotoputri: Pedagogical Dhalang": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Jinteki: Restoring Humanity\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "cybersurfclub": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "missinformation": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "bobafred": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "julze": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "marblegarden": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "shlynz": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     },
+     "taeldor": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     }
+    },
+    "corp_side_wins": 8.0,
+    "games": 12
+   }
+  },
+  {
    "id": 5807,
    "title": "STATION ONE | STARTUP LEAGUE | SEASON 23",
    "date": "2026.08.16.",

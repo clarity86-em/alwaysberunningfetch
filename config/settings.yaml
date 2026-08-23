@@ -192,3 +192,6 @@ tiers:
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:
   - non-tournament event
+  # async는 라운드마다 덱 교체가 가능해 identity가 자리표시자(The Shadow/The Masque)로
+  # 올라오는 경우가 대부분 — 통계 가치가 없어 제외
+  - asynchronous tournament

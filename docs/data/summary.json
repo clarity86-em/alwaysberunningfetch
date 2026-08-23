@@ -2,6 +2,483 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5735,
+   "title": "Uppsala CTK augusti 2026",
+   "date": "2026.08.22.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "Cambro",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "BANGUN: When Disaster Strikes",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/97481",
+     "nrdb_id": "35068"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": "https://netrunnerdb.com/en/decklist/97907",
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "PT Untaian: Life's Building Blocks": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35047",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 6,
+     "ranks": [
+      6,
+      7
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      3
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "PT Untaian: Life's Building Blocks": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Jinteki: Restoring Humanity": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 5
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "PT Untaian: Life's Building Blocks\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "isterbollen": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "antro": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "sticktant": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "cambro": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "seabeast": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "effor": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cybertim": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "ottotheslayer": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     }
+    },
+    "corp_side_wins": 8.0,
+    "games": 23
+   }
+  },
+  {
    "id": 5799,
    "title": "Game Night @ B-Side - Start-Up Format",
    "date": "2026.08.21.",

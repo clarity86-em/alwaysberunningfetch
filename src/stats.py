@@ -350,6 +350,8 @@ def tournament_stats(tournament, entries, id_map, tjson=None):
         "mwl": tournament.get("mwl") or "",
         "url": tournament.get("url"),
         "players": players,
+        # ABR의 실제 참가 인원 — 엔트리는 본인이 클레임해야 생기므로 players(엔트리 수)와 다를 수 있음
+        "attendance": tournament.get("players_count") or players,
         "cut_size": sum(1 for e in entries if e.get("rank_top")),
         "corp": dict(sides["corp"]),
         "runner": dict(sides["runner"]),

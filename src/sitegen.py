@@ -622,7 +622,7 @@ def champion_board(per_tournament):
             f"<tr><td class='col-date'>{esc(short_date(t['date']))}</td>"
             f"<td><div class='cell-flex'><div class='trunc' title='{esc(t['title'])}'>"
             f"<a href='t/{t['id']}.html'>{esc(t['title'])}</a></div>"
-            f"<span class='players'>({t['players']}명)</span></div></td>"
+            f"<span class='players'>({t.get('attendance') or t['players']}명)</span></div></td>"
             f"<td><div class='trunc' title='{esc(corp_full)}'>{idtag(w.get('corp')) or '—'}</div></td>"
             f"<td><div class='trunc' title='{esc(runner_full)}'>{idtag(w.get('runner')) or '—'}</div></td></tr>"
         )
@@ -735,8 +735,9 @@ def tournament_table(tournaments, prefix="", show_meta=True, tier_order=None):
             meta_td = f"<td title='{esc(tip)}'>{esc(meta)}<div class='n' style='font-size:11.5px;color:var(--muted)'>{esc(t['cardpool'])}{' · ' + ban if ban else ''}</div></td>"
         tier = t.get("tier_label") or t["type"] or "?"
         fmt_label = FORMAT_LABELS.get(t["format"], t["format"] or "?")
+        att = t.get("attendance") or t["players"]
         mob_extra = (
-            f"<div class='mob-extra'>인원 {t['players']}명 · 우승: {winner}</div>"
+            f"<div class='mob-extra'>인원 {att}명 · 우승: {winner}</div>"
         )
         rows.append(
             f"<tr data-tier='{esc(tier)}' data-format='{esc(fmt_label)}'>"
@@ -745,7 +746,7 @@ def tournament_table(tournaments, prefix="", show_meta=True, tier_order=None):
             f"<td><a href='{prefix}t/{t['id']}.html'>{esc(t['title'])}</a>{mob_extra}</td>"
             + meta_td
             + f"<td>{tier_badge(t)}</td>"
-            f"<td class='num col-players'>{t['players']}</td>"
+            f"<td class='num col-players'>{att}</td>"
             f"<td class='col-winner'>{winner}</td></tr>"
         )
     meta_th = "<th>포맷</th>" if show_meta else ""
@@ -1011,13 +1012,22 @@ def render_tournament(t, settings):
     meta_txt = f"{FORMAT_LABELS.get(t['format'], t['format'])} · {t['cardpool']}" + (
         f" · {ban}" if ban else ""
     )
+    att = t.get("attendance") or t["players"]
+    ppl_txt = f"{att}명" + (f" (엔트리 등록 {t['players']}명)" if t["players"] < att else "")
     head = f"""
 <p class="crumb"><a href="../index.html">← 전체 통계</a></p>
 <h1>{esc(t['title'])}</h1>
-<p class="sub">{esc(t['date'])} · {tier_badge(t)} · <b>{esc(meta_txt)}</b> · {t['players']}명
+<p class="sub">{esc(t['date'])} · {tier_badge(t)} · <b>{esc(meta_txt)}</b> · {ppl_txt}
 {'· 탑컷 ' + str(t['cut_size']) + '명' if has_cut else ''}
 {f"· <a href='https://alwaysberunning.net/tournaments/{t['id']}' target='_blank' rel='noopener'>ABR에서 보기</a>" if t['id'] else ''}</p>
 """
+    if t["players"] < att / 2:
+        head += (
+            "<div class='card' style='border-left:3px solid var(--f-nbn)'>"
+            f"<p class='sub' style='margin:0'>⚠ 참가자 {att}명 중 {t['players']}명만 "
+            "ABR에 엔트리(identity)를 등록한 대회입니다. 아래 통계는 등록된 엔트리만 반영하므로 "
+            "대회 전체를 대표하지 않습니다.</p></div>"
+        )
     winner_html = ""
     if t["winner"]:
         w = t["winner"]

@@ -7063,10 +7063,37 @@
    "cardpool": "Vantage Point",
    "banlist": "26.08",
    "formality": "casual",
-   "players": 1,
+   "players": 2,
    "cut_size": 0,
-   "winner": null,
+   "winner": {
+    "player": "ChonkySeal",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "33057"
+    },
+    "runner": {
+     "identity": "Esâ Afontov: Eco-Insurrectionist",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "33001"
+    }
+   },
    "corp": {
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
     "Nuvem SA: Law of the Land": {
      "count": 1,
      "cut": 0,
@@ -7080,6 +7107,17 @@
     }
    },
    "runner": {
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
     "René \"Loup\" Arcemont: Party Animal": {
      "count": 1,
      "cut": 0,

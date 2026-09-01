@@ -114,48 +114,43 @@ def probe_cobra(settings):
     import glob
     import re as _re
 
-    # 1) 알려진 공개 대회로 파서 검증
-    known = "https://tournaments.nullsignal.games/tournaments/5041"
+    # 공개 확인된 대회(5041)로 어떤 엔드포인트가 익명 접근을 허용하는지 핀포인트 검증
+    base = "https://tournaments.nullsignal.games"
+    known = f"{base}/tournaments/5041"
     try:
-        resp = abr._get_text(f"{known}/players/standings")
-        pids = _re.findall(r"/players/(\d+)/view_decks", resp.text)
-        print(f"검증 대회 standings -> {resp.status_code}, view_decks 링크 {len(pids)}개")
-        for pid in pids[:2]:
-            r2 = abr._get_text(f"{known}/players/{pid}/view_decks")
-            parsed = abr.parse_cobra_decks(r2.text)
-            print(f"  플레이어 {pid} -> {r2.status_code}, 파싱: {'성공' if parsed else '실패'}")
-            if parsed:
-                for side, deck in parsed.items():
-                    if deck:
-                        det = deck.get("details") or {}
-                        cards = deck.get("cards") or []
-                        print(f"    {side}: {det.get('identity_title')!r} 카드 {len(cards)}종, "
-                              f"예: {[(c.get('title'), c.get('quantity'), c.get('nrdb_printing_id')) for c in cards[:2]]}")
+        r = abr._get_text(f"{known}/players/standings_data")
+        print(f"standings_data -> {r.status_code} ({r.headers.get('content-type')})")
+        data = r.json()
+        pids_open = []
+        for stage in data.get("stages") or []:
+            print(f"  stage: any_decks_viewable={stage.get('any_decks_viewable')}, "
+                  f"standings={len(stage.get('standings') or [])}")
+            for s in stage.get("standings") or []:
+                pol = s.get("policy") or {}
+                if pol.get("view_decks"):
+                    pid = (s.get("player") or {}).get("id")
+                    if pid and pid not in pids_open:
+                        pids_open.append(pid)
+        print(f"  view_decks 허용 플레이어: {len(pids_open)}명 -> {pids_open[:5]}")
+        for pid in pids_open[:2]:
+            for label, url in (
+                ("view_decks(HTML)", f"{known}/players/{pid}/view_decks"),
+                ("beta decks(JSON)", f"{base}/beta/tournaments/5041/players/{pid}/decks"),
+            ):
+                r2 = abr._get_text(url)
+                body = r2.text
+                parsed = abr.parse_cobra_decks(body)
+                print(f"  [{label}] {pid} -> {r2.status_code}, {len(body)}b, "
+                      f"corp_deck입력={'corp_deck' in body}, 파싱={'OK' if parsed else 'X'}")
+                if label.startswith("beta") and r2.status_code == 200:
+                    print(f"    body[:400]: {body[:400]}")
+                if parsed:
+                    for side, deck in parsed.items():
+                        if deck:
+                            det = deck.get("details") or {}
+                            print(f"    {side}: {det.get('identity_title')!r} 카드 {len(deck.get('cards') or [])}종")
     except Exception as e:
-        print(f"검증 대회 확인 실패: {e}")
-
-    # 2) 전체 대회 공개 여부 조사 (대회당 요청 1건)
-    pub, priv, err = [], 0, 0
-    files = sorted(glob.glob(str(abr.MATCHES_DIR / "*.json")))
-    print(f"\n전체 조사 시작: tjson {len(files)}개")
-    for f in files:
-        d = json.load(open(f, encoding="utf-8"))
-        if d.get("unavailable"):
-            continue
-        url = abr.cobra_tournament_url(d)
-        players = [p for p in (d.get("players") or []) if p.get("id") is not None]
-        if not url or not players:
-            continue
-        try:
-            r = abr._get_text(f"{url}/players/{players[0]['id']}/view_decks")
-            if r.status_code == 200 and abr.parse_cobra_decks(r.text):
-                pub.append(Path(f).stem)
-            else:
-                priv += 1
-        except Exception:
-            err += 1
-    print(f"\n결과: 덱 공개 {len(pub)}개 / 비공개 {priv}개 / 오류 {err}개")
-    print(f"공개 대회 ABR id: {pub}")
+        print(f"검증 실패: {e}")
     return 0
 
 

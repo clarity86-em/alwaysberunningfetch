@@ -246,6 +246,113 @@ def card_index(offline=False, want_codes=()):
     return cached
 
 
+def _get_text(url):
+    """HTML 페이지 fetch (JSON 아님) — _get_json과 같은 속도 제한 공유."""
+    wait = REQUEST_DELAY - (time.monotonic() - _last_request[0])
+    if wait > 0:
+        time.sleep(wait)
+    resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+    _last_request[0] = time.monotonic()
+    return resp
+
+
+COBRA_DECKS_DIR = DATA_DIR / "cobra_decks"
+
+
+def cobra_tournament_url(tjson):
+    """tjson의 uploadedfrom 링크에서 Cobra 대회 URL 추출. 없으면 None."""
+    for link in (tjson or {}).get("links") or []:
+        href = link.get("href") or ""
+        if link.get("rel") == "uploadedfrom" and "/tournaments/" in href:
+            return href.rstrip("/")
+    return None
+
+
+def parse_cobra_decks(html_text):
+    """Cobra view_decks 페이지에서 corp/runner 덱 JSON 추출.
+
+    페이지에 <input id="corp_deck" value="{...json...}"> 형태로 덱 전체가
+    들어 있다 (HTML 이스케이프됨). 반환: {"corp": deck|None, "runner": deck|None}
+    덱 입력 자체가 없으면 None (비공개/권한 없음).
+    """
+    import html as _html
+
+    out, found = {}, False
+    for side in ("corp", "runner"):
+        m = re.search(
+            rf"id=[\"']{side}_deck[\"'][^>]*value=[\"'](.*?)[\"']\s*/?>",
+            html_text,
+            re.S,
+        )
+        if not m:
+            # value가 id보다 앞에 오는 속성 순서도 시도
+            m = re.search(
+                rf"value=[\"'](.*?)[\"'][^>]*id=[\"']{side}_deck[\"']",
+                html_text,
+                re.S,
+            )
+        deck = None
+        if m:
+            found = True
+            raw = _html.unescape(m.group(1)).strip()
+            if raw and raw not in ("null", "{}"):
+                try:
+                    deck = json.loads(raw)
+                except ValueError:
+                    deck = None
+        out[side] = deck
+    return out if found else None
+
+
+def fetch_cobra_decks(cobra_url, player_id, refresh=False, offline=False):
+    """Cobra 공개 덱 fetch: {side: {"identity":..., "cards": {code: qty}}}.
+
+    덱 공개 설정이 아닌 대회/플레이어는 unavailable 마커를 캐시.
+    refresh=True(최근 대회)일 때만 마커를 다시 확인한다.
+    """
+    slug = cobra_url.rstrip("/").split("/")[-1]
+    path = COBRA_DECKS_DIR / f"{slug}-{player_id}.json"
+    cached = _read_cache(path)
+    if cached is not None:
+        if not cached.get("unavailable"):
+            return cached
+        if offline or not refresh:
+            return None
+    elif offline:
+        return None
+    try:
+        resp = _get_text(f"{cobra_url}/players/{player_id}/view_decks")
+    except requests.RequestException as e:
+        print(f"경고: cobra 덱 {slug}/{player_id} fetch 실패: {e}", file=sys.stderr)
+        return None
+    parsed = parse_cobra_decks(resp.text) if resp.status_code == 200 else None
+    if not parsed:
+        _write_cache(path, {"unavailable": True, "checked": date.today().isoformat()})
+        return None
+    out = {}
+    for side, deck in parsed.items():
+        if not deck or not deck.get("cards"):
+            continue
+        cards = {}
+        for c in deck["cards"]:
+            code = c.get("nrdb_printing_id")
+            qty = c.get("quantity")
+            if code is None or not qty:
+                continue
+            code = str(code).zfill(5)
+            cards[code] = cards.get(code, 0) + int(qty)
+        if cards:
+            out[side] = {
+                "identity": (deck.get("details") or {}).get("identity_title") or "",
+                "cards": cards,
+            }
+    if not out:
+        _write_cache(path, {"unavailable": True, "checked": date.today().isoformat()})
+        return None
+    _write_cache(path, out)
+    return out
+
+
 def deck_token(url):
     """덱리스트 URL에서 id/uuid 추출. 없으면 None."""
     m = re.search(r"/decklist/([A-Za-z0-9-]+)", url or "")

@@ -13,6 +13,10 @@ on:
         description: "API 스키마 확인만 실행 (사이트 생성 안 함)"
         type: boolean
         default: false
+      probe_cobra:
+        description: "Cobra 덱 페이지 파싱 검증만 실행"
+        type: boolean
+        default: false
 
 permissions:
   contents: write               # data/, docs/ 결과를 저장소에 커밋
@@ -39,12 +43,16 @@ jobs:
         if: ${{ inputs.probe }}
         run: python src/main.py --probe
 
+      - name: Probe Cobra deck pages
+        if: ${{ inputs.probe_cobra }}
+        run: python src/main.py --probe-cobra
+
       - name: Run pipeline
-        if: ${{ !inputs.probe }}
+        if: ${{ !inputs.probe && !inputs.probe_cobra }}
         run: python src/main.py
 
       - name: Commit results
-        if: ${{ !inputs.probe }}
+        if: ${{ !inputs.probe && !inputs.probe_cobra }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"

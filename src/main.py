@@ -104,6 +104,47 @@ def probe_matchdata(settings):
     return 0
 
 
+def probe_cobra(settings):
+    """Cobra view_decks 페이지 구조 확인 — 덱 수집 활성화 전 파싱 검증용."""
+    import glob
+
+    picked = []
+    for f in sorted(glob.glob(str(abr.MATCHES_DIR / "*.json")), reverse=True):
+        d = json.load(open(f, encoding="utf-8"))
+        if d.get("unavailable"):
+            continue
+        url = abr.cobra_tournament_url(d)
+        players = [p for p in (d.get("players") or []) if p.get("id") is not None]
+        if url and players:
+            picked.append((Path(f).stem, url, players))
+        if len(picked) >= 3:
+            break
+    for abr_id, url, players in picked:
+        print(f"\n===== ABR {abr_id} -> {url} (플레이어 {len(players)}명) =====")
+        for p in players[:3]:
+            target = f"{url}/players/{p['id']}/view_decks"
+            try:
+                resp = abr._get_text(target)
+            except Exception as e:
+                print(f"GET {target} -> 예외: {e}")
+                continue
+            html_text = resp.text
+            has_input = 'corp_deck' in html_text
+            parsed = abr.parse_cobra_decks(html_text)
+            print(f"GET {target} -> {resp.status_code}, {len(html_text)}b, corp_deck 존재: {has_input}")
+            if parsed:
+                for side, deck in parsed.items():
+                    if deck:
+                        cards = deck.get("cards") or []
+                        det = deck.get("details") or {}
+                        print(f"  {side}: identity={det.get('identity_title')!r} 카드 {len(cards)}종")
+                        for c in cards[:3]:
+                            print(f"    {c.get('title')!r} x{c.get('quantity')} printing={c.get('nrdb_printing_id')}")
+            else:
+                print("  덱 입력 없음 (비공개?)")
+    return 0
+
+
 def probe(settings):
     """API 실제 응답의 키 구조를 출력 — 스키마 검증/디버그용."""
     results = abr.fetch_results(limit=10)
@@ -245,11 +286,14 @@ def main():
     parser.add_argument("--offline", action="store_true", help="네트워크 없이 캐시만 사용")
     parser.add_argument("--probe", action="store_true", help="API 응답 구조 출력")
     parser.add_argument("--probe-matchdata", action="store_true", help="matchdata 엔드포인트 탐색")
+    parser.add_argument("--probe-cobra", action="store_true", help="Cobra 덱 페이지 파싱 검증")
     args = parser.parse_args()
     if args.probe:
         sys.exit(probe(load_settings()))
     if args.probe_matchdata:
         sys.exit(probe_matchdata(load_settings()))
+    if args.probe_cobra:
+        sys.exit(probe_cobra(load_settings()))
     sys.exit(run(offline=args.offline))
 
 

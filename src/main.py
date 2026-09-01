@@ -274,6 +274,82 @@ def run(offline=False):
     with_cards = sum(1 for t in per_tournament for d in t.get("decks", []) if d.get("cards"))
     print(f"덱리스트: 고유 {len(deck_cache)}개, 카드 확보 {with_cards}건")
 
+    # Cobra(NSG 대회 플랫폼) 공개 덱 보완 수집 — NRDB 링크가 없는 플레이어 대상.
+    # tjson의 uploadedfrom 링크가 Cobra 대회 URL, players[].id가 Cobra 플레이어 id.
+    from stats import norm_title, player_name
+
+    cobra_rows, cobra_ts = 0, 0
+    for (t_src, entries, tjson), t in zip(raw, per_tournament):
+        if not tjson:
+            continue
+        curl = abr.cobra_tournament_url(tjson)
+        if not curl:
+            continue
+        d = parse_abr_date(t_src.get("date"))
+        refresh = bool(d and d >= refresh_after) and not offline
+        try:
+            viewable = abr.fetch_cobra_viewable(curl, refresh=refresh, offline=offline)
+        except Exception as e:
+            print(f"경고: cobra {curl} 조회 실패: {e}", file=sys.stderr)
+            continue
+        if not viewable:
+            continue
+        # ABR에 NRDB 덱이 이미 있는 (플레이어, 사이드)는 건너뜀
+        have = set()
+        for e in entries:
+            pkey = norm_title(player_name(e)).casefold()
+            for side in ("corp", "runner"):
+                if e.get(f"{side}_deck_url"):
+                    have.add((pkey, side))
+        name_of, ident_of = {}, {}
+        for p in tjson.get("players") or []:
+            if p.get("id") is None:
+                continue
+            name_of[p["id"]] = p.get("name")
+            ident_of[p["id"]] = {
+                "corp": p.get("corpIdentity") or "",
+                "runner": p.get("runnerIdentity") or "",
+            }
+        perf_map = (t.get("winrates") or {}).get("players") or {}
+        added_here = 0
+        for pid in viewable:
+            name = name_of.get(pid)
+            if not name:
+                continue
+            pkey = norm_title(str(name)).casefold()
+            need = [s for s in ("corp", "runner") if (pkey, s) not in have]
+            if not need:
+                continue
+            try:
+                got = abr.fetch_cobra_decks(curl, pid, refresh=refresh, offline=offline)
+            except Exception as e:
+                print(f"경고: cobra 덱 {curl}/{pid} 실패: {e}", file=sys.stderr)
+                continue
+            if not got:
+                continue
+            for side in need:
+                deck = got.get(side)
+                if not deck or not deck.get("cards"):
+                    continue
+                perf = (perf_map.get(pkey) or {}).get(side) or {}
+                t["decks"].append(
+                    {
+                        "side": side,
+                        "identity": deck.get("identity")
+                        or ident_of.get(pid, {}).get(side, ""),
+                        "url": f"{curl}/players/{pid}/view_decks",
+                        "wins": perf.get("wins", 0.0),
+                        "ties": perf.get("ties", 0),
+                        "games": perf.get("games", 0),
+                        "cards": deck["cards"],
+                    }
+                )
+                added_here += 1
+        if added_here:
+            cobra_rows += added_here
+            cobra_ts += 1
+    print(f"Cobra 공개 덱: {cobra_ts}개 대회에서 {cobra_rows}건 보완")
+
     # 카드 코드 -> 이름/타입 인덱스 (표시용)
     want_codes = set()
     for t in per_tournament:

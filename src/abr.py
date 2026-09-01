@@ -304,6 +304,35 @@ def parse_cobra_decks(html_text):
     return out if found else None
 
 
+def fetch_cobra_viewable(cobra_url, refresh=False, offline=False):
+    """Cobra 대회에서 덱이 공개된 플레이어 id 목록 (standings_data 기반).
+
+    대회당 요청 1건. 결과는 캐시되고 refresh=True(최근 대회)일 때만 갱신.
+    """
+    slug = cobra_url.rstrip("/").split("/")[-1]
+    path = COBRA_DECKS_DIR / f"{slug}-index.json"
+    cached = _read_cache(path)
+    if cached is not None and not refresh:
+        return cached.get("viewable") or []
+    if offline:
+        return (cached or {}).get("viewable") or []
+    try:
+        resp = _get_text(f"{cobra_url}/players/standings_data")
+        data = resp.json() if resp.status_code == 200 else {}
+    except (requests.RequestException, ValueError) as e:
+        print(f"경고: cobra standings_data {slug} 실패: {e}", file=sys.stderr)
+        return (cached or {}).get("viewable") or []
+    viewable = []
+    for stage in data.get("stages") or []:
+        for s in stage.get("standings") or []:
+            if (s.get("policy") or {}).get("view_decks"):
+                pid = (s.get("player") or {}).get("id")
+                if pid is not None and pid not in viewable:
+                    viewable.append(pid)
+    _write_cache(path, {"viewable": viewable, "checked": date.today().isoformat()})
+    return viewable
+
+
 def fetch_cobra_decks(cobra_url, player_id, refresh=False, offline=False):
     """Cobra 공개 덱 fetch: {side: {"identity":..., "cards": {code: qty}}}.
 

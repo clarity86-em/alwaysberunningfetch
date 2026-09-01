@@ -246,12 +246,12 @@ def card_index(offline=False, want_codes=()):
     return cached
 
 
-def _get_text(url):
+def _get_text(url, allow_redirects=True):
     """HTML 페이지 fetch (JSON 아님) — _get_json과 같은 속도 제한 공유."""
     wait = REQUEST_DELAY - (time.monotonic() - _last_request[0])
     if wait > 0:
         time.sleep(wait)
-    resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT)
+    resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=allow_redirects)
     _last_request[0] = time.monotonic()
     return resp
 
@@ -302,6 +302,44 @@ def parse_cobra_decks(html_text):
                     deck = None
         out[side] = deck
     return out if found else None
+
+
+COBRA_SLUGS_CACHE = DATA_DIR / "cobra_slugs.json"
+
+
+def resolve_cobra_url(cobra_url, offline=False):
+    """슬러그형 Cobra URL을 숫자 id URL로 변환.
+
+    tjson의 uploadedfrom은 /tournaments/Q090 같은 단축코드 형태인데,
+    standings_data 등 데이터 라우트는 숫자 id만 받는다. 루트의 /{slug}가
+    /tournaments/{숫자}로 302 리다이렉트하므로 그걸 따라가 매핑을 캐시.
+    """
+    m = re.match(r"(https?://[^/]+)/tournaments/([^/]+)$", (cobra_url or "").rstrip("/"))
+    if not m:
+        return None
+    base, slug = m.group(1), m.group(2)
+    if slug.isdigit():
+        return f"{base}/tournaments/{slug}"
+    cache = _read_cache(COBRA_SLUGS_CACHE) or {}
+    if slug in cache:
+        return cache[slug] or None
+    if offline:
+        return None
+    try:
+        resp = _get_text(f"{base}/{slug}", allow_redirects=False)
+    except requests.RequestException as e:
+        print(f"경고: cobra 슬러그 {slug} 변환 실패: {e}", file=sys.stderr)
+        return None  # 일시 오류는 캐시하지 않음
+    resolved = None
+    loc = resp.headers.get("location") or ""
+    if resp.status_code in (301, 302, 303, 307, 308) and loc:
+        if loc.startswith("/"):
+            loc = base + loc
+        if re.match(rf"{re.escape(base)}/tournaments/\d+$", loc.rstrip("/")):
+            resolved = loc.rstrip("/")
+    cache[slug] = resolved
+    _write_cache(COBRA_SLUGS_CACHE, cache)
+    return resolved
 
 
 def fetch_cobra_viewable(cobra_url, refresh=False, offline=False):

@@ -305,6 +305,9 @@ def run(offline=False):
         d = parse_abr_date(t_src.get("date"))
         refresh = bool(d and d >= refresh_after) and not offline
         try:
+            curl = abr.resolve_cobra_url(curl, offline=offline)
+            if not curl:
+                continue
             viewable = abr.fetch_cobra_viewable(curl, refresh=refresh, offline=offline)
         except Exception as e:
             print(f"경고: cobra {curl} 조회 실패: {e}", file=sys.stderr)

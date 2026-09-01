@@ -105,43 +105,57 @@ def probe_matchdata(settings):
 
 
 def probe_cobra(settings):
-    """Cobra view_decks 페이지 구조 확인 — 덱 수집 활성화 전 파싱 검증용."""
-    import glob
+    """Cobra 덱 공개 여부 전수 조사 + 파싱 검증 (수집 활성화 전 사전 확인).
 
-    picked = []
-    for f in sorted(glob.glob(str(abr.MATCHES_DIR / "*.json")), reverse=True):
+    1) 공개 확인된 대회(5041)로 파서 검증
+    2) 캐시된 모든 tjson 대회에 대해 1위 플레이어의 view_decks를 찔러
+       덱 공개/비공개를 집계
+    """
+    import glob
+    import re as _re
+
+    # 1) 알려진 공개 대회로 파서 검증
+    known = "https://tournaments.nullsignal.games/tournaments/5041"
+    try:
+        resp = abr._get_text(f"{known}/players/standings")
+        pids = _re.findall(r"/players/(\d+)/view_decks", resp.text)
+        print(f"검증 대회 standings -> {resp.status_code}, view_decks 링크 {len(pids)}개")
+        for pid in pids[:2]:
+            r2 = abr._get_text(f"{known}/players/{pid}/view_decks")
+            parsed = abr.parse_cobra_decks(r2.text)
+            print(f"  플레이어 {pid} -> {r2.status_code}, 파싱: {'성공' if parsed else '실패'}")
+            if parsed:
+                for side, deck in parsed.items():
+                    if deck:
+                        det = deck.get("details") or {}
+                        cards = deck.get("cards") or []
+                        print(f"    {side}: {det.get('identity_title')!r} 카드 {len(cards)}종, "
+                              f"예: {[(c.get('title'), c.get('quantity'), c.get('nrdb_printing_id')) for c in cards[:2]]}")
+    except Exception as e:
+        print(f"검증 대회 확인 실패: {e}")
+
+    # 2) 전체 대회 공개 여부 조사 (대회당 요청 1건)
+    pub, priv, err = [], 0, 0
+    files = sorted(glob.glob(str(abr.MATCHES_DIR / "*.json")))
+    print(f"\n전체 조사 시작: tjson {len(files)}개")
+    for f in files:
         d = json.load(open(f, encoding="utf-8"))
         if d.get("unavailable"):
             continue
         url = abr.cobra_tournament_url(d)
         players = [p for p in (d.get("players") or []) if p.get("id") is not None]
-        if url and players:
-            picked.append((Path(f).stem, url, players))
-        if len(picked) >= 3:
-            break
-    for abr_id, url, players in picked:
-        print(f"\n===== ABR {abr_id} -> {url} (플레이어 {len(players)}명) =====")
-        for p in players[:3]:
-            target = f"{url}/players/{p['id']}/view_decks"
-            try:
-                resp = abr._get_text(target)
-            except Exception as e:
-                print(f"GET {target} -> 예외: {e}")
-                continue
-            html_text = resp.text
-            has_input = 'corp_deck' in html_text
-            parsed = abr.parse_cobra_decks(html_text)
-            print(f"GET {target} -> {resp.status_code}, {len(html_text)}b, corp_deck 존재: {has_input}")
-            if parsed:
-                for side, deck in parsed.items():
-                    if deck:
-                        cards = deck.get("cards") or []
-                        det = deck.get("details") or {}
-                        print(f"  {side}: identity={det.get('identity_title')!r} 카드 {len(cards)}종")
-                        for c in cards[:3]:
-                            print(f"    {c.get('title')!r} x{c.get('quantity')} printing={c.get('nrdb_printing_id')}")
+        if not url or not players:
+            continue
+        try:
+            r = abr._get_text(f"{url}/players/{players[0]['id']}/view_decks")
+            if r.status_code == 200 and abr.parse_cobra_decks(r.text):
+                pub.append(Path(f).stem)
             else:
-                print("  덱 입력 없음 (비공개?)")
+                priv += 1
+        except Exception:
+            err += 1
+    print(f"\n결과: 덱 공개 {len(pub)}개 / 비공개 {priv}개 / 오류 {err}개")
+    print(f"공개 대회 ABR id: {pub}")
     return 0
 
 

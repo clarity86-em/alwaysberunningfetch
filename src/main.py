@@ -114,8 +114,25 @@ def probe_cobra(settings):
     import glob
     import re as _re
 
-    # 공개 확인된 대회(5041)로 어떤 엔드포인트가 익명 접근을 허용하는지 핀포인트 검증
+    # 슬러그형 URL(tjson uploadedfrom)에서 standings_data가 왜 HTML을 주는지 진단
     base = "https://tournaments.nullsignal.games"
+    for tid in ("5041", "Q090", "374Y"):
+        for suffix, headers in (
+            ("/players/standings_data", None),
+            ("/players/standings_data", {"Accept": "application/json"}),
+        ):
+            url = f"{base}/tournaments/{tid}{suffix}"
+            try:
+                import requests as _rq
+
+                resp = _rq.get(url, headers={**abr.HEADERS, **(headers or {})},
+                               timeout=30, allow_redirects=True)
+                print(f"GET {tid}{suffix} accept={bool(headers)} -> {resp.status_code} "
+                      f"({resp.headers.get('content-type')}) final={resp.url}")
+                print(f"  body[:150]: {resp.text[:150]!r}")
+            except Exception as e:
+                print(f"GET {url} 예외: {e}")
+
     known = f"{base}/tournaments/5041"
     try:
         r = abr._get_text(f"{known}/players/standings_data")

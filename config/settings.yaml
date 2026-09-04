@@ -31,6 +31,11 @@ banlist_schedule:
     - {version: "26.03", from: "2026-03-13"}
     - {version: "25.12", from: "2025-12-01"}
 
+# 내용이 같은 밴리스트 버전 통합 (변경 없는 갱신판 -> 기존 버전 그룹으로 묶음).
+# 26.09는 26.08에서 밴 카드 변경 없음 (nullsignal.games/blog/standard-balance-update-26-09)
+banlist_merge:
+  "26.09": "26.08"
+
 # 개별 대회 밴리스트 수동 지정 (대회 ID -> 버전). 날짜/주최자 입력 판정보다 최우선.
 # 발효일에 걸쳐 진행돼 자동 판정이 어긋나는 대회에 사용.
 banlist_overrides:

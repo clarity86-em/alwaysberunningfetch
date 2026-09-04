@@ -68,6 +68,15 @@ def banlist_version(mwl):
 
 
 def derive_banlist(t, settings):
+    """밴리스트 버전 판정 + 동일 내용 버전 통합(banlist_merge)."""
+    v = _derive_banlist_ver(t, settings)
+    if v:
+        merge = settings.get("banlist_merge") or {}
+        v = str(merge.get(str(v), v))
+    return v
+
+
+def _derive_banlist_ver(t, settings):
     """대회 날짜로 밴리스트 버전 판정 (발효일 표 기반).
 
     ABR의 주최자 입력(mwl)은 오표기가 많아 기본적으로 신뢰하지 않지만,

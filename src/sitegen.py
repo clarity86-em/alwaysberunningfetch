@@ -227,6 +227,7 @@ h3 {{ font-size: 15px; margin: 0 0 8px; color: var(--ink-2); }}
 .bars svg {{ display: block; width: 100%; height: 18px; }}
 table {{ border-collapse: collapse; width: 100%; font-size: 13.5px; }}
 th, td {{ text-align: left; padding: 6px 10px; border-bottom: 1px solid var(--grid); }}
+.standings tr.cut-line td {{ border-top: 2px solid var(--ink-2); }}
 th {{ color: var(--ink-2); font-weight: 600; font-size: 12.5px; white-space: nowrap; }}
 td.num, th.num {{ text-align: right; font-variant-numeric: tabular-nums; }}
 tr:hover td {{ background: color-mix(in srgb, var(--ink) 4%, transparent); }}
@@ -1060,10 +1061,14 @@ def render_tournament(t, settings):
             matchup_base=f"../matchup/{meta_slug(meta_key(t))}/",
         )
     rows = []
+    prev_in_cut = False
     for s in t["standings"]:
         rank = s["rank_top"] or s["rank_swiss"] or ""
+        # 탑컷 진출자와 탈락자 사이 경계선 (컷 있는 대회만)
+        cls = " class='cut-line'" if prev_in_cut and not s["rank_top"] else ""
+        prev_in_cut = bool(s["rank_top"])
         rows.append(
-            f"<tr><td class='num'>{rank}</td><td>{esc(s['player'])}</td>"
+            f"<tr{cls}><td class='num'>{rank}</td><td>{esc(s['player'])}</td>"
             f"<td>{idtag(s.get('corp'))}</td><td>{idtag(s.get('runner'))}</td>"
             f"<td class='num'>{s['rank_swiss'] or ''}</td></tr>"
         )

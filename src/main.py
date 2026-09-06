@@ -332,6 +332,7 @@ def run(offline=False):
             }
         perf_map = (t.get("winrates") or {}).get("players") or {}
         added_here = 0
+        cobra_link = {}  # (플레이어 키, 사이드) -> Cobra 덱 페이지 URL
         for pid in viewable:
             name = name_of.get(pid)
             if not name:
@@ -364,7 +365,17 @@ def run(offline=False):
                         "cards": deck["cards"],
                     }
                 )
+                cobra_link[(pkey, side)] = f"{curl}/players/{pid}/view_decks"
                 added_here += 1
+        # 순위표에서 NRDB 링크가 없는 칸에 Cobra 덱 페이지를 링크
+        # (winner는 standings 행과 같은 객체를 참조하므로 함께 반영됨)
+        if cobra_link:
+            for row in t.get("standings") or []:
+                pkey = norm_title(str(row.get("player") or "")).casefold()
+                for side in ("corp", "runner"):
+                    cell = row.get(side)
+                    if cell and not cell.get("url") and (pkey, side) in cobra_link:
+                        cell["url"] = cobra_link[(pkey, side)]
         if added_here:
             cobra_rows += added_here
             cobra_ts += 1

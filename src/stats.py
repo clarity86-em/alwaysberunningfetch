@@ -213,16 +213,32 @@ def parse_matchdata(tjson, id_map=None):
             c2, r2 = idents.get(id2, (None, None))
             role1 = (p1.get("role") or "").lower()
             if role1 in ("corp", "runner"):
-                # 단판 (컷 라운드 등): p1이 role1 측을 플레이
-                winner1 = p1.get("winner")
-                if winner1 is None and p1.get("combinedScore") is not None:
-                    winner1 = (p1.get("combinedScore") or 0) > (p2.get("combinedScore") or 0)
-                if winner1 is None:
+                # 단판 (컷/싱글사이드 스위스): p1이 role1 측을 플레이.
+                # 동점(예: 1-1)은 무승부 — 점수 비교로 승자를 정하면 p2 승으로
+                # 잘못 집계되므로 반드시 무승부로 처리한다. 0-0은 미진행.
+                w1, w2 = p1.get("winner"), p2.get("winner")
+                s1, s2 = p1.get("combinedScore"), p2.get("combinedScore")
+                winner1, tie1 = None, False
+                if w1 is not None or w2 is not None:
+                    winner1 = bool(w1) if w1 is not None else not bool(w2)
+                elif s1 is not None or s2 is not None:
+                    s1v, s2v = s1 or 0, s2 or 0
+                    if s1v != s2v:
+                        winner1 = s1v > s2v
+                    elif s1v > 0:
+                        tie1 = True
+                if winner1 is None and not tie1:
                     continue
-                if role1 == "corp":
-                    record(c1, r2, 3 if winner1 else 0, 0 if winner1 else 3, id1, id2)
+                if tie1:
+                    cs, rs = 1, 1
+                elif (role1 == "corp") == winner1:
+                    cs, rs = 3, 0
                 else:
-                    record(c2, r1, 0 if winner1 else 3, 3 if winner1 else 0, id2, id1)
+                    cs, rs = 0, 3
+                if role1 == "corp":
+                    record(c1, r2, cs, rs, id1, id2)
+                else:
+                    record(c2, r1, cs, rs, id2, id1)
             else:
                 # 스위스 양판
                 record(c1, r2, p1.get("corpScore"), p2.get("runnerScore"), id1, id2)

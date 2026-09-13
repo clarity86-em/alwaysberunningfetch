@@ -2,6 +2,441 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5872,
+   "title": "APAC CONTS STARTUP SICKOS",
+   "date": "2026.09.13.",
+   "type": "gnk / seasonal",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "ThePatrician",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Poétrï Luxury Brands: All the Rage",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "35036"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      6
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      5,
+      8
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Jinteki: Restoring Humanity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "30043",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "PT Untaian: Life's Building Blocks": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35047",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "runner": {
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      6,
+      8
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      7
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 1.5,
+      "ties": 1,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 4.5,
+      "ties": 1,
+      "games": 6
+     },
+     "Jinteki: Restoring Humanity": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 2.5,
+      "ties": 1,
+      "games": 4
+     },
+     "PT Untaian: Life's Building Blocks": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 1.5,
+      "ties": 1,
+      "games": 6
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 0.5,
+      "ties": 1,
+      "games": 4
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "matchups": {
+     "Poétrï Luxury Brands: All the Rage\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Jinteki: Restoring Humanity\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.5,
+      "ties": 1,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.5,
+      "ties": 1,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "PT Untaian: Life's Building Blocks\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Jinteki: Restoring Humanity\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "thepatrician": {
+      "corp": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cr4ter": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "gizmaluke": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "tk809": {
+      "corp": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "snedd": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "xyceres": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 2
+      }
+     },
+     "(cj) cody": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cosmic": {
+      "corp": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 2
+      }
+     },
+     "i am the gull": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "garlick": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 2
+      }
+     }
+    },
+    "corp_side_wins": 12.5,
+    "games": 20
+   }
+  },
+  {
    "id": 5773,
    "title": "[新竹] 矩陣潛襲-九月交流賽",
    "date": "2026.09.12.",

@@ -246,17 +246,41 @@ def card_index(offline=False, want_codes=()):
     return cached
 
 
-def _get_text(url, allow_redirects=True):
+def _get_text(url, allow_redirects=True, timeout=None):
     """HTML 페이지 fetch (JSON 아님) — _get_json과 같은 속도 제한 공유."""
     wait = REQUEST_DELAY - (time.monotonic() - _last_request[0])
     if wait > 0:
         time.sleep(wait)
-    resp = requests.get(url, headers=HEADERS, timeout=TIMEOUT, allow_redirects=allow_redirects)
+    resp = requests.get(
+        url, headers=HEADERS, timeout=timeout or TIMEOUT, allow_redirects=allow_redirects
+    )
     _last_request[0] = time.monotonic()
     return resp
 
 
 COBRA_DECKS_DIR = DATA_DIR / "cobra_decks"
+COBRA_TIMEOUT = 20  # Cobra는 다운 시 전체 실행이 늘어지지 않게 짧은 타임아웃
+_cobra_fail = [0]  # 연속 연결 실패 수 — 3회면 이번 실행의 나머지 Cobra 요청 생략
+
+
+def _cobra_down():
+    return _cobra_fail[0] >= 3
+
+
+def _cobra_get(url, allow_redirects=True):
+    """Cobra 요청 (서킷 브레이커 공유). 연속 실패 3회 후엔 호출 전에 걸러진다."""
+    try:
+        resp = _get_text(url, allow_redirects=allow_redirects, timeout=COBRA_TIMEOUT)
+    except requests.RequestException:
+        _cobra_fail[0] += 1
+        if _cobra_fail[0] == 3:
+            print(
+                "경고: Cobra 연결 3회 연속 실패 — 이번 실행의 나머지 Cobra 수집을 생략합니다",
+                file=sys.stderr,
+            )
+        raise
+    _cobra_fail[0] = 0
+    return resp
 
 
 def cobra_tournament_url(tjson):
@@ -323,10 +347,10 @@ def resolve_cobra_url(cobra_url, offline=False):
     cache = _read_cache(COBRA_SLUGS_CACHE) or {}
     if slug in cache:
         return cache[slug] or None
-    if offline:
+    if offline or _cobra_down():
         return None
     try:
-        resp = _get_text(f"{base}/{slug}", allow_redirects=False)
+        resp = _cobra_get(f"{base}/{slug}", allow_redirects=False)
     except requests.RequestException as e:
         print(f"경고: cobra 슬러그 {slug} 변환 실패: {e}", file=sys.stderr)
         return None  # 일시 오류는 캐시하지 않음
@@ -352,10 +376,10 @@ def fetch_cobra_viewable(cobra_url, refresh=False, offline=False):
     cached = _read_cache(path)
     if cached is not None and not refresh:
         return cached.get("viewable") or []
-    if offline:
+    if offline or _cobra_down():
         return (cached or {}).get("viewable") or []
     try:
-        resp = _get_text(f"{cobra_url}/players/standings_data")
+        resp = _cobra_get(f"{cobra_url}/players/standings_data")
         data = resp.json() if resp.status_code == 200 else {}
     except (requests.RequestException, ValueError) as e:
         print(f"경고: cobra standings_data {slug} 실패: {e}", file=sys.stderr)
@@ -387,8 +411,10 @@ def fetch_cobra_decks(cobra_url, player_id, refresh=False, offline=False):
             return None
     elif offline:
         return None
+    if _cobra_down():
+        return None
     try:
-        resp = _get_text(f"{cobra_url}/players/{player_id}/view_decks")
+        resp = _cobra_get(f"{cobra_url}/players/{player_id}/view_decks")
     except requests.RequestException as e:
         print(f"경고: cobra 덱 {slug}/{player_id} fetch 실패: {e}", file=sys.stderr)
         return None

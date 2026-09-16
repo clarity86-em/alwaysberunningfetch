@@ -298,6 +298,8 @@ def run(offline=False):
     from stats import norm_title, player_name
 
     cobra_rows, cobra_ts = 0, 0
+    # 덱 공개는 대회 몇 주 뒤에 켜지는 경우가 있어 ABR(14일)보다 길게 재확인
+    cobra_refresh_after = date.today() - timedelta(days=30)
     for (t_src, entries, tjson), t in zip(raw, per_tournament):
         if not tjson:
             continue
@@ -305,7 +307,7 @@ def run(offline=False):
         if not curl:
             continue
         d = parse_abr_date(t_src.get("date"))
-        refresh = bool(d and d >= refresh_after) and not offline
+        refresh = bool(d and d >= cobra_refresh_after) and not offline
         try:
             curl = abr.resolve_cobra_url(curl, offline=offline)
             if not curl:

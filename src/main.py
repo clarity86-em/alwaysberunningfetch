@@ -133,7 +133,9 @@ def probe_cobra(settings):
             except Exception as e:
                 print(f"GET {url} 예외: {e}")
 
-    known = f"{base}/tournaments/5041"
+    import os
+    probe_id = os.environ.get("COBRA_PROBE") or "5041"
+    known = f"{base}/tournaments/{probe_id}"
     try:
         r = abr._get_text(f"{known}/players/standings_data")
         print(f"standings_data -> {r.status_code} ({r.headers.get('content-type')})")
@@ -152,7 +154,7 @@ def probe_cobra(settings):
         for pid in pids_open[:2]:
             for label, url in (
                 ("view_decks(HTML)", f"{known}/players/{pid}/view_decks"),
-                ("beta decks(JSON)", f"{base}/beta/tournaments/5041/players/{pid}/decks"),
+                ("beta decks(JSON)", f"{base}/beta/tournaments/{probe_id}/players/{pid}/decks"),
             ):
                 r2 = abr._get_text(url)
                 body = r2.text

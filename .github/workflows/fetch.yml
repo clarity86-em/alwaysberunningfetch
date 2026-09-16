@@ -17,6 +17,10 @@ on:
         description: "Cobra 덱 페이지 파싱 검증만 실행"
         type: boolean
         default: false
+      cobra_probe_id:
+        description: "Cobra 프로브 대상 대회 id (probe_cobra용)"
+        type: string
+        default: "5041"
 
 permissions:
   contents: write               # data/, docs/ 결과를 저장소에 커밋
@@ -45,6 +49,8 @@ jobs:
 
       - name: Probe Cobra deck pages
         if: ${{ inputs.probe_cobra }}
+        env:
+          COBRA_PROBE: ${{ inputs.cobra_probe_id }}
         run: python src/main.py --probe-cobra
 
       - name: Run pipeline

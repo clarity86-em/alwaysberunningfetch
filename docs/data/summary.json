@@ -2,6 +2,584 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5752,
+   "title": "Worlds Dress Rehearsal CTK/GNK",
+   "date": "2026.09.19.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 12,
+   "cut_size": 4,
+   "winner": {
+    "player": "Whiteblade111",
+    "rank_swiss": 1,
+    "rank_top": 1,
+    "corp": {
+     "identity": "NBN: Reality Plus",
+     "faction": "nbn",
+     "url": null,
+     "nrdb_id": "30051"
+    },
+    "runner": {
+     "identity": "Magdalene Keino-Chemutai: Cryptarchitect",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "35024"
+    }
+   },
+   "corp": {
+    "NBN: Reality Plus": {
+     "count": 4,
+     "cut": 2,
+     "wins": 1,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      2,
+      7,
+      8
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 1,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 1,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      6
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "36046",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 12,
+     "ranks": [
+      12
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 2,
+     "cut": 1,
+     "wins": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      11
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 1,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 4,
+     "cut": 1,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      5,
+      9,
+      12
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 1,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 14
+     },
+     "Editorial Division: Ad Nihilum": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 4.5,
+      "ties": 1,
+      "games": 6
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Mercury: Chrome Libertador": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 5.5,
+      "ties": 1,
+      "games": 11
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMercury: Chrome Libertador": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.5,
+      "ties": 1,
+      "games": 2
+     },
+     "NBN: Reality Plus\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Thule Subsea: Safety Below\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "friday": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "solomir": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "ghost meat": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "hams": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "cyberpholk": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "alcyon": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.5,
+       "ties": 1,
+       "games": 3
+      }
+     },
+     "sindarin": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "aruzan": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "evilbrennan": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "whiteblade111": {
+      "corp": {
+       "wins": 5.0,
+       "ties": 0,
+       "games": 5
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "magz": {
+      "corp": {
+       "wins": 2.5,
+       "ties": 1,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "hir0pr0tag0nist": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     }
+    },
+    "corp_side_wins": 21.5,
+    "games": 36
+   }
+  },
+  {
    "id": 5872,
    "title": "APAC CONTS STARTUP SICKOS",
    "date": "2026.09.13.",

@@ -2,6 +2,477 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5882,
+   "title": "Ottawa - Gatineau pre-Worlds GNK",
+   "date": "2026.09.28.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 9,
+   "cut_size": 0,
+   "winner": {
+    "player": "lopert",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "AU Co.: The Gold Standard in Clones",
+     "faction": "jinteki",
+     "url": null,
+     "nrdb_id": "35046"
+    },
+    "runner": {
+     "identity": "Sebastião Souza Pessoa: Activist Organizer",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "34066"
+    }
+   },
+   "corp": {
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 3,
+     "cut": 0,
+     "wins": 1,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4,
+      7
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      9
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Thule Subsea: Safety Below": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 6.0,
+      "ties": 0,
+      "games": 7
+     },
+     "NBN: Reality Plus": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Lat: Ethical Freelancer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "matchups": {
+     "Thule Subsea: Safety Below\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "bazza": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "theuglyred": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "dubovik001": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "fastjack": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "juice": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "emaaaly": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "lopert": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "hany": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "lyra": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     }
+    },
+    "corp_side_wins": 13.0,
+    "games": 20
+   }
+  },
+  {
    "id": 5889,
    "title": "Toronto Last Chance GNK",
    "date": "2026.09.27.",
@@ -4450,7 +4921,7 @@
    "cardpool": "Vantage Point",
    "banlist": "26.08",
    "formality": "casual",
-   "players": 236,
+   "players": 235,
    "cut_size": 16,
    "winner": {
     "player": "davz131",
@@ -4864,7 +5335,7 @@
      ]
     },
     "Thule Subsea: Safety Below": {
-     "count": 9,
+     "count": 8,
      "cut": 0,
      "wins": 0,
      "faction": "haas-bioroid",
@@ -4874,7 +5345,6 @@
       105,
       109,
       113,
-      124,
       151,
       154,
       160,
@@ -4919,7 +5389,7 @@
    },
    "runner": {
     "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
-     "count": 51,
+     "count": 50,
      "cut": 7,
      "wins": 0,
      "faction": "criminal",
@@ -4956,7 +5426,6 @@
       110,
       114,
       120,
-      124,
       124,
       128,
       130,

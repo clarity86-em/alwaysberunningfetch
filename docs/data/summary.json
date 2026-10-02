@@ -2,6 +2,102 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5905,
+   "title": "TAIB INVITATIOBAL",
+   "date": "2026.10.01.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 4,
+   "cut_size": 0,
+   "winner": null,
+   "corp": {
+    "Information Dynamics: All You Need To Know": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "00012",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      8
+     ]
+    },
+    "Tennin Institute: The Secrets Within": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "05003",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Haas-Bioroid: Architects of Tomorrow": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "31040",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "runner": {
+    "Adam: Compulsive Hacker": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "adam",
+     "nrdb_id": "09037",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Apex: Invasive Predator": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "apex",
+     "nrdb_id": "09029",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Wyvern: Chemically Enhanced": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "00007",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Quetzal: Free Spirit": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "31001",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "winrates": null
+  },
+  {
    "id": 5882,
    "title": "Ottawa - Gatineau pre-Worlds GNK",
    "date": "2026.09.28.",

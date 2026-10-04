@@ -2,6 +2,448 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5863,
+   "title": "Riga City Grid Casual Tournament 2026",
+   "date": "2026.10.04.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "neror",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Earth Station: SEA Headquarters",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "26120"
+    },
+    "runner": {
+     "identity": "Virtual Intelligence, P.I.: “You Can Call Me Vic”",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "36009"
+    }
+   },
+   "corp": {
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      5
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      6
+     ]
+    },
+    "Dewi Subrotoputri: Pedagogical Dhalang": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35023",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      7
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "NBN: Reality Plus": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 6
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Dewi Subrotoputri: Pedagogical Dhalang": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 6
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "matchups": {
+     "AU Co.: The Gold Standard in Clones\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tDewi Subrotoputri: Pedagogical Dhalang": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "kurcs": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "kristaps": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "neror": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "suipe": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "juice": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "viljums": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "sumpurnis": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "ričards": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      }
+     }
+    },
+    "corp_side_wins": 11.0,
+    "games": 21
+   }
+  },
+  {
    "id": 5643,
    "title": "Reading Monthly GNK (2026-Oct)",
    "date": "2026.10.03.",

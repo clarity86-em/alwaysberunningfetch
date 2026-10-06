@@ -8474,6 +8474,576 @@
    }
   },
   {
+   "id": 5886,
+   "title": "Winnipeg CTK Sept",
+   "date": "2026.09.27.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "Dragoonkin",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "BANGUN: When Disaster Strikes",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "35068"
+    },
+    "runner": {
+     "identity": "MuslihaT: Multifarious Marketeer",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "35013"
+    }
+   },
+   "corp": {
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      4
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      9
+     ]
+    },
+    "Thule Subsea: Safety Below": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "33095",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Thunderbolt Armaments: Peace Through Power": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "34096",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Synapse Global: Faster than Thought": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35058",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    }
+   },
+   "runner": {
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      10
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      5
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      6
+     ]
+    },
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Thule Subsea: Safety Below": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 8
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 7.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Thunderbolt Armaments: Peace Through Power": {
+      "wins": 1.5,
+      "ties": 1,
+      "games": 4
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Synapse Global: Faster than Thought": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "runner": {
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 4
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 3.5,
+      "ties": 1,
+      "games": 8
+     },
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "matchups": {
+     "AU Co.: The Gold Standard in Clones\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "BANGUN: When Disaster Strikes\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Thunderbolt Armaments: Peace Through Power\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.5,
+      "ties": 1,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "AU Co.: The Gold Standard in Clones\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thunderbolt Armaments: Peace Through Power\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thunderbolt Armaments: Peace Through Power\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Synapse Global: Faster than Thought\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Thule Subsea: Safety Below\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "dc": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 4
+      }
+     },
+     "creaphis": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "swekyde": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "kawaii": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "scp993": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "ajjr82": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "dragoonkin": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "kenseventy": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "freqking": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "augold": {
+      "corp": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     }
+    },
+    "corp_side_wins": 24.5,
+    "games": 40
+   }
+  },
+  {
    "id": 5839,
    "title": "Calgary 2026 Game Night Kit Q3",
    "date": "2026.09.26.",
@@ -9864,7 +10434,7 @@
    "id": 5898,
    "title": "Co trzymajmi Kufel",
    "date": "2026.09.25.",
-   "type": "gnk / seasonal",
+   "type": "casual tournament kit",
    "format": "standard",
    "cardpool": "Vantage Point",
    "banlist": "26.08",

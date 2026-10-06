@@ -595,6 +595,7 @@ def idtag(deck):
 # 최근 우승 보드에 포함할 챔피언십 (Standard 경쟁 티어)
 CHAMPIONSHIP_TYPES = {
     "worlds",
+    "worlds championship",
     "intercontinental championship",
     "continental championship",
     "megacity championship",

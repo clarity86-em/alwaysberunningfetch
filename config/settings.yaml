@@ -69,6 +69,15 @@ tiers:
       World Championship. 한 해 조직 플레이의 정점으로, NSG가 직접 주최하는
       연 1회 오프라인 대회입니다. 대회라기보다 3일간의 컨벤션에 가까운 최정상 이벤트로,
       2026년은 10월 2~4일 캐나다 몬트리올에서 열립니다.
+  # ABR의 실제 type 값 (2026 Worlds부터 확인). 위 worlds와 같은 티어로 묶임
+  worlds championship:
+    rank: 1
+    label: "Worlds"
+    formality: competitive
+    desc: >-
+      World Championship. 한 해 조직 플레이의 정점으로, NSG가 직접 주최하는
+      연 1회 오프라인 대회입니다. 대회라기보다 3일간의 컨벤션에 가까운 최정상 이벤트로,
+      2026년은 10월 2~4일 캐나다 몬트리올에서 열립니다.
   intercontinental championship:
     rank: 1
     label: "Intercontinentals"

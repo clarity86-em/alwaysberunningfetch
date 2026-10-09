@@ -444,6 +444,1154 @@
    }
   },
   {
+   "id": 5922,
+   "title": "2026 Worlds Championship Startup Side Event",
+   "date": "2026.10.04.",
+   "type": "worlds championship",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "competitive",
+   "players": 29,
+   "cut_size": 0,
+   "winner": {
+    "player": "SkoolKnight4",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "LEO Construction: Labor Solutions",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "35035"
+    },
+    "runner": {
+     "identity": "Magdalene Keino-Chemutai: Cryptarchitect",
+     "faction": "shaper",
+     "url": null,
+     "nrdb_id": "35024"
+    }
+   },
+   "corp": {
+    "LEO Construction: Labor Solutions": {
+     "count": 6,
+     "cut": 0,
+     "wins": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      7,
+      12,
+      13,
+      21,
+      26
+     ]
+    },
+    "Méliès U: Only the Brightest": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "36036",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      16,
+      29
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      5,
+      24
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 8,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      6,
+      8,
+      14,
+      18,
+      23,
+      25,
+      28
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 4,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      11,
+      15,
+      20
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 10,
+     "ranks": [
+      10
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 17,
+     "ranks": [
+      17,
+      22,
+      27
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 19,
+     "ranks": [
+      19
+     ]
+    }
+   },
+   "runner": {
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 3,
+     "cut": 0,
+     "wins": 1,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      10,
+      16
+     ]
+    },
+    "Tāo Salonga: Telepresence Magician": {
+     "count": 6,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "30019",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      5,
+      7,
+      15,
+      17,
+      26
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      19,
+      25
+     ]
+    },
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 8,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      6,
+      8,
+      11,
+      13,
+      14,
+      22,
+      23
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 6,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      12,
+      18,
+      21,
+      27,
+      28
+     ]
+    },
+    "Ryō “Phoenix” Ōno: Out of the Ashes": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35001",
+     "best_rank": 20,
+     "ranks": [
+      20,
+      24
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 29,
+     "ranks": [
+      29
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "BANGUN: When Disaster Strikes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "LEO Construction: Labor Solutions": {
+      "wins": 12.0,
+      "ties": 0,
+      "games": 16
+     },
+     "NBN: Reality Plus": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 13.5,
+      "ties": 1,
+      "games": 21
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Méliès U: Only the Brightest": {
+      "wins": 5.0,
+      "ties": 0,
+      "games": 6
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 9.0,
+      "ties": 0,
+      "games": 12
+     },
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 8.5,
+      "ties": 1,
+      "games": 24
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 7
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 13
+     },
+     "Tāo Salonga: Telepresence Magician": {
+      "wins": 7.0,
+      "ties": 0,
+      "games": 16
+     },
+     "Ryō \"Phoenix\" Ōno: Out of the Ashes": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 4.0,
+      "ties": 0,
+      "games": 8
+     }
+    },
+    "matchups": {
+     "BANGUN: When Disaster Strikes\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Weyland Consortium: Built to Last\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 3.5,
+      "ties": 1,
+      "games": 7
+     },
+     "Méliès U: Only the Brightest\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "LEO Construction: Labor Solutions\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Weyland Consortium: Built to Last\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "LEO Construction: Labor Solutions\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 3.0,
+      "ties": 0,
+      "games": 4
+     },
+     "The Zwicky Group: Invisible Hands\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Weyland Consortium: Built to Last\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "The Zwicky Group: Invisible Hands\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 4.0,
+      "ties": 0,
+      "games": 4
+     },
+     "LEO Construction: Labor Solutions\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tRyō \"Phoenix\" Ōno: Out of the Ashes": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Méliès U: Only the Brightest\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tZahya Sadeghi: Versatile Smuggler": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Méliès U: Only the Brightest\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tTāo Salonga: Telepresence Magician": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "binderpaper": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "shinmuteki": {
+      "corp": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "skoolknight4": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "cr4ter": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "hams": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "warriorforc": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "huckleberryfinn": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "eskay": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jmlmtl": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "fourinone": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "grtll": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "ironfoot96": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "redgar": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "ghost meat": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "diogene": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "victor524287": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "missplay": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "soft_decay": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "new creation": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "houston jeff": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "shadowthe6th": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "hany": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "dubovik001": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 3
+      }
+     },
+     "brita": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "tradon": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "zeebag": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cybershark": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "yetidoodledandy": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "camanecrozscope": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     }
+    },
+    "corp_side_wins": 48.5,
+    "games": 75
+   }
+  },
+  {
+   "id": 5921,
+   "title": "World's 2026 Sunday Cube Draft (FFG-Food)",
+   "date": "2026.10.04.",
+   "type": "community tournament",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "diogenes",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Asa Group: Security Through Vigilance",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "21009"
+    },
+    "runner": {
+     "identity": "Sunny Lebeau: Security Specialist",
+     "faction": "sunny-lebeau",
+     "url": null,
+     "nrdb_id": "09045"
+    }
+   },
+   "corp": {
+    "Asa Group: Security Through Vigilance": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "21009",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Azmari EdTech: Shaping the Future": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "21054",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 4,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      5,
+      8
+     ]
+    },
+    "Near-Earth Hub: Broadcast Center": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "31060",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "The Outfit: Family Owned and Operated": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "22050",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "runner": {
+    "Sunny Lebeau: Security Specialist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "sunny-lebeau",
+     "nrdb_id": "09045",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Liza Talking Thunder: Prominent Legislator": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "22008",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 4,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4,
+      5,
+      8
+     ]
+    },
+    "Reina Roja: Freedom Fighter": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "31002",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Rielle \"Kit\" Peddler: Transhuman": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "31026",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Asa Group: Security Through Vigilance": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Near-Earth Hub: Broadcast Center": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Azmari EdTech: Shaping the Future": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Sunny Lebeau: Security Specialist": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Reina Roja: Freedom Fighter": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Liza Talking Thunder: Prominent Legislator": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "matchups": {
+     "Asa Group: Security Through Vigilance\tLiza Talking Thunder: Prominent Legislator": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Azmari EdTech: Shaping the Future\tSunny Lebeau: Security Specialist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "diogenes": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "wynaut": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "tullaris": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jumbosupreme": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "styx": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "foodforachange": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "zhansonic": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "nakron": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     }
+    },
+    "corp_side_wins": 13.0,
+    "games": 24
+   }
+  },
+  {
    "id": 5643,
    "title": "Reading Monthly GNK (2026-Oct)",
    "date": "2026.10.03.",

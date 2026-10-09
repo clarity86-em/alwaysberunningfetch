@@ -1,0 +1,352 @@
+{
+ "name": "World's 2026 Sunday Cube Draft (FFG-Food)",
+ "date": "2026-10-04",
+ "cutToTop": 0,
+ "preliminaryRounds": 3,
+ "tournamentOrganiser": {
+  "nrdbId": 38263,
+  "nrdbUsername": "Foodforachange"
+ },
+ "players": [
+  {
+   "id": 60624,
+   "name": "diogenes",
+   "rank": 1,
+   "corpFaction": "haas-bioroid",
+   "corpIdentity": "Asa Group: Security Through Vigilance",
+   "runnerFaction": "sunny-lebeau",
+   "runnerIdentity": "Sunny Lebeau: Security Specialist",
+   "matchPoints": 15,
+   "strengthOfSchedule": "4.0",
+   "extendedStrengthOfSchedule": "2.777777777777778",
+   "pronouns": "he/him"
+  },
+  {
+   "id": 60647,
+   "name": "zhansonic",
+   "rank": 2,
+   "corpFaction": "nbn",
+   "corpIdentity": "Azmari EdTech: Shaping the Future",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "Liza Talking Thunder: Prominent Legislator",
+   "matchPoints": 15,
+   "strengthOfSchedule": "2.6666666666666666666666666666667",
+   "extendedStrengthOfSchedule": "3.5555555555555533333333333333333",
+   "pronouns": "He/him"
+  },
+  {
+   "id": 60622,
+   "name": "Styx",
+   "rank": 3,
+   "corpFaction": null,
+   "corpIdentity": null,
+   "runnerFaction": null,
+   "runnerIdentity": null,
+   "matchPoints": 12,
+   "strengthOfSchedule": "3.0",
+   "extendedStrengthOfSchedule": "3.0",
+   "pronouns": "they/them"
+  },
+  {
+   "id": 60621,
+   "name": "Wynaut",
+   "rank": 4,
+   "corpFaction": null,
+   "corpIdentity": null,
+   "runnerFaction": null,
+   "runnerIdentity": null,
+   "matchPoints": 9,
+   "strengthOfSchedule": "2.6666666666666666666666666666667",
+   "extendedStrengthOfSchedule": "3.5555555555555533333333333333333",
+   "pronouns": ""
+  },
+  {
+   "id": 60623,
+   "name": "JumboSupreme",
+   "rank": 5,
+   "corpFaction": null,
+   "corpIdentity": null,
+   "runnerFaction": null,
+   "runnerIdentity": null,
+   "matchPoints": 6,
+   "strengthOfSchedule": "3.3333333333333333333333333333333",
+   "extendedStrengthOfSchedule": "2.6666666666666666666666666666667",
+   "pronouns": ""
+  },
+  {
+   "id": 60625,
+   "name": "Tullaris",
+   "rank": 6,
+   "corpFaction": "nbn",
+   "corpIdentity": "Near-Earth Hub: Broadcast Center",
+   "runnerFaction": "anarch",
+   "runnerIdentity": "Reina Roja: Freedom Fighter",
+   "matchPoints": 6,
+   "strengthOfSchedule": "2.6666666666666666666666666666667",
+   "extendedStrengthOfSchedule": "2.8888888888888886666666666666667",
+   "pronouns": "He/him"
+  },
+  {
+   "id": 60611,
+   "name": "Foodforachange",
+   "rank": 7,
+   "corpFaction": null,
+   "corpIdentity": null,
+   "runnerFaction": null,
+   "runnerIdentity": null,
+   "matchPoints": 6,
+   "strengthOfSchedule": "2.3333333333333333333333333333333",
+   "extendedStrengthOfSchedule": "3.0",
+   "pronouns": ""
+  },
+  {
+   "id": 60620,
+   "name": "Nakron",
+   "rank": 8,
+   "corpFaction": null,
+   "corpIdentity": null,
+   "runnerFaction": null,
+   "runnerIdentity": null,
+   "matchPoints": 3,
+   "strengthOfSchedule": "3.3333333333333333333333333333333",
+   "extendedStrengthOfSchedule": "2.5555555555555556666666666666667",
+   "pronouns": ""
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60624,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 60621,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60625,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 60623,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60622,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 60611,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60647,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 60620,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60624,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 60622,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60623,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 60647,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60625,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 60611,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60620,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "player2": {
+     "id": 60621,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60624,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 60647,
+     "runnerScore": 0,
+     "corpScore": 3,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60622,
+     "runnerScore": 3,
+     "corpScore": 3,
+     "combinedScore": 6
+    },
+    "player2": {
+     "id": 60625,
+     "runnerScore": 0,
+     "corpScore": 0,
+     "combinedScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60621,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 60623,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60611,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "player2": {
+     "id": 60620,
+     "runnerScore": 3,
+     "corpScore": 0,
+     "combinedScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "https://tournaments.nullsignal.games/schemas/tournament-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/QKZD"
+  }
+ ]
+}

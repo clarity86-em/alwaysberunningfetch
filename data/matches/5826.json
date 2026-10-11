@@ -1,0 +1,540 @@
+{
+ "name": "R&B Netrunner Standard Tournament - October 10th",
+ "date": "2026-10-10",
+ "cutToTop": 0,
+ "preliminaryRounds": 5,
+ "tournamentOrganiser": {
+  "nrdbId": 45175,
+  "nrdbUsername": "Mirror-Maker"
+ },
+ "players": [
+  {
+   "id": 60724,
+   "name": "Neagat",
+   "rank": 1,
+   "corpFaction": "weyland-consortium",
+   "corpIdentity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+   "runnerFaction": "anarch",
+   "runnerIdentity": "Sebastião Souza Pessoa: Activist Organizer",
+   "matchPoints": 12,
+   "strengthOfSchedule": "1.8",
+   "extendedStrengthOfSchedule": "1.806",
+   "pronouns": ""
+  },
+  {
+   "id": 60718,
+   "name": "Lia",
+   "rank": 2,
+   "corpFaction": "haas-bioroid",
+   "corpIdentity": "LEO Construction: Labor Solutions",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"",
+   "matchPoints": 12,
+   "strengthOfSchedule": "1.56",
+   "extendedStrengthOfSchedule": "1.74",
+   "pronouns": "she/her"
+  },
+  {
+   "id": 60719,
+   "name": "Artemis",
+   "rank": 3,
+   "corpFaction": "nbn",
+   "corpIdentity": "NBN: Reality Plus",
+   "runnerFaction": "anarch",
+   "runnerIdentity": "Esâ Afontov: Eco-Insurrectionist",
+   "matchPoints": 9,
+   "strengthOfSchedule": "2.1",
+   "extendedStrengthOfSchedule": "1.725",
+   "pronouns": "it/its"
+  },
+  {
+   "id": 60721,
+   "name": "mystermerry",
+   "rank": 4,
+   "corpFaction": "jinteki",
+   "corpIdentity": "Jinteki: Restoring Humanity",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"",
+   "matchPoints": 9,
+   "strengthOfSchedule": "1.53",
+   "extendedStrengthOfSchedule": "1.4555",
+   "pronouns": "They/Them"
+  },
+  {
+   "id": 60720,
+   "name": "BoxShapedHeart",
+   "rank": 5,
+   "corpFaction": "weyland-consortium",
+   "corpIdentity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "MuslihaT: Multifarious Marketeer",
+   "matchPoints": 6,
+   "strengthOfSchedule": "1.74",
+   "extendedStrengthOfSchedule": "1.6155",
+   "pronouns": "He/Him"
+  },
+  {
+   "id": 60723,
+   "name": "StorytellerTanis",
+   "rank": 6,
+   "corpFaction": "jinteki",
+   "corpIdentity": "AU Co.: The Gold Standard in Clones",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "Zahya Sadeghi: Versatile Smuggler",
+   "matchPoints": 6,
+   "strengthOfSchedule": "1.0875",
+   "extendedStrengthOfSchedule": "1.525",
+   "pronouns": ""
+  },
+  {
+   "id": 60722,
+   "name": "Sally",
+   "rank": 7,
+   "corpFaction": "weyland-consortium",
+   "corpIdentity": "Nuvem SA: Law of the Land",
+   "runnerFaction": "criminal",
+   "runnerIdentity": "MuslihaT: Multifarious Marketeer",
+   "matchPoints": 3,
+   "strengthOfSchedule": "1.53",
+   "extendedStrengthOfSchedule": "1.4435",
+   "pronouns": "she/her"
+  },
+  {
+   "id": 60726,
+   "name": "Mirror-Maker",
+   "rank": 8,
+   "corpFaction": "jinteki",
+   "corpIdentity": "PT Untaian: Life's Building Blocks",
+   "runnerFaction": "anarch",
+   "runnerIdentity": "Esâ Afontov: Eco-Insurrectionist",
+   "matchPoints": 3,
+   "strengthOfSchedule": "1.3",
+   "extendedStrengthOfSchedule": "1.3825",
+   "pronouns": ""
+  }
+ ],
+ "eliminationPlayers": [],
+ "rounds": [
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60723,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60721,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60720,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60724,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60718,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60722,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60719,
+     "role": null,
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": null
+    },
+    "player2": {
+     "id": null,
+     "role": null,
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60724,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60719,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60718,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "player2": {
+     "id": 60721,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60720,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "player2": {
+     "id": 60722,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60726,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60723,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60719,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60718,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60721,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "player2": {
+     "id": 60724,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60720,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "player2": {
+     "id": 60723,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60722,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60726,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60718,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60724,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60720,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60719,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60722,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60723,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60721,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60726,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ],
+  [
+   {
+    "table": 1,
+    "player1": {
+     "id": 60719,
+     "role": "runner",
+     "combinedScore": 0,
+     "runnerScore": 0,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60724,
+     "role": "corp",
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": 3
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 2,
+    "player1": {
+     "id": 60718,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "player2": {
+     "id": 60720,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 3,
+    "player1": {
+     "id": 60722,
+     "role": "corp",
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": 0
+    },
+    "player2": {
+     "id": 60721,
+     "role": "runner",
+     "combinedScore": 3,
+     "runnerScore": 3,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   },
+   {
+    "table": 4,
+    "player1": {
+     "id": 60726,
+     "role": null,
+     "combinedScore": 3,
+     "runnerScore": null,
+     "corpScore": null
+    },
+    "player2": {
+     "id": null,
+     "role": null,
+     "combinedScore": 0,
+     "runnerScore": null,
+     "corpScore": null
+    },
+    "intentionalDraw": false,
+    "twoForOne": false,
+    "eliminationGame": false
+   }
+  ]
+ ],
+ "uploadedFrom": "Cobra",
+ "links": [
+  {
+   "rel": "schemaderivedfrom",
+   "href": "https://tournaments.nullsignal.games/schemas/tournament-schema.json"
+  },
+  {
+   "rel": "uploadedfrom",
+   "href": "https://tournaments.nullsignal.games/tournaments/UFGC"
+  }
+ ]
+}

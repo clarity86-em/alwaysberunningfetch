@@ -236,6 +236,11 @@ def sync_schedules(settings, selected, offline):
 def run(offline=False):
     settings = load_settings()
     results = abr.fetch_results(limit=settings.get("scan_limit", 200), offline=offline)
+    overrides = settings.get("tournament_overrides") or {}
+    for t in results:
+        fix = overrides.get(t.get("id"))
+        if fix:
+            t.update(fix)
     selected = select_tournaments(results, settings)
     sync_schedules(settings, selected, offline)
 

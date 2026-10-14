@@ -206,8 +206,8 @@ tiers:
 # 개별 대회 정보 수동 보정 (대회 ID -> 덮어쓸 ABR 필드). 주최자가 포맷/타입을
 # 잘못 등록한 대회에 사용. format, type 등 ABR 대회 목록의 필드명을 그대로 쓴다.
 tournament_overrides:
-  # 2026 Worlds Startup Side Event: Standard/Worlds로 잘못 등록됨
-  5922: {format: startup, type: community tournament}
+  # 2026 Worlds Startup Side Event: 포맷이 Standard로 잘못 등록됨 (티어는 Worlds 유지)
+  5922: {format: startup}
 
 # 여기 나열된 type은 아예 수집하지 않음
 exclude_types:

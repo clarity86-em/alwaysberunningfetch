@@ -369,6 +369,447 @@
    }
   },
   {
+   "id": 5913,
+   "title": "GNK @ Hightide Tabletop Gaming Fremantle",
+   "date": "2026.10.24.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 9,
+   "cut_size": 0,
+   "winner": {
+    "player": "Anzekay",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "BANGUN: When Disaster Strikes",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "35068"
+    },
+    "runner": {
+     "identity": "Sebastião Souza Pessoa: Activist Organizer",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "34066"
+    }
+   },
+   "corp": {
+    "BANGUN: When Disaster Strikes": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      5
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Poétrï Luxury Brands: All the Rage": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35036",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 9,
+     "ranks": [
+      9
+     ]
+    }
+   },
+   "runner": {
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      6
+     ]
+    },
+    "Hiram “0mission” Svensson: Shadow of the Past": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "36017",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      9
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "LEO Construction: Labor Solutions": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 5
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Poétrï Luxury Brands: All the Rage": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Magdalene Keino-Chemutai: Cryptarchitect": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Sebastião Souza Pessoa: Activist Organizer": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Hiram \"0mission\" Svensson: Shadow of the Past": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "matchups": {
+     "LEO Construction: Labor Solutions\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Weyland Consortium: Built to Last\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tSebastião Souza Pessoa: Activist Organizer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "BANGUN: When Disaster Strikes\tMagdalene Keino-Chemutai: Cryptarchitect": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Poétrï Luxury Brands: All the Rage\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tHiram \"0mission\" Svensson: Shadow of the Past": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "The Zwicky Group: Invisible Hands\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "dc_": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "jon": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      }
+     },
+     "ayanami": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 0
+      }
+     },
+     "arkem": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "grombatmole": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "zak": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "ivor": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "anzekay": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "hayden": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 1
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 1
+      }
+     }
+    },
+    "corp_side_wins": 11.0,
+    "games": 15
+   }
+  },
+  {
    "id": 5924,
    "title": "Quebec City GNK",
    "date": "2026.10.22.",

@@ -2,6 +2,373 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5851,
+   "title": "Capital Hostage Negotiation",
+   "date": "2026.10.24.",
+   "type": "casual tournament kit",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 8,
+   "cut_size": 0,
+   "winner": {
+    "player": "eBentl",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "NBN: Reality Plus",
+     "faction": "nbn",
+     "url": "https://netrunnerdb.com/en/decklist/98635",
+     "nrdb_id": "30051"
+    },
+    "runner": {
+     "identity": "Sebastião Souza Pessoa: Activist Organizer",
+     "faction": "anarch",
+     "url": "https://netrunnerdb.com/en/decklist/98352",
+     "nrdb_id": "34066"
+    }
+   },
+   "corp": {
+    "NBN: Reality Plus": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 2,
+     "ranks": [
+      2
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "BANGUN: When Disaster Strikes": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35068",
+     "best_rank": 4,
+     "ranks": [
+      4,
+      7
+     ]
+    },
+    "Haas-Bioroid: Precision Design": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Earth Station: SEA Headquarters": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "26120",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Sebastião Souza Pessoa: Activist Organizer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "34066",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      7
+     ]
+    },
+    "Az McCaffrey: Mechanical Prodigy": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "26010",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      4
+     ]
+    },
+    "Captain Padma Isbister: Intrepid Explorer": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "33021",
+     "best_rank": 5,
+     "ranks": [
+      5,
+      8
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     },
+     "BANGUN: When Disaster Strikes": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Earth Station: SEA Headquarters": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 2
+     }
+    },
+    "runner": {
+     "Captain Padma Isbister: Intrepid Explorer": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 6
+     },
+     "Az McCaffrey: Mechanical Prodigy": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "matchups": {
+     "BANGUN: When Disaster Strikes\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Earth Station: SEA Headquarters\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Earth Station: SEA Headquarters\tAz McCaffrey: Mechanical Prodigy": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tCaptain Padma Isbister: Intrepid Explorer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "BANGUN: When Disaster Strikes\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "melty coconut": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "gargareth": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "gizmaluke": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "ebentl": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "cr4ter": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "hector": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "sutto": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "esoterica": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     }
+    },
+    "corp_side_wins": 14.0,
+    "games": 20
+   }
+  },
+  {
    "id": 5924,
    "title": "Quebec City GNK",
    "date": "2026.10.22.",

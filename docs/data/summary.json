@@ -2,6 +2,62 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5955,
+   "title": "Footscray GNK 3 Naarm Melbourne",
+   "date": "2026.11.07.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 1,
+   "cut_size": 0,
+   "winner": {
+    "player": "y.pro",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Ob Superheavy Logistics: Extract. Export. Excel.",
+     "faction": "weyland-consortium",
+     "url": "https://netrunnerdb.com/en/decklist/99427",
+     "nrdb_id": "33057"
+    },
+    "runner": {
+     "identity": "Arissana Rocha Nahu: Street Artist",
+     "faction": "shaper",
+     "url": "https://netrunnerdb.com/en/decklist/99428",
+     "nrdb_id": "34020"
+    }
+   },
+   "corp": {
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    }
+   },
+   "runner": {
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    }
+   },
+   "winrates": null
+  },
+  {
    "id": 5871,
    "title": "Hack o' Lantern 🎃 (or Juno's Birthday Bonanza!)",
    "date": "2026.11.01.",

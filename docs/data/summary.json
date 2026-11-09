@@ -2,6 +2,300 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5908,
+   "title": "NashGrid Casual Startup Tournament",
+   "date": "2026.11.08.",
+   "type": "casual tournament kit",
+   "format": "startup",
+   "cardpool": "Vantage Point",
+   "banlist": "",
+   "formality": "casual",
+   "players": 10,
+   "cut_size": 0,
+   "winner": {
+    "player": "xredvortex",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "The Zwicky Group: Invisible Hands",
+     "faction": "weyland-consortium",
+     "url": null,
+     "nrdb_id": "35069"
+    },
+    "runner": {
+     "identity": "Zahya Sadeghi: Versatile Smuggler",
+     "faction": "criminal",
+     "url": null,
+     "nrdb_id": "30010"
+    }
+   },
+   "corp": {
+    "The Zwicky Group: Invisible Hands": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "weyland-consortium",
+     "nrdb_id": "35069",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "The Shadow: Pulling the Strings": {
+     "count": 6,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-corp",
+     "nrdb_id": "00005",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      4,
+      5,
+      7,
+      9,
+      10
+     ]
+    },
+    "Weyland Consortium: Built to Last": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "30059",
+     "best_rank": 3,
+     "ranks": [
+      3,
+      6
+     ]
+    },
+    "LEO Construction: Labor Solutions": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "haas-bioroid",
+     "nrdb_id": "35035",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "runner": {
+    "Zahya Sadeghi: Versatile Smuggler": {
+     "count": 1,
+     "cut": 0,
+     "wins": 1,
+     "faction": "criminal",
+     "nrdb_id": "30010",
+     "best_rank": 1,
+     "ranks": [
+      1
+     ]
+    },
+    "The Masque: Cyber General": {
+     "count": 6,
+     "cut": 0,
+     "wins": 0,
+     "faction": "neutral-runner",
+     "nrdb_id": "00006",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      4,
+      5,
+      7,
+      9,
+      10
+     ]
+    },
+    "Topan: Ormas Leader": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "35002",
+     "best_rank": 3,
+     "ranks": [
+      3
+     ]
+    },
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "Magdalene Keino-Chemutai: Cryptarchitect": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "35024",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "Weyland Consortium: Built to Last": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     },
+     "The Zwicky Group: Invisible Hands": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Zahya Sadeghi: Versatile Smuggler": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 0.5,
+      "ties": 1,
+      "games": 2
+     }
+    },
+    "matchups": {},
+    "players": {
+     "galvanator": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 2
+      }
+     },
+     "shweazel": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "jtopia": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 3
+      }
+     },
+     "thiehle": {
+      "corp": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "ostrichmiller": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "dunknets": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "djdexbuild": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "jp": {
+      "corp": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 2
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "xredvortex": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 2
+      }
+     },
+     "brian b": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 2
+      }
+     }
+    },
+    "corp_side_wins": 14.0,
+    "games": 25
+   }
+  },
+  {
    "id": 5955,
    "title": "Footscray GNK 3 Naarm Melbourne",
    "date": "2026.11.07.",

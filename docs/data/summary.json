@@ -2,6 +2,652 @@
  "season_start": "2026-01-01",
  "tournaments": [
   {
+   "id": 5644,
+   "title": "Reading Monthly GNK (2026-Nov)",
+   "date": "2026.11.14.",
+   "type": "gnk / seasonal",
+   "format": "standard",
+   "cardpool": "Vantage Point",
+   "banlist": "26.08",
+   "formality": "casual",
+   "players": 14,
+   "cut_size": 0,
+   "winner": {
+    "player": "simen",
+    "rank_swiss": 1,
+    "rank_top": null,
+    "corp": {
+     "identity": "Haas-Bioroid: Precision Design",
+     "faction": "haas-bioroid",
+     "url": null,
+     "nrdb_id": "30035"
+    },
+    "runner": {
+     "identity": "René \"Loup\" Arcemont: Party Animal",
+     "faction": "anarch",
+     "url": null,
+     "nrdb_id": "30001"
+    }
+   },
+   "corp": {
+    "Haas-Bioroid: Precision Design": {
+     "count": 2,
+     "cut": 0,
+     "wins": 1,
+     "faction": "haas-bioroid",
+     "nrdb_id": "30035",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      14
+     ]
+    },
+    "Ob Superheavy Logistics: Extract. Export. Excel.": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "33057",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      5
+     ]
+    },
+    "Nuvem SA: Law of the Land": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "weyland-consortium",
+     "nrdb_id": "34121",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Nebula Talent Management: Making Stars": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "35057",
+     "best_rank": 6,
+     "ranks": [
+      6
+     ]
+    },
+    "AU Co.: The Gold Standard in Clones": {
+     "count": 2,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "35046",
+     "best_rank": 7,
+     "ranks": [
+      7,
+      13
+     ]
+    },
+    "Issuaq Adaptics: Sustaining Diversity": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "jinteki",
+     "nrdb_id": "33104",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "NBN: Reality Plus": {
+     "count": 3,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "30051",
+     "best_rank": 9,
+     "ranks": [
+      9,
+      10,
+      12
+     ]
+    },
+    "Editorial Division: Ad Nihilum": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "nbn",
+     "nrdb_id": "36046",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    }
+   },
+   "runner": {
+    "René \"Loup\" Arcemont: Party Animal": {
+     "count": 4,
+     "cut": 0,
+     "wins": 1,
+     "faction": "anarch",
+     "nrdb_id": "30001",
+     "best_rank": 1,
+     "ranks": [
+      1,
+      9,
+      12,
+      13
+     ]
+    },
+    "Arissana Rocha Nahu: Street Artist": {
+     "count": 4,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "34020",
+     "best_rank": 2,
+     "ranks": [
+      2,
+      3,
+      6,
+      10
+     ]
+    },
+    "Barry “Baz” Wong: Tri-Maf Veteran": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35012",
+     "best_rank": 4,
+     "ranks": [
+      4
+     ]
+    },
+    "Virtual Intelligence, P.I.: “You Can Call Me Vic”": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "36009",
+     "best_rank": 5,
+     "ranks": [
+      5
+     ]
+    },
+    "Esâ Afontov: Eco-Insurrectionist": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "anarch",
+     "nrdb_id": "33001",
+     "best_rank": 7,
+     "ranks": [
+      7
+     ]
+    },
+    "MuslihaT: Multifarious Marketeer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "35013",
+     "best_rank": 8,
+     "ranks": [
+      8
+     ]
+    },
+    "Lat: Ethical Freelancer": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "shaper",
+     "nrdb_id": "26019",
+     "best_rank": 11,
+     "ranks": [
+      11
+     ]
+    },
+    "Mercury: Chrome Libertador": {
+     "count": 1,
+     "cut": 0,
+     "wins": 0,
+     "faction": "criminal",
+     "nrdb_id": "34010",
+     "best_rank": 14,
+     "ranks": [
+      14
+     ]
+    }
+   },
+   "winrates": {
+    "corp": {
+     "NBN: Reality Plus": {
+      "wins": 1.5,
+      "ties": 1,
+      "games": 11
+     },
+     "Nuvem SA: Law of the Land": {
+      "wins": 2.5,
+      "ties": 1,
+      "games": 3
+     },
+     "Haas-Bioroid: Precision Design": {
+      "wins": 3.5,
+      "ties": 1,
+      "games": 7
+     },
+     "AU Co.: The Gold Standard in Clones": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 7
+     },
+     "Nebula Talent Management: Making Stars": {
+      "wins": 0.0,
+      "ties": 0,
+      "games": 3
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.": {
+      "wins": 8.0,
+      "ties": 0,
+      "games": 11
+     },
+     "Editorial Division: Ad Nihilum": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Issuaq Adaptics: Sustaining Diversity": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 3
+     }
+    },
+    "runner": {
+     "Lat: Ethical Freelancer": {
+      "wins": 0.5,
+      "ties": 1,
+      "games": 3
+     },
+     "MuslihaT: Multifarious Marketeer": {
+      "wins": 1.5,
+      "ties": 1,
+      "games": 4
+     },
+     "Virtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Arissana Rocha Nahu: Street Artist": {
+      "wins": 10.5,
+      "ties": 1,
+      "games": 13
+     },
+     "René \"Loup\" Arcemont: Party Animal": {
+      "wins": 7.0,
+      "ties": 0,
+      "games": 13
+     },
+     "Barry \"Baz\" Wong: Tri-Maf Veteran": {
+      "wins": 2.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Mercury: Chrome Libertador": {
+      "wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Esâ Afontov: Eco-Insurrectionist": {
+      "wins": 3.0,
+      "ties": 0,
+      "games": 4
+     }
+    },
+    "matchups": {
+     "NBN: Reality Plus\tLat: Ethical Freelancer": {
+      "corp_wins": 0.5,
+      "ties": 1,
+      "games": 1
+     },
+     "Nuvem SA: Law of the Land\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.5,
+      "ties": 1,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 5
+     },
+     "Nebula Talent Management: Making Stars\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Nuvem SA: Law of the Land\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 2.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Nebula Talent Management: Making Stars\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "NBN: Reality Plus\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 4
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Haas-Bioroid: Precision Design\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tArissana Rocha Nahu: Street Artist": {
+      "corp_wins": 1.5,
+      "ties": 1,
+      "games": 2
+     },
+     "Nebula Talent Management: Making Stars\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tLat: Ethical Freelancer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "AU Co.: The Gold Standard in Clones\tMercury: Chrome Libertador": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 2
+     },
+     "Issuaq Adaptics: Sustaining Diversity\tVirtual Intelligence, P.I.: \"You Can Call Me Vic\"": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "NBN: Reality Plus\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tRené \"Loup\" Arcemont: Party Animal": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Haas-Bioroid: Precision Design\tBarry \"Baz\" Wong: Tri-Maf Veteran": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Ob Superheavy Logistics: Extract. Export. Excel.\tMuslihaT: Multifarious Marketeer": {
+      "corp_wins": 1.0,
+      "ties": 0,
+      "games": 1
+     },
+     "Editorial Division: Ad Nihilum\tEsâ Afontov: Eco-Insurrectionist": {
+      "corp_wins": 0.0,
+      "ties": 0,
+      "games": 1
+     }
+    },
+    "players": {
+     "swabl": {
+      "corp": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "faultyice": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 3
+      }
+     },
+     "lgetlander": {
+      "corp": {
+       "wins": 2.5,
+       "ties": 1,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "kitsune552": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.5,
+       "ties": 1,
+       "games": 4
+      }
+     },
+     "simen": {
+      "corp": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "eon_ii": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "xpossum": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "æsc.": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 3
+      },
+      "runner": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "thalia": {
+      "corp": {
+       "wins": 0.5,
+       "ties": 1,
+       "games": 3
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      }
+     },
+     "tea_leaf": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "hey_red": {
+      "corp": {
+       "wins": 0.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 2.5,
+       "ties": 1,
+       "games": 3
+      }
+     },
+     "diamond_deluxe": {
+      "corp": {
+       "wins": 4.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "rockscake": {
+      "corp": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 1.0,
+       "ties": 0,
+       "games": 3
+      }
+     },
+     "llblumire": {
+      "corp": {
+       "wins": 2.0,
+       "ties": 0,
+       "games": 4
+      },
+      "runner": {
+       "wins": 3.0,
+       "ties": 0,
+       "games": 3
+      }
+     }
+    },
+    "corp_side_wins": 21.5,
+    "games": 49
+   }
+  },
+  {
    "id": 5899,
    "title": "Orange County CA Ultra-beginner-friendly Q4 GNK+",
    "date": "2026.11.11.",
